@@ -79,8 +79,8 @@ export const ContactPage: React.FC = () => {
                   </div>
                   <div>
                     <span className="block font-bold text-[#0B1020]">Email Inquiries</span>
-                    <a href="mailto:contact@astrapathways.com" className="text-gray-600 hover:text-[#4F7CFF]">
-                      contact@astrapathways.com
+                    <a href="mailto:info@astrapathways.net" className="text-gray-600 hover:text-[#4F7CFF] transition-colors">
+                      info@astrapathways.net
                     </a>
                   </div>
                 </div>
@@ -90,8 +90,10 @@ export const ContactPage: React.FC = () => {
                     <Phone className="w-4 h-4" />
                   </div>
                   <div>
-                    <span className="block font-bold text-[#0B1020]">Advisory Line (Placeholder)</span>
-                    <span className="text-gray-600">+1 (800) 555-ASTRA</span>
+                    <span className="block font-bold text-[#0B1020]">Contact Phone</span>
+                    <a href="tel:13073177151" className="text-gray-600 hover:text-[#4F7CFF] transition-colors">
+                      1-307-317-7151
+                    </a>
                   </div>
                 </div>
 
@@ -100,18 +102,20 @@ export const ContactPage: React.FC = () => {
                     <Clock className="w-4 h-4" />
                   </div>
                   <div>
-                    <span className="block font-bold text-[#0B1020]">Advisory Hours</span>
-                    <span className="text-gray-600">Monday – Friday: 9am – 6pm EST</span>
+                    <span className="block font-bold text-[#0B1020]">Availability & Hours</span>
+                    <span className="text-gray-600 block">Monday to Sunday (7 days a week)</span>
+                    <span className="text-gray-500 text-xs">Timing: 9am to 9pm EST</span>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-3">
                   <div className="w-9 h-9 rounded-xl bg-gray-100 text-gray-600 flex items-center justify-center shrink-0">
-                    <MapPin className="w-4 h-4" />
+                    <MapPin className="w-4 h-4 text-emerald-600" />
                   </div>
                   <div>
-                    <span className="block font-bold text-[#0B1020]">Global Digital Campus</span>
-                    <span className="text-gray-600">Headquarters & Virtual Learning Labs</span>
+                    <span className="block font-bold text-[#0B1020]">Office Address</span>
+                    <span className="text-gray-600 block">30 N Gould St, STE N</span>
+                    <span className="text-gray-600 block">Sheridan, WY, USA - 82801</span>
                   </div>
                 </div>
               </div>

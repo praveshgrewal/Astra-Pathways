@@ -81,7 +81,8 @@ CAREER SUPPORT & PLACEMENT ASSISTANCE:
 ${program.placement_support_info}
 
 Note: Astra Pathways provides career support and placement assistance without guaranteeing job placement or employment outcomes.
-Visit: https://astrapathways.com for more details.`;
+Contact: info@astrapathways.net | Phone: 1-307-317-7151 | Office: 30 N Gould St, STE N, Sheridan, WY, USA - 82801
+Availability: Monday to Sunday (7 days a week), 9am to 9pm EST.`;
 
     const blob = new Blob([syllabusText], { type: 'text/plain;charset=utf-8' });
     const url = URL.createObjectURL(blob);

@@ -194,7 +194,17 @@ cd server && npm start
 
 ---
 
-## 7. License & Compliance Statement
+## 7. Official Contact & Operational Details
+
+- **Email:** `info@astrapathways.net`
+- **Phone:** `1-307-317-7151`
+- **Office Address:** `30 N Gould St, STE N, Sheridan, WY, USA - 82801`
+- **Availability:** Monday to Sunday (7 days a week)
+- **Timing:** 9am to 9pm EST
+
+---
+
+## 8. License & Compliance Statement
 
 © 2026 Astra Pathways. All rights reserved.  
 *Educational Notice: Astra Pathways provides career-oriented skill development, practical project-based learning, and career support services. Astra Pathways does not offer or promise placement guarantees, guaranteed employment, or specific salary outcomes.*

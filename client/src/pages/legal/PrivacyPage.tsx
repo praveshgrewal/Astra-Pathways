@@ -66,10 +66,11 @@ export const PrivacyPage: React.FC = () => {
           <section className="space-y-3">
             <h2 className="text-lg font-bold text-[#0B1020]">6. Contact Us</h2>
             <p>
-              For privacy-related questions or data deletion requests, contact our team at{' '}
-              <a href="mailto:privacy@astrapathways.com" className="text-[#4F7CFF] font-semibold underline">
-                privacy@astrapathways.com
-              </a>.
+              For privacy-related questions or data deletion requests, contact our compliance team at{' '}
+              <a href="mailto:info@astrapathways.net" className="text-[#4F7CFF] font-semibold underline">
+                info@astrapathways.net
+              </a>{' '}
+              or by mail at Astra Pathways, 30 N Gould St, STE N, Sheridan, WY, USA - 82801. Phone: 1-307-317-7151.
             </p>
           </section>
         </div>

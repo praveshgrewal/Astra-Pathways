@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Mail, Phone, MapPin, Globe, Shield, ArrowUpRight } from 'lucide-react';
+import { Mail, Phone, MapPin, Globe, Shield, ArrowUpRight, Clock } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   return (
@@ -14,8 +14,8 @@ export const Footer: React.FC = () => {
           {/* Brand Info & Mission */}
           <div className="lg:col-span-2 space-y-4">
             <Link to="/" className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-[#0B1020] border border-white/15 flex items-center justify-center">
-                <img src="/logo-icon.svg" alt="Astra Pathways Logo" className="w-8 h-8" />
+              <div className="w-10 h-10 rounded-xl overflow-hidden bg-white/10 border border-white/15 flex items-center justify-center">
+                <img src="/logo.png" alt="Astra Pathways Logo" className="w-full h-full object-cover" />
               </div>
               <span className="text-2xl font-extrabold tracking-tight text-white">
                 Astra <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#4F7CFF] to-[#8B5CF6]">Pathways</span>
@@ -26,18 +26,26 @@ export const Footer: React.FC = () => {
               Helping motivated learners build industry-relevant technical capabilities, work on practical project artifacts, and navigate career pathways with confidence.
             </p>
 
-            <div className="space-y-2 text-xs text-gray-400 pt-2">
+            <div className="space-y-2.5 text-xs text-gray-400 pt-2">
               <div className="flex items-center gap-2.5">
-                <Mail className="w-4 h-4 text-[#4F7CFF]" />
-                <span>contact@astrapathways.com</span>
+                <Mail className="w-4 h-4 text-[#4F7CFF] shrink-0" />
+                <a href="mailto:info@astrapathways.net" className="hover:text-white transition-colors">
+                  info@astrapathways.net
+                </a>
               </div>
               <div className="flex items-center gap-2.5">
-                <Phone className="w-4 h-4 text-[#8B5CF6]" />
-                <span>+1 (800) 555-ASTRA (Placeholder)</span>
+                <Phone className="w-4 h-4 text-[#8B5CF6] shrink-0" />
+                <a href="tel:13073177151" className="hover:text-white transition-colors">
+                  1-307-317-7151
+                </a>
               </div>
-              <div className="flex items-center gap-2.5">
-                <MapPin className="w-4 h-4 text-gray-400" />
-                <span>Global Digital Campus & Advisory Centers</span>
+              <div className="flex items-start gap-2.5">
+                <MapPin className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                <span>30 N Gould St, STE N, Sheridan, WY, USA - 82801</span>
+              </div>
+              <div className="flex items-start gap-2.5">
+                <Clock className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
+                <span>Mon to Sun (7 days a week) · 9am to 9pm EST</span>
               </div>
             </div>
           </div>

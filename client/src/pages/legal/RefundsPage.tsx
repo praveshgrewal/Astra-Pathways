@@ -42,7 +42,7 @@ export const RefundsPage: React.FC = () => {
             <ul className="list-disc pl-5 space-y-1.5 text-sm text-gray-600">
               <li>Course curricula focus on practical, project-based skill development.</li>
               <li>Career support and placement assistance are preparatory support services, not guarantees of employment.</li>
-              <li>For any specific administrative questions, contact academic advisement at admissions@astrapathways.com.</li>
+              <li>For any specific administrative questions, contact academic advisement at info@astrapathways.net or call 1-307-317-7151.</li>
             </ul>
           </section>
         </div>

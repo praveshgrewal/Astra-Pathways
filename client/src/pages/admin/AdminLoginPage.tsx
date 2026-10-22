@@ -54,8 +54,8 @@ export const AdminLoginPage: React.FC = () => {
 
       <div className="sm:mx-auto sm:w-full sm:max-w-md relative z-10 text-center mb-8">
         <Link to="/" className="inline-flex items-center gap-3 mb-4 group">
-          <div className="w-10 h-10 rounded-xl bg-[#0B1020] border border-white/20 flex items-center justify-center shadow-lg shadow-[#8B5CF6]/20">
-            <img src="/logo-icon.svg" alt="Astra Logo" className="w-8 h-8" />
+          <div className="w-10 h-10 rounded-xl overflow-hidden bg-white/10 border border-white/20 flex items-center justify-center shadow-lg shadow-[#8B5CF6]/20">
+            <img src="/logo.png" alt="Astra Logo" className="w-full h-full object-cover" />
           </div>
           <span className="text-2xl font-extrabold tracking-tight text-white">
             Astra <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#4F7CFF] to-[#8B5CF6]">Pathways</span>

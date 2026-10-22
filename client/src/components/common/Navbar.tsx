@@ -57,8 +57,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAdvisorModal }) => {
           
           {/* Logo & Brand */}
           <Link to="/" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 rounded-xl bg-[#0B1020] border border-white/10 flex items-center justify-center shadow-lg shadow-[#4F7CFF]/10 group-hover:border-[#4F7CFF]/50 transition-all">
-              <img src="/logo-icon.svg" alt="Astra Pathways Logo" className="w-8 h-8" />
+            <div className="w-10 h-10 rounded-xl overflow-hidden bg-white/10 border border-white/15 flex items-center justify-center shadow-lg shadow-[#4F7CFF]/20 group-hover:border-[#4F7CFF]/60 transition-all">
+              <img src="/logo.png" alt="Astra Pathways Logo" className="w-full h-full object-cover" />
             </div>
             <div>
               <span className="text-xl font-extrabold tracking-tight text-white flex items-center gap-1.5 font-sans">
