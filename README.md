@@ -208,3 +208,4 @@ cd server && npm start
 
 © 2026 Astra Pathways. All rights reserved.  
 *Educational Notice: Astra Pathways provides career-oriented skill development, practical project-based learning, and career support services. Astra Pathways does not offer or promise placement guarantees, guaranteed employment, or specific salary outcomes.*
+# Astra-Pathways
