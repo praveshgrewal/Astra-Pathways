@@ -1,6 +1,39 @@
+# Dependencies
 node_modules/
+*/node_modules/
+
+# Production build artifacts
 dist/
-.DS_Store
-*.log
+client/dist/
+server/dist/
+
+# Local Environment Variables & Secrets
 .env
-data/astra.db*
+.env.local
+.env.*.local
+server/.env
+client/.env
+
+# Local Database & Uploads
+data/
+server/data/
+uploads/
+server/uploads/
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+
+# OS & Logs
+.DS_Store
+Thumbs.db
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# IDE & Editor caches
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace

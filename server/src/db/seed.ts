@@ -2,27 +2,30 @@ import bcrypt from 'bcryptjs';
 import { v4 as uuidv4 } from 'uuid';
 import { db, initDatabase } from './index.js';
 
-initDatabase();
+export function seedDatabase(cleanExisting = false) {
+  initDatabase();
 
-console.log('Seeding database with compliant, production-grade initial data...');
+  console.log('Seeding database with compliant, production-grade initial data...');
 
-// 1. Clean existing seed data to allow idempotent seeding
-db.exec(`
-  DELETE FROM users;
-  DELETE FROM programs;
-  DELETE FROM blogs;
-  DELETE FROM faqs;
-  DELETE FROM announcements;
-  DELETE FROM testimonials;
-  DELETE FROM leads;
-  DELETE FROM student_enrollments;
-  DELETE FROM student_assignments;
-`);
+  // 1. Clean existing seed data if requested
+  if (cleanExisting) {
+    db.exec(`
+      DELETE FROM users;
+      DELETE FROM programs;
+      DELETE FROM blogs;
+      DELETE FROM faqs;
+      DELETE FROM announcements;
+      DELETE FROM testimonials;
+      DELETE FROM leads;
+      DELETE FROM student_enrollments;
+      DELETE FROM student_assignments;
+    `);
+  }
 
-// 2. Insert Users (Admin & Student)
-const salt = bcrypt.genSaltSync(10);
-const adminPasswordHash = bcrypt.hashSync('AdminPass123!', salt);
-const studentPasswordHash = bcrypt.hashSync('StudentPass123!', salt);
+  // 2. Insert Users (Admin & Student)
+  const salt = bcrypt.genSaltSync(10);
+  const adminPasswordHash = bcrypt.hashSync('AdminPass123!', salt);
+  const studentPasswordHash = bcrypt.hashSync('StudentPass123!', salt);
 
 const adminId = 'usr_admin_' + uuidv4().slice(0, 8);
 const studentId = 'usr_student_' + uuidv4().slice(0, 8);
@@ -712,6 +715,18 @@ db.prepare(`
   'Pending'
 );
 
-console.log('Database seeded successfully with compliant, rich production data!');
-console.log('Admin account: admin@astrapathways.com / AdminPass123!');
-console.log('Student account: student@astrapathways.com / StudentPass123!');
+  console.log('Database seeded successfully with compliant, rich production data!');
+  console.log('Admin account: admin@astrapathways.com / AdminPass123!');
+  console.log('Student account: student@astrapathways.com / StudentPass123!');
+}
+
+// Auto-run if executed as script
+const isMain = process.argv[1] && (
+  process.argv[1].endsWith('seed.ts') || 
+  process.argv[1].endsWith('seed.js') || 
+  process.argv[1].includes('seed')
+);
+
+if (isMain) {
+  seedDatabase(true);
+}

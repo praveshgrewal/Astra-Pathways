@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: astra-pathways
+    env: node
+    plan: free
+    buildCommand: npm run build
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: JWT_SECRET
+        generateValue: true
+      - key: DATABASE_FILE
+        value: ./data/astra.db
+      - key: CLIENT_ORIGIN
+        value: ""
+    # Note: On Render free tier, local disk is ephemeral across re-deploys.
+    # The application automatically re-seeds default data if a fresh database is initialized.
+    # For permanent persistence across re-deploys on Render, attach a Persistent Disk:
+    # disk:
+    #   name: astra-data
+    #   mountPath: /var/data
+    #   sizeGB: 1
+    # and update DATABASE_FILE to /var/data/astra.db
