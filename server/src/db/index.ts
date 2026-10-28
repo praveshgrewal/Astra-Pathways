@@ -141,6 +141,24 @@ export function initDatabase() {
       FOREIGN KEY(user_id) REFERENCES users(id),
       FOREIGN KEY(program_id) REFERENCES programs(id)
     );
+
+    CREATE TABLE IF NOT EXISTS forms_submissions (
+      id TEXT PRIMARY KEY,
+      reference_number TEXT UNIQUE NOT NULL,
+      form_type TEXT NOT NULL,
+      full_name TEXT NOT NULL,
+      email TEXT NOT NULL,
+      phone TEXT,
+      program_name TEXT,
+      cohort TEXT,
+      status TEXT DEFAULT 'New',
+      priority TEXT DEFAULT 'Standard',
+      payload TEXT NOT NULL,
+      notes TEXT DEFAULT '',
+      resolution TEXT DEFAULT '',
+      created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+      updated_at DATETIME DEFAULT CURRENT_TIMESTAMP
+    );
   `);
 
   console.log('Database tables verified and initialized.');

@@ -147,8 +147,9 @@ export const Footer: React.FC = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/privacy" className="hover:text-white transition-colors">
-                  Privacy Policy
+                <Link to="/forms" className="text-[#4F7CFF] font-semibold hover:text-[#8B5CF6] transition-colors flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                  Student Forms Hub (7 Forms)
                 </Link>
               </li>
               <li>
@@ -157,13 +158,23 @@ export const Footer: React.FC = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/cookies" className="hover:text-white transition-colors">
-                  Cookie Policy
+                <Link to="/refunds" className="hover:text-white transition-colors">
+                  Refund & Cancellation Policy
                 </Link>
               </li>
               <li>
-                <Link to="/refunds" className="hover:text-white transition-colors">
-                  Enrollment Terms
+                <Link to="/dispute-resolution" className="hover:text-white transition-colors">
+                  Dispute & Charge Resolution
+                </Link>
+              </li>
+              <li>
+                <Link to="/privacy" className="hover:text-white transition-colors">
+                  Privacy Policy & Data Security
+                </Link>
+              </li>
+              <li>
+                <Link to="/cookies" className="hover:text-white transition-colors">
+                  Cookie Policy
                 </Link>
               </li>
             </ul>

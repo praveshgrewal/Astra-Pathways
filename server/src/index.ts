@@ -14,6 +14,7 @@ import leadsRoutes from './routes/leads.js';
 import contentRoutes from './routes/content.js';
 import studentRoutes from './routes/student.js';
 import adminRoutes from './routes/admin.js';
+import formsRoutes from './routes/forms.js';
 
 dotenv.config();
 
@@ -126,6 +127,7 @@ app.use('/api/leads', leadsLimiter, leadsRoutes);
 app.use('/api/content', contentRoutes);
 app.use('/api/student', studentRoutes);
 app.use('/api/admin', adminRoutes);
+app.use('/api/forms', leadsLimiter, formsRoutes);
 
 // Health check endpoint
 app.get('/api/health', (_req, res) => {

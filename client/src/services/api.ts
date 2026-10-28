@@ -78,6 +78,19 @@ export const api = {
   deleteLead: (id: string) => request<any>(`/leads/${id}`, { method: 'DELETE' }),
   exportLeadsUrl: () => `${API_BASE}/leads/export/csv`,
 
+  // Forms Submissions (Cancellation, Refund, Complaint, Inquiry, Enrollment, Query, Placement Assistance)
+  submitForm: (formData: any) => request<any>('/forms/submit', { method: 'POST', body: JSON.stringify(formData) }),
+  lookupSubmission: (ref: string) => request<any>(`/forms/lookup/${encodeURIComponent(ref)}`),
+  getFormSubmissions: (params?: { form_type?: string; status?: string; search?: string }) => {
+    const searchParams = new URLSearchParams();
+    if (params?.form_type) searchParams.set('form_type', params.form_type);
+    if (params?.status) searchParams.set('status', params.status);
+    if (params?.search) searchParams.set('search', params.search);
+    const query = searchParams.toString();
+    return request<any>(`/forms/submissions${query ? `?${query}` : ''}`);
+  },
+  updateFormSubmission: (id: string, updates: any) => request<any>(`/forms/submissions/${id}`, { method: 'PATCH', body: JSON.stringify(updates) }),
+
   // Content
   getAnnouncements: (all?: boolean) => request<any>(`/content/announcements${all ? '?all=true' : ''}`),
   createAnnouncement: (data: any) => request<any>('/content/announcements', { method: 'POST', body: JSON.stringify(data) }),

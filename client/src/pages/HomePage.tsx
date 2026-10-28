@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { 
   Sparkles, ArrowRight, Code2, Brain, Database, Cloud, Shield, CheckCircle2,
   Compass, Laptop, Users, Target, HelpCircle, ChevronDown, ChevronUp, Layers,
-  Terminal, BarChart3, Lock, Rocket, MessageSquare
+  Terminal, BarChart3, Lock, Rocket, MessageSquare, Building2, Briefcase
 } from 'lucide-react';
 import { PathwaysCanvas } from '../components/common/PathwaysCanvas';
 import { api } from '../services/api';
@@ -143,12 +143,49 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenAdvisorModal }) => {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold bg-white/5 border border-white/10 text-gray-200 backdrop-blur-md mb-8 shadow-inner animate-in fade-in duration-500">
-            <span className="w-2 h-2 rounded-full bg-[#4F7CFF] animate-ping" />
-            <span className="text-[#8B5CF6] font-bold">Astra Pathways</span>
-            <span className="text-gray-400">|</span>
-            <span>Career-Oriented Technical Education</span>
+          {/* Co-branded Presentation Lockup: Madyan Holdings (Left) & Astra Pathways (Right) */}
+          <div className="inline-flex flex-col sm:flex-row items-center gap-3 sm:gap-4 px-4 sm:px-6 py-2.5 sm:py-3 rounded-2xl bg-gradient-to-r from-[#181124]/90 via-[#0B1020]/95 to-[#121B3A]/90 border border-white/15 backdrop-blur-xl mb-8 shadow-2xl shadow-[#7C3AED]/20 hover:border-white/25 transition-all animate-in fade-in duration-500">
+            {/* Left: Madyan Holdings Logo & Name */}
+            <div className="flex items-center gap-2.5">
+              <div className="h-10 sm:h-11 px-2.5 py-1 rounded-xl overflow-hidden bg-[#160e24] border border-[#7C3AED]/40 flex items-center justify-center shadow-md shrink-0">
+                <img 
+                  src="/madyan-holdings.png" 
+                  alt="Madyan Holdings Logo" 
+                  className="h-8 sm:h-9 w-auto object-contain rounded"
+                />
+              </div>
+              <div className="flex flex-col text-left justify-center">
+                <span className="text-sm sm:text-base font-black text-white tracking-tight leading-tight">
+                  Madyan <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-200 to-amber-400">Holdings</span>
+                </span>
+                <span className="text-[9px] sm:text-[10px] text-amber-300/90 font-medium tracking-wider uppercase">
+                  Crossroads of Commerce
+                </span>
+              </div>
+            </div>
+
+            {/* Middle Badge: Host & Introduce */}
+            <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 border border-white/15 text-[10px] sm:text-xs font-semibold text-gray-200">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping" />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-white to-[#8B5CF6]">
+                Introduces & Hosts
+              </span>
+            </div>
+
+            {/* Right: Astra Pathways Logo & Name */}
+            <div className="flex items-center gap-2.5">
+              <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl overflow-hidden bg-white/10 border border-white/20 flex items-center justify-center shadow-lg shadow-[#4F7CFF]/25 shrink-0">
+                <img src="/logo.png" alt="Astra Pathways Logo" className="w-full h-full object-cover" />
+              </div>
+              <div className="flex flex-col text-left justify-center">
+                <span className="text-sm sm:text-base font-black text-white tracking-tight leading-tight">
+                  Astra <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#4F7CFF] to-[#8B5CF6]">Pathways</span>
+                </span>
+                <span className="text-[9px] sm:text-[10px] text-cyan-300/90 font-medium tracking-wider uppercase">
+                  School & Programs
+                </span>
+              </div>
+            </div>
           </div>
 
           {/* Headline */}
@@ -161,7 +198,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenAdvisorModal }) => {
 
           {/* Supporting Copy */}
           <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed mb-10 font-normal">
-            Discover industry-relevant learning experiences designed to help you develop practical skills, work on meaningful projects, and navigate your professional journey with confidence.
+            <span className="text-white font-semibold">Madyan Holdings</span> proudly introduces <span className="text-white font-semibold">Astra Pathways</span> — our premier school of practical technical education, offering industry-calibrated curricula, verifiable milestone artifacts, and guided career pathways.
           </p>
 
           {/* CTAs */}
@@ -211,6 +248,125 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenAdvisorModal }) => {
             </div>
           </div>
 
+        </div>
+      </section>
+
+      {/* ================= HOSTED BY MADYAN HOLDINGS SECTION ================= */}
+      <section className="bg-gradient-to-b from-[#0B1020] via-[#120d24] to-[#0B1020] text-white py-16 border-y border-white/10 relative overflow-hidden">
+        {/* Ambient glow */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[300px] bg-gradient-to-r from-[#7C3AED]/15 via-transparent to-[#4F7CFF]/15 blur-[120px] pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="p-8 sm:p-12 rounded-3xl bg-white/[0.03] border border-white/10 backdrop-blur-xl shadow-2xl">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+              
+              {/* Dual Logo Card (Left: Madyan Holdings, Right: Astra Pathways) */}
+              <div className="lg:col-span-5 flex flex-col items-center sm:items-start text-center sm:text-left space-y-6">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-amber-400/10 text-amber-300 border border-amber-400/20">
+                  <Sparkles className="w-3.5 h-3.5 text-amber-400" />
+                  Institutional Sponsor & Host
+                </span>
+
+                {/* Both Logos in clear Left/Right presentation */}
+                <div className="w-full flex items-center justify-between sm:justify-start gap-4 p-5 rounded-2xl bg-[#0B1020]/90 border border-white/15 shadow-xl">
+                  {/* Left: Madyan Holdings Logo */}
+                  <div className="flex flex-col items-center text-center">
+                    <div className="h-16 w-28 sm:w-32 rounded-xl overflow-hidden bg-[#160e24] border border-[#7C3AED]/40 flex items-center justify-center shadow-lg p-1">
+                      <img 
+                        src="/madyan-holdings.png" 
+                        alt="Madyan Holdings" 
+                        className="h-full w-full object-cover rounded-lg" 
+                      />
+                    </div>
+                    <span className="block text-sm font-black text-white mt-2 uppercase tracking-wide">
+                      Madyan <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-200 to-amber-400">Holdings</span>
+                    </span>
+                    <span className="block text-[9px] text-amber-300 font-semibold tracking-widest uppercase">
+                      Crossroads of Commerce
+                    </span>
+                  </div>
+
+                  {/* Host Connector */}
+                  <div className="flex flex-col items-center justify-center px-1">
+                    <span className="text-[10px] font-extrabold text-gray-400 uppercase tracking-widest">hosts</span>
+                    <div className="w-8 h-8 rounded-full bg-white/5 border border-white/15 flex items-center justify-center text-cyan-400 my-1 font-bold">
+                      &rarr;
+                    </div>
+                    <span className="text-[9px] text-[#8B5CF6] font-semibold uppercase">program</span>
+                  </div>
+
+                  {/* Right: Astra Pathways Logo */}
+                  <div className="flex flex-col items-center text-center">
+                    <div className="h-16 w-16 sm:w-20 rounded-xl overflow-hidden bg-white/10 border border-white/20 flex items-center justify-center shadow-lg shadow-[#4F7CFF]/20 p-1">
+                      <img 
+                        src="/logo.png" 
+                        alt="Astra Pathways" 
+                        className="h-full w-full object-contain rounded-lg" 
+                      />
+                    </div>
+                    <span className="block text-xs font-black text-white mt-2 uppercase tracking-wider">
+                      Astra Pathways
+                    </span>
+                    <span className="block text-[8px] text-cyan-300/80 tracking-widest uppercase font-semibold">
+                      School & Programs
+                    </span>
+                  </div>
+                </div>
+
+                <p className="text-xs text-gray-400 leading-relaxed">
+                  Astra Pathways is hosted and operated under the strategic umbrella of Madyan Holdings, bridging enterprise commerce with rigorous technical education.
+                </p>
+              </div>
+
+              {/* Informational Pillars */}
+              <div className="lg:col-span-7 space-y-6">
+                <div>
+                  <h3 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+                    Madyan Holdings Introduces Astra Pathways
+                  </h3>
+                  <p className="text-sm text-gray-300 mt-2 leading-relaxed">
+                    At the crossroads of global commerce and technological transformation, Madyan Holdings introduces Astra Pathways as an elite training ground for the modern workforce. Every program blends technical depth with real-world business context.
+                  </p>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-1">
+                  <div className="p-4 rounded-xl bg-white/[0.04] border border-white/10 hover:border-white/20 transition-all">
+                    <div className="text-[#4F7CFF] font-bold text-sm mb-1.5 flex items-center gap-1.5">
+                      <Building2 className="w-4 h-4" /> Enterprise Foundation
+                    </div>
+                    <p className="text-xs text-gray-400 leading-relaxed">
+                      Backed by Madyan Holdings' governance, ensuring accredited curricula, transparent ethics, and high educational standards.
+                    </p>
+                  </div>
+
+                  <div className="p-4 rounded-xl bg-white/[0.04] border border-white/10 hover:border-white/20 transition-all">
+                    <div className="text-[#8B5CF6] font-bold text-sm mb-1.5 flex items-center gap-1.5">
+                      <Briefcase className="w-4 h-4" /> Crossroads of Commerce
+                    </div>
+                    <p className="text-xs text-gray-400 leading-relaxed">
+                      Lab projects and milestone artifacts modeled on real-world industry requirements, architectures, and data pipelines.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="pt-2 flex flex-wrap items-center gap-4 text-xs text-gray-300">
+                  <span className="inline-flex items-center gap-1.5 font-medium">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
+                    Verified Project Portfolios
+                  </span>
+                  <span className="inline-flex items-center gap-1.5 font-medium">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
+                    Dedicated Career Mentorship
+                  </span>
+                  <span className="inline-flex items-center gap-1.5 font-medium">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
+                    Accredited Technical Modules
+                  </span>
+                </div>
+              </div>
+
+            </div>
+          </div>
         </div>
       </section>
 

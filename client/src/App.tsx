@@ -23,6 +23,17 @@ import { PrivacyPage } from './pages/legal/PrivacyPage';
 import { TermsPage } from './pages/legal/TermsPage';
 import { CookiesPage } from './pages/legal/CookiesPage';
 import { RefundsPage } from './pages/legal/RefundsPage';
+import { DisputeResolutionPage } from './pages/legal/DisputeResolutionPage';
+
+// Student Forms Pages
+import { FormsHubPage } from './pages/forms/FormsHubPage';
+import { CancellationFormPage } from './pages/forms/CancellationFormPage';
+import { RefundFormPage } from './pages/forms/RefundFormPage';
+import { ComplaintFormPage } from './pages/forms/ComplaintFormPage';
+import { InquiryFormPage } from './pages/forms/InquiryFormPage';
+import { EnrollmentFormPage } from './pages/forms/EnrollmentFormPage';
+import { QueryFormPage } from './pages/forms/QueryFormPage';
+import { PlacementAssistanceFormPage } from './pages/forms/PlacementAssistanceFormPage';
 
 // Student Portal Pages
 import { StudentLoginPage } from './pages/student/StudentLoginPage';
@@ -138,6 +149,26 @@ export function AppContent() {
           <Route path="/terms" element={<TermsPage />} />
           <Route path="/cookies" element={<CookiesPage />} />
           <Route path="/refunds" element={<RefundsPage />} />
+          <Route path="/dispute-resolution" element={<DisputeResolutionPage />} />
+
+          {/* Student Services & Forms Routes */}
+          <Route path="/forms" element={<FormsHubPage />} />
+          <Route path="/forms/cancellation" element={<CancellationFormPage />} />
+          <Route path="/cancellation" element={<CancellationFormPage />} />
+          <Route path="/forms/refund" element={<RefundFormPage />} />
+          <Route path="/refund" element={<RefundFormPage />} />
+          <Route path="/refund-request" element={<RefundFormPage />} />
+          <Route path="/forms/complaint" element={<ComplaintFormPage />} />
+          <Route path="/complaint" element={<ComplaintFormPage />} />
+          <Route path="/dispute" element={<ComplaintFormPage />} />
+          <Route path="/forms/inquiry" element={<InquiryFormPage />} />
+          <Route path="/inquiry" element={<InquiryFormPage />} />
+          <Route path="/forms/enrollment" element={<EnrollmentFormPage />} />
+          <Route path="/enrollment" element={<EnrollmentFormPage />} />
+          <Route path="/forms/query" element={<QueryFormPage />} />
+          <Route path="/query" element={<QueryFormPage />} />
+          <Route path="/forms/placement-assistance" element={<PlacementAssistanceFormPage />} />
+          <Route path="/placement-assistance" element={<PlacementAssistanceFormPage />} />
 
           {/* Student Portal Routes */}
           <Route path="/student/login" element={<StudentLoginPage />} />
