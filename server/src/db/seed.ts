@@ -446,7 +446,7 @@ const programsData = [
     ]),
     placement_support_info: 'Our team assists learners with technical cybersecurity interview preparation, scenario-based questioning, and resume framing. Placement assistance is a guidance service; employment is not guaranteed.',
     learning_format: 'Interactive Online Learning with Guided Virtual Labs',
-    featured: 0,
+    featured: 1,
     published: 1
   }
 ];

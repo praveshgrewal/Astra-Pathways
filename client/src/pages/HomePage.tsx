@@ -431,7 +431,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenAdvisorModal }) => {
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {featuredPrograms.map((prog) => (
               <div 
                 key={prog.id}
@@ -502,6 +502,74 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenAdvisorModal }) => {
                 </div>
               </div>
             ))}
+
+            {/* Custom Track Card completing the balanced 3x2 grid */}
+            <div className="rounded-2xl bg-gradient-to-br from-[#0B1020] via-[#111827] to-[#1E1B4B] border border-dashed border-[#8B5CF6]/40 hover:border-[#8B5CF6] p-6 flex flex-col justify-between transition-all duration-300 hover:shadow-xl hover:shadow-[#8B5CF6]/15 group">
+              <div>
+                <div className="flex items-center justify-between gap-2 mb-4">
+                  <span className="text-[11px] font-semibold text-[#A78BFA] bg-[#8B5CF6]/15 px-2.5 py-1 rounded-md border border-[#8B5CF6]/30 flex items-center gap-1.5">
+                    <Sparkles className="w-3 h-3 text-[#A78BFA]" />
+                    Custom & Corporate
+                  </span>
+                  <span className="text-[11px] font-medium text-emerald-400">
+                    Cohort & 1-on-1
+                  </span>
+                </div>
+
+                <h3 className="text-xl font-bold text-white mb-2.5 group-hover:text-[#A78BFA] transition-colors">
+                  Enterprise & Custom Engineering Tracks
+                </h3>
+
+                <p className="text-xs text-gray-300 leading-relaxed mb-5">
+                  Need a tailored syllabus for your engineering squad, or a specialized technical transition track? Our curriculum architects design customized learning roadmaps.
+                </p>
+
+                {/* Skills badges */}
+                <div className="mb-5">
+                  <span className="block text-[11px] font-semibold text-gray-400 uppercase tracking-wider mb-2">
+                    Flexible Modules:
+                  </span>
+                  <div className="flex flex-wrap gap-1.5">
+                    {['Team Upskilling', 'Tailored Syllabi', 'Live Architecture Reviews', 'Executive Briefings', 'Custom Capstones'].map((skill, sIdx) => (
+                      <span key={sIdx} className="text-[10px] font-medium px-2 py-0.5 rounded bg-white/5 text-purple-200 border border-purple-500/20">
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Highlights */}
+                <div className="space-y-1.5 py-3 border-t border-white/10 text-xs text-gray-300">
+                  <div className="flex items-center gap-2">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-[#8B5CF6] shrink-0" />
+                    <span>Customized Duration & Modular Schedule</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-[#4F7CFF] shrink-0" />
+                    <span>Dedicated Domain Practitioner Mentors</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                    <span>Production Alignment & Security Hardening</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="pt-6 border-t border-white/10 grid grid-cols-2 gap-3 mt-6">
+                <Link
+                  to="/programs"
+                  className="text-center py-2.5 px-3 rounded-xl bg-white/5 hover:bg-white/10 text-white font-semibold text-xs border border-white/10 transition-colors"
+                >
+                  All Curricula
+                </Link>
+                <button
+                  onClick={() => onOpenAdvisorModal('Custom & Corporate Track')}
+                  className="text-center py-2.5 px-3 rounded-xl bg-gradient-to-r from-[#8B5CF6] to-[#4F7CFF] text-white font-bold text-xs hover:opacity-95 transition-all shadow-md shadow-[#8B5CF6]/20"
+                >
+                  Request Track
+                </button>
+              </div>
+            </div>
           </div>
 
         </div>
