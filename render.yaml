@@ -14,7 +14,7 @@ services:
       - key: DATABASE_FILE
         value: ./data/astra.db
       - key: CLIENT_ORIGIN
-        value: ""
+        value: "https://astra-pathways.onrender.com,https://madyanholdings.com,https://www.madyanholdings.com"
     # Note: On Render free tier, local disk is ephemeral across re-deploys.
     # The application automatically re-seeds default data if a fresh database is initialized.
     # For permanent persistence across re-deploys on Render, attach a Persistent Disk:

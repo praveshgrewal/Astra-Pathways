@@ -39,7 +39,67 @@ try {
   console.warn('Auto-seed check note:', err);
 }
 
-// 1. Security Headers (Helmet)
+// 1. Production & Local CORS Configuration
+const normalizeOrigin = (url: string) =>
+  url.trim().toLowerCase().replace(/:443$/, '').replace(/:80$/, '').replace(/\/+$/, '');
+
+const defaultAllowedOrigins = [
+  'https://astra-pathways.onrender.com',
+  'https://madyanholdings.com',
+  'https://www.madyanholdings.com',
+  'http://localhost:5173',
+  'http://127.0.0.1:5173',
+  'http://localhost:5000',
+  'http://127.0.0.1:5000',
+  'http://localhost:3000',
+  'http://127.0.0.1:3000'
+].map(normalizeOrigin);
+
+const envOrigins = process.env.CLIENT_ORIGIN
+  ? process.env.CLIENT_ORIGIN.split(',').map(normalizeOrigin).filter(Boolean)
+  : [];
+
+const allowedOriginsSet = new Set([...defaultAllowedOrigins, ...envOrigins]);
+
+const corsOptions: cors.CorsOptions = {
+  origin: (origin, callback) => {
+    // Allow requests with no origin (e.g. same-origin static assets, mobile apps, curl, server-to-server)
+    if (!origin) {
+      return callback(null, true);
+    }
+
+    const normalized = normalizeOrigin(origin);
+    if (allowedOriginsSet.has(normalized)) {
+      return callback(null, true);
+    }
+
+    // In local development mode, allow localhost/local network origins flexibly
+    if (!isProd) {
+      return callback(null, true);
+    }
+
+    console.warn(`[CORS Blocked] Origin not allowed: ${origin}`);
+    return callback(new Error('Cross-Origin Request Blocked by Security Policy'));
+  },
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
+  allowedHeaders: [
+    'Content-Type',
+    'Authorization',
+    'X-Requested-With',
+    'Accept',
+    'Origin'
+  ],
+  exposedHeaders: ['Content-Range', 'X-Content-Range'],
+  maxAge: 86400, // 24 hours preflight cache
+  optionsSuccessStatus: 204
+};
+
+// CORS must be first in the middleware chain to handle preflight OPTIONS and attach headers
+app.use(cors(corsOptions));
+app.options('*', cors(corsOptions));
+
+// 2. Security Headers (Helmet)
 app.use(helmet({
   contentSecurityPolicy: {
     directives: {
@@ -48,20 +108,21 @@ app.use(helmet({
       styleSrc: ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com"],
       fontSrc: ["'self'", "https://fonts.gstatic.com", "data:"],
       imgSrc: ["'self'", "data:", "blob:", "https:"],
-      connectSrc: ["'self'", "https:"]
+      connectSrc: ["'self'", "https:", "http://localhost:*", "http://127.0.0.1:*"]
     }
   },
   crossOriginEmbedderPolicy: false,
   crossOriginResourcePolicy: { policy: "cross-origin" }
 }));
 
-// 2. Rate Limiters
+// 3. Rate Limiters (skip OPTIONS preflight requests)
 // General API rate limiter: 200 requests per 15 min
 const apiLimiter = rateLimit({
   windowMs: 15 * 60 * 1000,
   max: 200,
   standardHeaders: true,
   legacyHeaders: false,
+  skip: (req) => req.method === 'OPTIONS',
   message: {
     success: false,
     message: 'Too many requests from this IP. Please try again after 15 minutes.'
@@ -74,6 +135,7 @@ const authLimiter = rateLimit({
   max: 15,
   standardHeaders: true,
   legacyHeaders: false,
+  skip: (req) => req.method === 'OPTIONS',
   message: {
     success: false,
     message: 'Too many authentication attempts. Please try again after 15 minutes.'
@@ -86,28 +148,12 @@ const leadsLimiter = rateLimit({
   max: 10,
   standardHeaders: true,
   legacyHeaders: false,
+  skip: (req) => req.method === 'OPTIONS',
   message: {
     success: false,
     message: 'Too many inquiries submitted from this connection. Please wait a few minutes before submitting again.'
   }
 });
-
-// 3. Dynamic CORS configuration
-const allowedOrigins = process.env.CLIENT_ORIGIN
-  ? process.env.CLIENT_ORIGIN.split(',').map(s => s.trim())
-  : ['http://localhost:5173', 'http://127.0.0.1:5173', 'http://localhost:5000'];
-
-app.use(cors({
-  origin: (origin, callback) => {
-    // Allow requests with no origin (e.g. same-origin static assets, curl, server-to-server)
-    if (!origin) return callback(null, true);
-    if (!isProd || allowedOrigins.includes(origin)) {
-      return callback(null, true);
-    }
-    return callback(new Error('Cross-Origin Request Blocked by Security Policy'));
-  },
-  credentials: true
-}));
 
 app.use(express.json({ limit: '5mb' }));
 app.use(express.urlencoded({ extended: true, limit: '5mb' }));
@@ -172,6 +218,13 @@ if (clientDistPath) {
 
 // 7. Sanitized Error Handling
 app.use((err: any, _req: express.Request, res: express.Response, _next: express.NextFunction) => {
+  if (err.message === 'Cross-Origin Request Blocked by Security Policy') {
+    return res.status(403).json({
+      success: false,
+      message: 'Cross-Origin Request Blocked by Security Policy'
+    });
+  }
+
   console.error('Unhandled server error:', err);
   const status = err.status || 500;
   res.status(status).json({
