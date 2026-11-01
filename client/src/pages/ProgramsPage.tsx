@@ -12,7 +12,6 @@ export const ProgramsPage: React.FC<ProgramsPageProps> = ({ onOpenAdvisorModal }
   const [programs, setPrograms] = useState<Program[]>([]);
   const [categories, setCategories] = useState<string[]>(['All']);
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
-  const [selectedLevel, setSelectedLevel] = useState<string>('All');
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [loading, setLoading] = useState<boolean>(true);
 
@@ -28,7 +27,6 @@ export const ProgramsPage: React.FC<ProgramsPageProps> = ({ onOpenAdvisorModal }
     setLoading(true);
     api.getPrograms({
       category: selectedCategory !== 'All' ? selectedCategory : undefined,
-      level: selectedLevel !== 'All' ? selectedLevel : undefined,
       search: searchQuery.trim() || undefined
     })
       .then(res => {
@@ -40,14 +38,12 @@ export const ProgramsPage: React.FC<ProgramsPageProps> = ({ onOpenAdvisorModal }
 
   useEffect(() => {
     fetchPrograms();
-  }, [selectedCategory, selectedLevel]);
+  }, [selectedCategory]);
 
   const handleSearchSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     fetchPrograms();
   };
-
-  const levels = ['All', 'Beginner', 'Intermediate', 'Advanced'];
 
   return (
     <div className="min-h-screen bg-[#F5F7FC] text-[#0B1020] pb-24">
@@ -92,51 +88,24 @@ export const ProgramsPage: React.FC<ProgramsPageProps> = ({ onOpenAdvisorModal }
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10">
         
         {/* Filter Controls */}
-        <div className="bg-white rounded-2xl p-5 border border-slate-200 shadow-sm mb-10 space-y-4">
-          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-            
-            {/* Category Pills */}
-            <div className="flex items-center gap-2 overflow-x-auto pb-2 md:pb-0 scrollbar-none">
-              <span className="text-xs font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1 shrink-0 mr-1">
-                <Filter className="w-3.5 h-3.5" /> Category:
-              </span>
-              {categories.map((cat) => (
-                <button
-                  key={cat}
-                  onClick={() => setSelectedCategory(cat)}
-                  className={`px-3.5 py-1.5 rounded-lg text-xs font-semibold whitespace-nowrap transition-all ${
-                    selectedCategory === cat
-                      ? 'bg-[#4F7CFF] text-white shadow-sm'
-                      : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
-                  }`}
-                >
-                  {cat}
-                </button>
-              ))}
-            </div>
-
-            {/* Level Selector */}
-            <div className="flex items-center gap-2 shrink-0">
-              <span className="text-xs font-bold text-gray-400 uppercase tracking-wider">
-                Level:
-              </span>
-              <div className="flex gap-1.5">
-                {levels.map((lvl) => (
-                  <button
-                    key={lvl}
-                    onClick={() => setSelectedLevel(lvl)}
-                    className={`px-3 py-1 rounded-md text-xs font-medium transition-all ${
-                      selectedLevel === lvl
-                        ? 'bg-[#4F7CFF] text-white'
-                        : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
-                    }`}
-                  >
-                    {lvl}
-                  </button>
-                ))}
-              </div>
-            </div>
-
+        <div className="bg-white rounded-2xl p-5 border border-slate-200 shadow-sm mb-10">
+          <div className="flex items-center gap-2 overflow-x-auto pb-2 md:pb-0 scrollbar-none">
+            <span className="text-xs font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1 shrink-0 mr-1">
+              <Filter className="w-3.5 h-3.5" /> Category:
+            </span>
+            {categories.map((cat) => (
+              <button
+                key={cat}
+                onClick={() => setSelectedCategory(cat)}
+                className={`px-3.5 py-1.5 rounded-lg text-xs font-semibold whitespace-nowrap transition-all ${
+                  selectedCategory === cat
+                    ? 'bg-[#4F7CFF] text-white shadow-sm'
+                    : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+                }`}
+              >
+                {cat}
+              </button>
+            ))}
           </div>
         </div>
 
@@ -145,11 +114,10 @@ export const ProgramsPage: React.FC<ProgramsPageProps> = ({ onOpenAdvisorModal }
           <span>
             Showing <strong className="text-[#0B1020]">{programs.length}</strong> learning programs
           </span>
-          {(selectedCategory !== 'All' || selectedLevel !== 'All' || searchQuery) && (
+          {(selectedCategory !== 'All' || searchQuery) && (
             <button
               onClick={() => {
                 setSelectedCategory('All');
-                setSelectedLevel('All');
                 setSearchQuery('');
               }}
               className="text-xs font-semibold text-[#4F7CFF] hover:underline"
@@ -176,7 +144,6 @@ export const ProgramsPage: React.FC<ProgramsPageProps> = ({ onOpenAdvisorModal }
             <button
               onClick={() => {
                 setSelectedCategory('All');
-                setSelectedLevel('All');
                 setSearchQuery('');
               }}
               className="px-5 py-2.5 rounded-xl bg-[#0B1020] text-white text-xs font-semibold hover:bg-gray-800 transition-colors"
