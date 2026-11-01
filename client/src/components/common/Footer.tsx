@@ -196,17 +196,14 @@ export const Footer: React.FC = () => {
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-500">
           <p>© {new Date().getFullYear()} Astra Pathways. All rights reserved.</p>
           <div className="flex items-center gap-6">
-            <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="hover:text-gray-300 transition-colors">
+            <a href="https://www.linkedin.com/company/madyan-holdings-llc/" target="_blank" rel="noreferrer" className="hover:text-gray-300 transition-colors">
               LinkedIn
             </a>
-            <a href="https://github.com" target="_blank" rel="noreferrer" className="hover:text-gray-300 transition-colors">
-              GitHub
+            <a href="https://www.facebook.com/share/1Dd89LFKJ1/" target="_blank" rel="noreferrer" className="hover:text-gray-300 transition-colors">
+              Facebook
             </a>
-            <a href="https://twitter.com" target="_blank" rel="noreferrer" className="hover:text-gray-300 transition-colors">
-              Twitter / X
-            </a>
-            <a href="https://youtube.com" target="_blank" rel="noreferrer" className="hover:text-gray-300 transition-colors">
-              YouTube
+            <a href="https://www.instagram.com/astra_pathways26?utm_source=qr&psln=Nm1oNnFtN2VxcXlw" target="_blank" rel="noreferrer" className="hover:text-gray-300 transition-colors">
+              Instagram
             </a>
           </div>
         </div>
