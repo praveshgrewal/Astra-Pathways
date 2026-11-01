@@ -10,15 +10,17 @@ export function seedDatabase(cleanExisting = false) {
   // 1. Clean existing seed data if requested
   if (cleanExisting) {
     db.exec(`
-      DELETE FROM users;
-      DELETE FROM programs;
-      DELETE FROM blogs;
-      DELETE FROM faqs;
-      DELETE FROM announcements;
-      DELETE FROM testimonials;
-      DELETE FROM leads;
-      DELETE FROM student_enrollments;
+      PRAGMA foreign_keys = OFF;
       DELETE FROM student_assignments;
+      DELETE FROM student_enrollments;
+      DELETE FROM leads;
+      DELETE FROM testimonials;
+      DELETE FROM announcements;
+      DELETE FROM faqs;
+      DELETE FROM blogs;
+      DELETE FROM programs;
+      DELETE FROM users;
+      PRAGMA foreign_keys = ON;
     `);
   }
 
@@ -37,22 +39,22 @@ const insertUser = db.prepare(`
 
 insertUser.run(
   adminId,
-  'admin@astrapathways.com',
+  'admin@madyanholdings.com',
   adminPasswordHash,
-  'Astra Administrator',
+  'Madyan Administrator',
   'admin',
-  'System Administrator & Academic Operations Lead',
-  '+1 (555) 019-2831'
+  'System Administrator & Operations Lead',
+  '+1 (307) 317-7151'
 );
 
 insertUser.run(
   studentId,
-  'student@astrapathways.com',
+  'student@madyanholdings.com',
   studentPasswordHash,
   'Alex Morgan',
   'student',
-  'Learner focusing on Modern Full-Stack Web Development & Cloud Systems',
-  '+1 (555) 014-9982'
+  'Learner focusing on Modern Web Development & Cloud Systems',
+  '+1 (307) 317-7151'
 );
 
 // 3. Insert Programs (Strict adherence to restrictions: NO fees, NO salaries, NO placement guarantees)
@@ -74,77 +76,77 @@ const programsData = [
     title: 'Full-Stack Web Development',
     category: 'Full-Stack Web Development',
     level: 'Beginner to Intermediate',
-    short_description: 'Master modern frontend and backend architectures through hands-on project engineering and production-grade workflows.',
-    full_overview: 'The Full-Stack Web Development program at Astra Pathways offers a structured, project-driven pathway into building scalable modern web applications. From core JavaScript, React, and TypeScript to Node.js backend services, RESTful APIs, and database engineering, learners develop working software artifacts and deploy real-world applications.',
+    short_description: 'Learn how to build complete websites and online apps from scratch, with friendly step-by-step guidance.',
+    full_overview: 'This program makes learning to code clear and practical. You will learn how modern websites work, from interactive pages using React and TypeScript to secure servers and databases using Node.js and SQL. Guided by experienced mentors, you will build real-world applications that you can proudly showcase in your portfolio.',
     who_is_it_for: JSON.stringify([
-      'Aspiring software developers looking to build practical web applications',
-      'Frontend developers wanting to expand into backend and database systems',
-      'Computer science graduates looking for structured hands-on project experience'
+      'Beginners and students wanting to build real websites and apps',
+      'Career switchers looking for a structured, hands-on path into tech',
+      'Learners who want a strong portfolio of real working projects'
     ]),
     prerequisites: JSON.stringify([
-      'Basic familiarity with computers and operating systems',
-      'Fundamental understanding of logic or basic problem solving; no prior professional coding experience required'
+      'Basic computer skills and curiosity to learn',
+      'No prior professional coding experience required'
     ]),
     learning_objectives: JSON.stringify([
-      'Architect robust single-page applications using React and modern TypeScript',
-      'Design RESTful microservices and backend endpoints using Node.js and Express',
-      'Model relational and document databases with best design and indexing practices',
-      'Implement secure user authentication, role-based authorization, and token handling',
-      'Deploy full-stack applications with environment-based configuration and CI/CD pipelines'
+      'Build clean, responsive, mobile-friendly websites with React and TypeScript',
+      'Create backend servers that save and manage data securely with Node.js',
+      'Connect applications to databases using easy-to-read SQL queries',
+      'Add user accounts, logins, and passwords with industry-standard security',
+      'Publish and launch completed web projects live on the internet'
     ]),
     skills_covered: JSON.stringify([
-      'TypeScript', 'React.js', 'Node.js', 'Express', 'SQL & PostgreSQL', 'REST APIs', 'Git Workflows', 'Authentication & Security', 'Docker Basics', 'Testing Fundamentals'
+      'HTML & CSS', 'JavaScript', 'TypeScript', 'React.js', 'Node.js', 'Express', 'SQL & Databases', 'REST APIs', 'Git & GitHub', 'Web Security'
     ]),
     tools_technologies: JSON.stringify([
-      'React 19', 'TypeScript', 'Node.js', 'PostgreSQL', 'Tailwind CSS', 'Vite', 'Git & GitHub', 'Postman', 'Docker'
+      'React', 'TypeScript', 'Node.js', 'PostgreSQL', 'Tailwind CSS', 'Vite', 'Git & GitHub', 'Postman'
     ]),
     curriculum_modules: JSON.stringify([
       {
-        title: 'Module 1: Modern Web Foundations & TypeScript',
-        description: 'Deep dive into DOM mechanics, modern ESNext features, strict TypeScript typing, and responsive layout architecture.',
-        topics: ['Semantic HTML & Accessibility Standards', 'Advanced CSS & Tailwind Design Systems', 'Modern JavaScript (ES6+)', 'TypeScript Types, Interfaces, & Generics']
+        title: 'Module 1: Web Foundations & TypeScript',
+        description: 'Understand how websites are built, master modern JavaScript, and write cleaner code with TypeScript.',
+        topics: ['Building Web Pages with HTML & Modern CSS', 'Styling with Tailwind CSS', 'JavaScript Essentials (ES6+)', 'Writing Safe Code with TypeScript']
       },
       {
-        title: 'Module 2: Component Architecture with React',
-        description: 'Building performant component trees, hooks, custom state management, and client routing.',
-        topics: ['Functional Components & Virtual DOM', 'State Management & Custom Hooks', 'Client-side Routing & Protected Views', 'Form Validation & Error Boundaries']
+        title: 'Module 2: Building Interactive Pages with React',
+        description: 'Create modern, dynamic user interfaces that respond instantly to user clicks and input.',
+        topics: ['React Components & Page Layouts', 'Managing State and User Clicks', 'Multi-Page Navigation & Protected Routes', 'Building and Validating User Forms']
       },
       {
-        title: 'Module 3: Server-Side Engineering & REST APIs',
-        description: 'Building scalable Node.js servers, request lifecycles, middleware, and data validation.',
-        topics: ['Express.js Architecture & Middleware', 'RESTful API Design Standards', 'Input Validation & Sanitization', 'JWT Authentication & Password Hashing']
+        title: 'Module 3: Server Basics & Connecting Data',
+        description: 'Learn how servers handle requests, process information, and talk to frontends.',
+        topics: ['Building Servers with Node.js & Express', 'Creating REST APIs to Send and Receive Data', 'Checking and Cleaning User Input', 'User Logins with Secure Tokens']
       },
       {
-        title: 'Module 4: Database Design & ORM Modeling',
-        description: 'Relational data modeling, ACID transactions, migrations, and query optimization.',
-        topics: ['Relational Database Schema Design', 'SQL Queries, Joins, & Indexes', 'Data Integrity & Migration Scripts', 'Performance Profiling & Caching']
+        title: 'Module 4: Databases & Storing Information',
+        description: 'Learn how to store, organize, and find customer and product data reliably.',
+        topics: ['Relational Database Basics', 'Writing SQL to Find, Add, and Update Data', 'Connecting Databases to Your Server', 'Keeping Stored Data Safe and Fast']
       },
       {
-        title: 'Module 5: Capstone Engineering & Deployment',
-        description: 'Building a collaborative production web application with automated testing and deployment.',
-        topics: ['End-to-End Integration Testing', 'Containerization with Docker', 'Production Cloud Deployment & Monitoring', 'Portfolio Code Presentation']
+        title: 'Module 5: Capstone Project & Launching Live',
+        description: 'Put everything together into a complete web application and launch it live online.',
+        topics: ['Testing Your Application', 'Packaging Your App with Docker', 'Deploying Live on Cloud Platforms', 'Showcasing Your Work on GitHub']
       }
     ]),
     sample_projects: JSON.stringify([
       {
-        title: 'Collaborative Task & Workflow Engine',
-        description: 'A full-stack project management application with real-time updates, activity logging, and role-based permissions.',
+        title: 'Team Task & Project Tracker',
+        description: 'A complete project management website with task lists, team boards, status tags, and user logins.',
         tags: ['React', 'TypeScript', 'Node.js', 'PostgreSQL']
       },
       {
-        title: 'Digital Asset & Media Management Portal',
-        description: 'Cloud storage integration platform featuring file chunking, metadata extraction, and search indexing.',
+        title: 'Cloud Photo & File Manager',
+        description: 'A photo upload and file storage app with file categorization, instant search, and secure user sharing.',
         tags: ['Express', 'REST API', 'Tailwind', 'Authentication']
       }
     ]),
-    learning_methodology: 'Structured lectures, live guided coding labs, progressive milestone assignments, and weekly peer code reviews.',
-    mentorship_support: 'Weekly dedicated office hours with industry practitioners, dedicated asynchronous Q&A forums, and direct milestone code feedback.',
-    assessment_approach: 'Continuous project milestone evaluations, code quality rubrics, practical lab submissions, and capstone presentation.',
+    learning_methodology: 'Step-by-step video lessons, live mentor code-alongs, weekly guided exercises, and personalized feedback.',
+    mentorship_support: 'Weekly open mentor office hours, student chat community for quick questions, and direct project code reviews.',
+    assessment_approach: 'Practical weekly project milestones, friendly mentor feedback, and a final capstone showcase.',
     career_pathways: JSON.stringify([
-      'Frontend Web Developer', 'Backend API Engineer', 'Full-Stack Software Engineer', 'Web Applications Specialist'
+      'Junior Web Developer', 'Frontend Developer', 'Full-Stack Developer', 'Technical Support Specialist'
     ]),
-    placement_support_info: 'Our career support team provides resume review, LinkedIn profile refinement, mock technical interview sessions, and job-search strategy guidance. Placement assistance is offered as a structured support service; employment outcomes depend on individual learner skill, eligibility, and employer requirements.',
-    learning_format: 'Interactive Online Learning with Live Mentorship Labs',
+    placement_support_info: 'Our career support team provides resume review, LinkedIn profile polishing, mock technical interview sessions, and job-search strategy guidance. Placement assistance is offered as a structured support service; employment outcomes depend on individual learner skill, eligibility, and employer requirements.',
+    learning_format: 'Interactive Online Learning with Live Mentor Support',
     featured: 1,
     published: 1
   },
@@ -152,75 +154,75 @@ const programsData = [
     id: 'ai-and-machine-learning',
     title: 'Artificial Intelligence & Machine Learning',
     category: 'Artificial Intelligence and Machine Learning',
-    level: 'Intermediate',
-    short_description: 'Develop practical AI models, machine learning pipelines, and predictive algorithms using modern Python ecosystems.',
-    full_overview: 'Dive deep into supervised and unsupervised learning, deep learning fundamentals, and practical machine learning engineering. Learners build end-to-end predictive pipelines from raw data preprocessing to model evaluation and containerized model inference.',
+    level: 'Beginner to Intermediate',
+    short_description: 'Discover how artificial intelligence and machine learning work, and build smart tools with Python.',
+    full_overview: 'This program breaks down artificial intelligence into clear, easy-to-follow steps. You will learn how computers learn from data, build models that make predictions, and create practical applications using Python and popular data science tools.',
     who_is_it_for: JSON.stringify([
-      'Programmers and analysts wanting to transition into machine learning engineering',
-      'STEM professionals seeking practical statistical modeling and deep learning skills',
-      'Engineers wanting to deploy predictive intelligence into software workflows'
+      'Beginners curious about artificial intelligence and modern automation',
+      'Career switchers wanting practical Python and data skills',
+      'Students looking for practical project experience in AI'
     ]),
     prerequisites: JSON.stringify([
-      'Prior programming experience in Python or equivalent language',
-      'Foundational understanding of basic algebra and statistics'
+      'Basic computer comfort and high school level math',
+      'No prior programming background required; we start with Python basics'
     ]),
     learning_objectives: JSON.stringify([
-      'Implement data preprocessing, feature engineering, and exploratory analysis',
-      'Train, tune, and evaluate classic supervised and unsupervised machine learning algorithms',
-      'Build and train neural networks using modern deep learning frameworks',
-      'Deploy trained models as RESTful inference APIs with validation schemas',
-      'Evaluate model fairness, explainability, and drift monitoring'
+      'Write clean, readable Python code to analyze and organize data',
+      'Train computer models to recognize patterns and make predictions',
+      'Evaluate model accuracy and improve prediction quality',
+      'Build simple online interfaces for your AI models',
+      'Understand ethical AI practices and real-world use cases'
     ]),
     skills_covered: JSON.stringify([
-      'Python', 'NumPy & Pandas', 'Scikit-Learn', 'Feature Engineering', 'Neural Networks', 'Model Optimization', 'FastAPI', 'MLflow', 'Data Visualization'
+      'Python Programming', 'NumPy & Pandas', 'Data Exploration', 'Machine Learning Basics', 'Predictive Modeling', 'FastAPI', 'Data Visualization'
     ]),
     tools_technologies: JSON.stringify([
-      'Python 3.12', 'Jupyter Lab', 'Scikit-Learn', 'PyTorch Basics', 'FastAPI', 'Docker', 'Pandas', 'Seaborn'
+      'Python 3.12', 'Jupyter Notebooks', 'Scikit-Learn', 'Pandas', 'FastAPI', 'Seaborn'
     ]),
     curriculum_modules: JSON.stringify([
       {
-        title: 'Module 1: Exploratory Data Analysis & Feature Engineering',
-        description: 'Techniques for handling missing data, statistical outliers, encoding categoricals, and feature scaling.',
-        topics: ['Vectorized Computing with NumPy', 'Data Manipulation with Pandas', 'Exploratory Visualization', 'Feature Selection & Dimensionality Reduction']
+        title: 'Module 1: Python for Data & AI',
+        description: 'Get comfortable with Python, inspect numbers and tables, and clean messy information.',
+        topics: ['Python Basics for Beginners', 'Working with Tables using Pandas', 'Creating Clear Charts and Visuals', 'Cleaning Incomplete Data']
       },
       {
-        title: 'Module 2: Supervised Learning & Model Validation',
-        description: 'Regression, classification, decision trees, ensemble methods, and cross-validation strategies.',
-        topics: ['Linear & Logistic Regression', 'Tree Models & Gradient Boosting (XGBoost)', 'Overfitting Mitigation & Regularization', 'Evaluation Metrics (ROC-AUC, F1, PR Curves)']
+        title: 'Module 2: Teaching Computers from Data',
+        description: 'Learn how machine learning algorithms find patterns and predict outcomes.',
+        topics: ['Supervised Learning Concepts', 'Predicting Numbers and Categories', 'Testing How Well Your Model Performs', 'Fixing Common Model Mistakes']
       },
       {
-        title: 'Module 3: Unsupervised Learning & Clustering',
-        description: 'Discovering hidden patterns in unlabeled datasets.',
-        topics: ['K-Means & Hierarchical Clustering', 'Principal Component Analysis (PCA)', 'Anomaly Detection Systems', 'Recommendation Principles']
+        title: 'Module 3: Grouping Data & Finding Patterns',
+        description: 'Discover how computers find natural groupings in data without human labels.',
+        topics: ['Clustering Customer Groups', 'Finding Unusual Outliers and Anomalies', 'Simplifying Large Datasets', 'Recommendation System Basics']
       },
       {
-        title: 'Module 4: Deep Learning Foundations',
-        description: 'Neural network architectures, activation functions, backpropagation, and loss optimization.',
-        topics: ['Perceptrons & Multi-Layer Neural Nets', 'Gradient Descent Optimizers (Adam, RMSProp)', 'Computer Vision & Convolutional Basics', 'Sequence Models & Attention Introduction']
+        title: 'Module 4: Introduction to Neural Networks',
+        description: 'Understand how deep learning mimics the human brain to recognize images and text.',
+        topics: ['How Neural Networks Learn', 'Image Recognition Basics', 'Working with Pre-trained AI Models', 'Understanding Generative AI Concepts']
       },
       {
-        title: 'Module 5: Machine Learning Ops & Model Serving',
-        description: 'Packaging trained models into production-ready inference endpoints.',
-        topics: ['Model Serialization & Versioning', 'Building Prediction APIs with FastAPI', 'Containerized Inference Pipelines', 'Monitoring Model Performance']
+        title: 'Module 5: Building AI Web Services & Capstone',
+        description: 'Connect your trained model to a web service so real people can interact with it.',
+        topics: ['Saving and Loading Trained Models', 'Creating APIs with FastAPI', 'Building an Interactive Demo', 'Presenting Your AI Portfolio']
       }
     ]),
     sample_projects: JSON.stringify([
       {
-        title: 'Customer Churn & Retention Predictor',
-        description: 'End-to-end supervised classification pipeline predicting customer turnover with feature importance interpretability.',
-        tags: ['Scikit-Learn', 'XGBoost', 'Feature Engineering', 'FastAPI']
+        title: 'Customer Trend & Retention Predictor',
+        description: 'A smart model that identifies which customers are likely to cancel a subscription, helping teams intervene early.',
+        tags: ['Python', 'Scikit-Learn', 'Pandas', 'FastAPI']
       },
       {
-        title: 'Medical Image Classification System',
-        description: 'Convolutional neural network benchmark identifying cellular anomalies with sensitivity analysis.',
-        tags: ['PyTorch', 'Computer Vision', 'Model Evaluation']
+        title: 'Smart Product Categorization Tool',
+        description: 'An automated assistant that reads product descriptions and assigns the correct catalog tags instantly.',
+        tags: ['Python', 'Text Analysis', 'Classification']
       }
     ]),
-    learning_methodology: 'Hands-on notebook assignments, real-world case study evaluations, and end-to-end model pipeline builds.',
-    mentorship_support: 'Weekly code walkthroughs, model diagnostic sessions, and personalized code reviews from practicing data scientists.',
-    assessment_approach: 'Kaggle-style benchmark assignments, reproducible project notebooks, and technical design documentation.',
+    learning_methodology: 'Hands-on Jupyter notebooks, interactive real-world datasets, and step-by-step guidance.',
+    mentorship_support: 'Weekly code walkthroughs, live troubleshooting sessions, and personalized feedback on your models.',
+    assessment_approach: 'Hands-on notebook submissions, practical prediction challenges, and capstone presentation.',
     career_pathways: JSON.stringify([
-      'Machine Learning Engineer', 'AI Solutions Developer', 'Predictive Modeling Specialist', 'Data Science Associate'
+      'Junior AI Associate', 'Data Analyst with AI Skills', 'Python Developer', 'Solutions Assistant'
     ]),
     placement_support_info: 'Learners receive structured portfolio review, resume optimization for AI/ML roles, and mock technical interviews. Placement assistance is a guiding support service; employment outcomes are not guaranteed.',
     learning_format: 'Interactive Online Learning with Lab Workshops',
@@ -229,72 +231,72 @@ const programsData = [
   },
   {
     id: 'data-science-and-analytics',
-    title: 'Data Science & Advanced Analytics',
+    title: 'Data Science & Business Analytics',
     category: 'Data Science',
     level: 'Beginner to Intermediate',
-    short_description: 'Transform complex datasets into actionable strategic intelligence using statistical modeling, SQL, and interactive dashboards.',
-    full_overview: 'The Data Science & Analytics pathway equips learners with practical analytical capabilities. From relational database querying with advanced SQL to Python data manipulation, statistical hypothesis testing, and business storytelling, learners gain practical proficiency in driving data-backed decisions.',
+    short_description: 'Turn spreadsheets and numbers into clear charts, helpful reports, and smart business decisions.',
+    full_overview: 'Learn how to answer real questions using data. You will master SQL to retrieve information quickly, use Python to clean and inspect numbers, and create visual dashboards that anyone can easily understand.',
     who_is_it_for: JSON.stringify([
-      'Business analysts looking to integrate Python and advanced SQL into their toolset',
-      'Recent graduates interested in entering business intelligence and data analytics',
-      'Operations and marketing specialists wanting to build quantitative decision models'
+      'Anyone looking to switch into data analysis or business intelligence',
+      'Professionals who want to move beyond basic spreadsheets',
+      'Students wanting practical data analysis skills for today’s job market'
     ]),
     prerequisites: JSON.stringify([
-      'Comfort with basic quantitative concepts (percentages, ratios, basic statistics)',
+      'Familiarity with basic computer use and simple arithmetic',
       'No prior programming background required'
     ]),
     learning_objectives: JSON.stringify([
-      'Write complex analytical SQL queries using window functions and Common Table Expressions',
-      'Clean, reshape, and analyze structured datasets using Python and Pandas',
-      'Formulate and execute hypothesis tests and A/B test experiments',
-      'Design interactive business intelligence dashboards and data reports',
-      'Synthesize analytical findings into actionable executive presentations'
+      'Write clear SQL queries to extract data from company databases',
+      'Clean, sort, and organize messy data files using Python',
+      'Perform basic statistical checks and understand A/B test results',
+      'Build eye-catching, interactive dashboards with visual charts',
+      'Explain data insights clearly to non-technical team members'
     ]),
     skills_covered: JSON.stringify([
-      'Advanced SQL', 'Python for Analytics', 'Pandas & NumPy', 'Statistical Inference', 'A/B Testing', 'PowerBI / Tableau Concepts', 'Data Storytelling'
+      'SQL Queries', 'Python for Analytics', 'Pandas', 'Data Cleaning', 'A/B Testing Basics', 'Dashboards & Charts', 'Business Storytelling'
     ]),
     tools_technologies: JSON.stringify([
-      'PostgreSQL', 'Python', 'Pandas', 'Jupyter', 'Git', 'DBeaver', 'Tableau / Looker Studio'
+      'PostgreSQL', 'Python', 'Pandas', 'Jupyter', 'Tableau / Looker Studio Concepts'
     ]),
     curriculum_modules: JSON.stringify([
       {
-        title: 'Module 1: Advanced Relational SQL for Analysts',
-        description: 'Querying enterprise data warehouses, grouping, aggregation, subqueries, and window functions.',
-        topics: ['Multi-table Joins & Set Operations', 'Window Functions (RANK, LEAD, LAG, PARTITION BY)', 'Common Table Expressions (CTEs)', 'Query Optimization & Explain Plans']
+        title: 'Module 1: Practical SQL for Data Retrieval',
+        description: 'Learn how to pull the exact data you need from company databases.',
+        topics: ['Connecting to Databases', 'Filtering, Sorting, and Grouping Data', 'Combining Tables with JOINs', 'Summary Reports and Calculations']
       },
       {
-        title: 'Module 2: Python Data Wrangling with Pandas',
-        description: 'Ingesting disparate data formats, cleaning messy records, and reshaping metrics.',
-        topics: ['Data Ingestion (CSV, JSON, SQL)', 'Handling Missing Values & Imputation', 'Data Reshaping (Melt, Pivot, GroupBy)', 'Time-Series Analysis & Date Formatting']
+        title: 'Module 2: Python Data Cleaning & Exploration',
+        description: 'Automate data cleanup and discover interesting trends in customer and sales figures.',
+        topics: ['Reading CSV and Excel Files in Python', 'Finding and Fixing Missing Information', 'Transforming Columns and Dates', 'Creating Clear Summary Charts']
       },
       {
-        title: 'Module 3: Applied Statistics & Experimentation',
-        description: 'Statistical significance, confidence intervals, and rigorous A/B testing methodologies.',
-        topics: ['Probability Distributions & Central Limit Theorem', 'Hypothesis Testing (t-tests, Chi-square)', 'A/B Testing Design & Sample Sizing', 'Avoiding False Positives & Statistical Pitfalls']
+        title: 'Module 3: Answering Business Questions with Numbers',
+        description: 'Use practical statistics to verify whether a trend is real or just random luck.',
+        topics: ['Averages, Medians, and Variations', 'Comparing Two Groups (A/B Testing)', 'Identifying Growth and Seasonal Trends', 'Avoiding Common Data Misinterpretations']
       },
       {
-        title: 'Module 4: Business Intelligence & Interactive Storytelling',
-        description: 'Designing high-impact dashboards and executive summaries.',
-        topics: ['KPI Selection & Dashboard Architecture', 'Interactive Visualizations', 'Data Storytelling for Stakeholders', 'Automated Reporting Workflows']
+        title: 'Module 4: Dashboards & Storytelling',
+        description: 'Design interactive visual dashboards that make key metrics easy to understand.',
+        topics: ['Choosing the Right Chart for Your Data', 'Building Interactive Filters and Views', 'Structuring an Executive Summary', 'Presenting Insights with Confidence']
       }
     ]),
     sample_projects: JSON.stringify([
       {
-        title: 'E-Commerce Funnel & Cohort Retention Analysis',
-        description: 'Cohort analysis measuring customer lifetime behavior, churn indicators, and drop-off points across an e-commerce checkout flow.',
-        tags: ['PostgreSQL', 'Python', 'Cohort Analysis', 'Tableau']
+        title: 'Store Sales & Customer Loyalty Dashboard',
+        description: 'An interactive sales dashboard displaying monthly revenue, top products, and repeat customer trends.',
+        tags: ['SQL', 'Python', 'Dashboards', 'Analytics']
       },
       {
-        title: 'Marketing Campaign A/B Experiment Evaluator',
-        description: 'Statistical validation of digital advertising variants analyzing conversion lifts and confidence levels.',
-        tags: ['Hypothesis Testing', 'Pandas', 'Data Storytelling']
+        title: 'Website Experiment & Sign-up Review',
+        description: 'A study comparing two website versions to see which one helped more users sign up successfully.',
+        tags: ['A/B Testing', 'Pandas', 'Storytelling']
       }
     ]),
-    learning_methodology: 'Hands-on dataset labs, weekly case study analysis, and data storytelling workshops.',
-    mentorship_support: 'One-on-one analytical project feedback, live query optimization sessions, and industry mentor check-ins.',
-    assessment_approach: 'Case study deliverables, SQL challenge benchmarks, and final executive dashboard presentation.',
+    learning_methodology: 'Hands-on dataset exercises, weekly real-world business cases, and visual chart workshops.',
+    mentorship_support: 'One-on-one analytical project feedback, query troubleshooting, and industry mentor check-ins.',
+    assessment_approach: 'Case study reports, SQL query challenges, and final dashboard presentation.',
     career_pathways: JSON.stringify([
-      'Data Analyst', 'Business Intelligence Analyst', 'Marketing Analytics Specialist', 'Operations Data Strategist'
+      'Data Analyst', 'Business Intelligence Analyst', 'Operations Analyst', 'Reporting Specialist'
     ]),
     placement_support_info: 'Our team guides students on portfolio presentation, technical analytical tests, and behavioral interviews. Placement assistance is a dedicated support service; guaranteed employment is neither offered nor implied.',
     learning_format: 'Interactive Online Learning with Practical Labs',
@@ -305,70 +307,70 @@ const programsData = [
     id: 'cloud-computing-and-devops',
     title: 'Cloud Computing & DevOps Engineering',
     category: 'Cloud Computing and DevOps',
-    level: 'Intermediate to Advanced',
-    short_description: 'Architect scalable cloud infrastructure, automate deployment pipelines, and master modern container orchestration.',
-    full_overview: 'Learn the foundational principles of modern infrastructure engineering. This program covers containerization with Docker, Infrastructure as Code (IaC) with Terraform, CI/CD automated build pipelines, and production cloud systems management.',
+    level: 'Beginner to Intermediate',
+    short_description: 'Learn how websites stay online 24/7, deploy cloud servers, and automate software releases.',
+    full_overview: 'Understand the engine behind modern tech companies. You will learn how cloud platforms work, how to package software in Docker containers, and how to automate software updates so apps run reliably without downtime.',
     who_is_it_for: JSON.stringify([
-      'Software developers looking to master infrastructure and deployment automation',
-      'System administrators transitioning into modern DevOps practices',
-      'Technical professionals wanting to build resilient cloud architectures'
+      'Learners interested in cloud systems and server management',
+      'Junior developers wanting to learn modern deployment tools',
+      'Career switchers interested in cloud and DevOps roles'
     ]),
     prerequisites: JSON.stringify([
-      'Fundamental command line / Linux terminal familiarity',
-      'Basic understanding of networking (IP, DNS, HTTP) and simple scripting'
+      'Basic familiarity with operating systems and the command terminal',
+      'General curiosity about how internet servers work'
     ]),
     learning_objectives: JSON.stringify([
-      'Containerize multi-tier applications using Docker and compose multi-container stacks',
-      'Automate cloud infrastructure provisioning using Terraform and declarative configuration',
-      'Design and maintain CI/CD pipelines with automated testing and build checks',
-      'Configure cloud networking, security groups, and identity access policies',
-      'Implement observability, logging, and performance telemetry for microservices'
+      'Package applications into portable Docker containers that run anywhere',
+      'Set up and configure cloud virtual servers and secure networking',
+      'Automate code testing and deployments using GitHub Actions',
+      'Understand infrastructure configuration files with Terraform',
+      'Monitor server health and set up alerts for system issues'
     ]),
     skills_covered: JSON.stringify([
-      'Linux Administration', 'Docker', 'Kubernetes Fundamentals', 'Terraform (IaC)', 'GitHub Actions', 'Cloud Networking', 'Monitoring & Logging (Prometheus/Grafana)'
+      'Linux Commands', 'Docker', 'Cloud Concepts', 'GitHub Actions CI/CD', 'Server Monitoring', 'Basic Infrastructure as Code'
     ]),
     tools_technologies: JSON.stringify([
-      'Docker', 'Kubernetes', 'Terraform', 'GitHub Actions', 'AWS/GCP Concepts', 'Nginx', 'Prometheus', 'Grafana'
+      'Docker', 'Linux', 'GitHub Actions', 'Terraform Basics', 'Cloud Virtual Machines', 'Nginx'
     ]),
     curriculum_modules: JSON.stringify([
       {
-        title: 'Module 1: Linux Foundations & Containerization',
-        description: 'Core Linux system management, permissions, networking, and Docker container architecture.',
-        topics: ['Linux Shell Scripting & Process Management', 'Docker Architecture, Images, & Multi-Stage Builds', 'Networking Containers & Volumes', 'Docker Compose Multi-Tier Orchestration']
+        title: 'Module 1: Linux & Docker Containers',
+        description: 'Master essential terminal commands and package your code so it runs everywhere.',
+        topics: ['Essential Linux Navigation and Permissions', 'Understanding Containers vs. Virtual Machines', 'Writing Dockerfiles and Building Images', 'Running Multi-Container Apps with Compose']
       },
       {
-        title: 'Module 2: Continuous Integration & Delivery (CI/CD)',
-        description: 'Automating the software delivery lifecycle with automated triggers and testing gates.',
-        topics: ['GitHub Actions Workflow Syntax', 'Automated Linting, Unit, & Integration Testing Gates', 'Artifact Versioning & Registry Publishing', 'Automated Deployment Strategies (Rolling, Canary)']
+        title: 'Module 2: Automated Testing & Releases (CI/CD)',
+        description: 'Set up automatic checks so code is tested and released whenever you push updates.',
+        topics: ['GitHub Actions Fundamentals', 'Automated Test Checks on Every Push', 'Building and Storing Container Images', 'Deploying Code Automatically to Servers']
       },
       {
-        title: 'Module 3: Infrastructure as Code (IaC)',
-        description: 'Provisioning declarative, version-controlled cloud infrastructure.',
-        topics: ['Terraform State Management & Providers', 'Modular Infrastructure Design', 'Security Groups, VPCs, & Subnets', 'Secrets Management & Compliance']
+        title: 'Module 3: Cloud Infrastructure Setup',
+        description: 'Learn how to launch and secure cloud servers, storage, and networking.',
+        topics: ['Virtual Private Clouds and IP Rules', 'Securing Servers with SSH and Firewalls', 'Writing Configuration Files with Terraform', 'Connecting Custom Domains and Free SSL']
       },
       {
-        title: 'Module 4: Orchestration & Observability',
-        description: 'Kubernetes workload deployment and production telemetry systems.',
-        topics: ['Kubernetes Pods, Deployments, & Services', 'Ingress Controllers & SSL Termination', 'Metrics Collection with Prometheus', 'Dashboard Telemetry with Grafana']
+        title: 'Module 4: Keeping Systems Healthy & Online',
+        description: 'Monitor server performance and know when issues happen before users do.',
+        topics: ['Reading Server Logs and Tracking Errors', 'Monitoring CPU and Memory Usage', 'Setting Up Alerts and Notifications', 'Restarting and Rolling Back Safely']
       }
     ]),
     sample_projects: JSON.stringify([
       {
-        title: 'Automated Microservices Deployment Pipeline',
-        description: 'Production-ready GitHub Actions CI/CD pipeline validating, building, and deploying containerized services with rollback capabilities.',
+        title: 'Automatic Web Application Deployment Pipeline',
+        description: 'A GitHub Actions pipeline that automatically tests code and updates a live server on every commit.',
         tags: ['GitHub Actions', 'Docker', 'CI/CD', 'Linux']
       },
       {
-        title: 'Multi-Region Terraform Infrastructure Stack',
-        description: 'Declarative IaC template configuring virtual networks, managed database clusters, and load balancers.',
-        tags: ['Terraform', 'IaC', 'Cloud Architecture']
+        title: 'Secure Cloud Web Server Setup',
+        description: 'A fully configured cloud server hosting a secure website with automated backups and monitoring.',
+        tags: ['Cloud', 'Linux', 'Security', 'Terraform']
       }
     ]),
-    learning_methodology: 'Lab-first training with cloud sandboxes, terminal exercises, and infrastructure milestone reviews.',
-    mentorship_support: 'Weekly infrastructure office hours, live pipeline debugging sessions, and architecture design reviews.',
-    assessment_approach: 'Automated pipeline verification checks, infrastructure code reviews, and capstone deployment.',
+    learning_methodology: 'Hands-on terminal exercises, cloud sandbox environments, and guided deployment labs.',
+    mentorship_support: 'Weekly infrastructure office hours, live pipeline debugging sessions, and mentor guidance.',
+    assessment_approach: 'Automated deployment verification checks, server setup reviews, and capstone deployment.',
     career_pathways: JSON.stringify([
-      'DevOps Engineer', 'Cloud Infrastructure Engineer', 'Site Reliability Associate', 'Build & Release Specialist'
+      'Junior DevOps Engineer', 'Cloud Support Specialist', 'Release Associate', 'Operations Technician'
     ]),
     placement_support_info: 'Our career specialists provide technical interview simulations, architecture whiteboard preparation, and resume guidance. Placement assistance is a support service; no employment outcomes are guaranteed.',
     learning_format: 'Interactive Online Learning with Infrastructure Labs',
@@ -380,62 +382,62 @@ const programsData = [
     title: 'Cybersecurity & Defensive Engineering',
     category: 'Cybersecurity',
     level: 'Beginner to Intermediate',
-    short_description: 'Protect networks, evaluate web application vulnerabilities, and implement robust defense-in-depth security controls.',
-    full_overview: 'The Cybersecurity & Defensive Engineering pathway trains learners in practical threat identification, network defense, secure application design, and incident response fundamentals. Through hands-on simulated exercises, learners understand how vulnerabilities arise and how to defend against modern digital threats.',
+    short_description: 'Learn how to protect computers, networks, and websites from modern online threats and attacks.',
+    full_overview: 'Learn practical digital defense. You will explore how computers communicate over the internet, how security gaps occur, and how to defend systems using modern protection tools and best practices.',
     who_is_it_for: JSON.stringify([
-      'IT professionals seeking to specialize in defensive cybersecurity',
-      'Software engineers looking to implement secure coding and application defense',
-      'Individuals looking for practical foundational knowledge in security analysis'
+      'Anyone wanting to start a career in defensive cybersecurity',
+      'Developers who want to write safer, hack-resistant code',
+      'Students and career switchers looking for practical security skills'
     ]),
     prerequisites: JSON.stringify([
-      'Basic understanding of computer networks (TCP/IP, DNS, OSI model)',
-      'Familiarity with general operating system concepts'
+      'General familiarity with computers, the internet, and basic networking',
+      'No previous security or hacking knowledge required'
     ]),
     learning_objectives: JSON.stringify([
-      'Analyze network traffic and identify anomalous communication patterns',
-      'Assess web applications for OWASP Top 10 vulnerabilities and apply remediation',
-      'Implement defensive identity, access management, and cryptographic standards',
-      'Understand threat modeling methodologies and risk management frameworks',
-      'Conduct structured incident triage and log forensics'
+      'Understand how internet traffic moves and inspect network packets',
+      'Identify common web vulnerabilities (like SQL injection and cross-site scripting)',
+      'Apply security best practices to protect passwords and user accounts',
+      'Understand encryption, digital certificates, and secure HTTPS connections',
+      'Analyze security logs to spot suspicious activity and respond calmly'
     ]),
     skills_covered: JSON.stringify([
-      'Network Security', 'OWASP Top 10', 'Threat Modeling', 'Wireshark Analysis', 'Identity & Access Management (IAM)', 'Cryptography Basics', 'SIEM Fundamentals'
+      'Network Basics', 'Web Security (OWASP Top 10)', 'Traffic Analysis', 'Password & Identity Security', 'Encryption Basics', 'Log Analysis'
     ]),
     tools_technologies: JSON.stringify([
-      'Wireshark', 'Burp Suite Community', 'Linux CLI', 'Nmap', 'OpenSSL', 'Snort / Suricata Concepts'
+      'Wireshark', 'Linux Terminal', 'Nmap', 'Burp Suite Basics', 'OpenSSL'
     ]),
     curriculum_modules: JSON.stringify([
       {
-        title: 'Module 1: Network Defense & Packet Analysis',
-        description: 'Analyzing protocols, inspecting packet captures, and identifying network scanning activity.',
-        topics: ['TCP/IP Stack Mechanics & Packet Structure', 'Wireshark Deep Packet Inspection', 'Firewalls, IDS/IPS, & DMZ Architecture', 'Port Scanning Analysis & Detection']
+        title: 'Module 1: How Internet Traffic Moves & Inspection',
+        description: 'Learn how data travels across networks and how to inspect packets for unusual activity.',
+        topics: ['Internet Protocols (IP, TCP, DNS, HTTP)', 'Inspecting Traffic with Wireshark', 'Understanding Firewalls and Safe Zones', 'Recognizing Port Scanning and Probing']
       },
       {
-        title: 'Module 2: Web Application Security (OWASP Top 10)',
-        description: 'Understanding injection, broken access control, cross-site scripting, and secure coding practices.',
-        topics: ['SQL Injection Mechanics & Prepared Statements', 'Cross-Site Scripting (XSS) & Content Security Policy', 'Authentication Flaws & Session Security', 'Secure Headers & Input Sanitization']
+        title: 'Module 2: Common Web Vulnerabilities & Fixes',
+        description: 'Explore the most common ways websites get attacked and how to prevent them.',
+        topics: ['SQL Injection: How It Works & How to Block It', 'Cross-Site Scripting (XSS) Prevention', 'Protecting User Logins and Sessions', 'Adding Security Headers to Web Pages']
       },
       {
-        title: 'Module 3: Cryptography & Identity Management',
-        description: 'Applied encryption, digital certificates, public key infrastructure, and secure access protocols.',
-        topics: ['Symmetric vs. Asymmetric Encryption', 'Hashing Algorithms & Salting Best Practices', 'PKI, TLS Handshakes, & Certificate Management', 'Multi-Factor Authentication & Zero Trust Concepts']
+        title: 'Module 3: Passwords, Encryption & Secure Access',
+        description: 'Learn how digital locks work to keep sensitive data confidential.',
+        topics: ['How Passwords Are Salted & Hashed Safely', 'Symmetric vs. Asymmetric Encryption', 'How SSL/TLS Certificates Protect Websites', 'Two-Factor Authentication (2FA) Best Practices']
       },
       {
-        title: 'Module 4: Incident Response & Security Operations',
-        description: 'Log aggregation, threat hunting basics, and incident containment workflows.',
-        topics: ['SIEM Log Analysis & Correlation Rules', 'Threat Intelligence Frameworks (MITRE ATT&CK)', 'Incident Triage & Containment Strategies', 'Documentation & Compliance Guidelines']
+        title: 'Module 4: Incident Response & Security Basics',
+        description: 'Learn what to do when suspicious behavior is detected and how to keep clear records.',
+        topics: ['Reading Security Logs to Spot Intruders', 'Steps to Contain and Investigate Incidents', 'Writing Simple Incident Reports', 'Best Habits for Everyday Digital Safety']
       }
     ]),
     sample_projects: JSON.stringify([
       {
-        title: 'Network Traffic Anomaly & Intrusion Investigation',
-        description: 'Forensic PCAP analysis identifying unauthorized exfiltration, malicious beaconing, and protocol misuse.',
-        tags: ['Wireshark', 'Network Defense', 'Incident Triage']
+        title: 'Network Traffic Investigation & Report',
+        description: 'Analyze recorded network traffic to locate where unauthorized data was transferred and write a clear summary.',
+        tags: ['Wireshark', 'Network Defense', 'Investigation']
       },
       {
-        title: 'Web Application Vulnerability Audit & Hardening Report',
-        description: 'Structured vulnerability assessment of a test application with detailed remediation code patches.',
-        tags: ['OWASP Top 10', 'AppSec', 'Security Hardening']
+        title: 'Website Security Audit & Fix Guide',
+        description: 'Inspect a sample web application, identify three security gaps, and provide code fixes to patch them.',
+        tags: ['Web Security', 'OWASP', 'Remediation']
       }
     ]),
     learning_methodology: 'Hands-on simulated laboratory exercises, security case study reviews, and defensive configuration labs.',
@@ -716,8 +718,8 @@ db.prepare(`
 );
 
   console.log('Database seeded successfully with compliant, rich production data!');
-  console.log('Admin account: admin@astrapathways.com / AdminPass123!');
-  console.log('Student account: student@astrapathways.com / StudentPass123!');
+  console.log('Admin account: admin@madyanholdings.com / AdminPass123!');
+  console.log('Student account: student@madyanholdings.com / StudentPass123!');
 }
 
 // Auto-run if executed as script

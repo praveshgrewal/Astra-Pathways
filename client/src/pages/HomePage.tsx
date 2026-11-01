@@ -38,93 +38,93 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenAdvisorModal }) => {
 
   const trustValues = [
     {
-      title: 'Practical Learning',
-      desc: 'Learn by actively constructing applications and systems rather than passive lecture consumption.',
+      title: 'Hands-On Practice',
+      desc: 'Learn by actually writing code and building websites and apps, not just watching videos.',
       icon: Terminal,
       color: '#4F7CFF'
     },
     {
-      title: 'Industry-Relevant Curriculum',
-      desc: 'Continuously refined modules reflecting current technological tooling and engineering paradigms.',
+      title: 'Real-World Skills',
+      desc: 'Focus on modern tools and technologies that companies actually look for and use every day.',
       icon: Layers,
       color: '#8B5CF6'
     },
     {
-      title: 'Project-Based Experience',
-      desc: 'Build functional portfolio artifacts with code reviews, tests, and deployment verification.',
+      title: 'Portfolio Projects',
+      desc: 'Graduate with real projects you built yourself to proudly show employers during interviews.',
       icon: Laptop,
       color: '#38BDF8'
     },
     {
-      title: 'Mentorship & Support',
-      desc: 'Regular office hours, structured code critique, and guided feedback from domain practitioners.',
+      title: 'Friendly Mentorship',
+      desc: 'Get personal help, code reviews, and quick answers to your questions whenever you are stuck.',
       icon: Users,
       color: '#818CF8'
     },
     {
-      title: 'Career Guidance',
-      desc: 'Resume coaching, GitHub presentation, interview simulations, and strategic job-search planning.',
+      title: 'Career Coaching',
+      desc: 'Get your resume polished, your LinkedIn profile optimized, and practice real technical interviews.',
       icon: Compass,
       color: '#A78BFA'
     },
     {
-      title: 'Placement Assistance',
-      desc: 'Structured professional support to prepare for industry opportunities without false promises.',
+      title: 'Job Search Support',
+      desc: 'Step-by-step guidance on finding job openings, applying to companies, and interview prep.',
       icon: Target,
       color: '#60A5FA'
     }
   ];
 
   const learningSteps = [
-    { step: '01', title: 'Discover', desc: 'Identify your target specialization and review prerequisite requirements with advisors.' },
-    { step: '02', title: 'Learn', desc: 'Deep dive into fundamental theory, architecture patterns, and structured lessons.' },
-    { step: '03', title: 'Practice', desc: 'Complete interactive programming exercises and milestone labs with instant diagnostics.' },
-    { step: '04', title: 'Build Projects', desc: 'Engineer complete real-world software artifacts designed for technical portfolios.' },
-    { step: '05', title: 'Receive Guidance', desc: 'Participate in milestone code reviews and 1-on-1 practitioner feedback sessions.' },
-    { step: '06', title: 'Prepare for Opportunities', desc: 'Engage in mock technical interviews, resume optimization, and placement assistance.' }
+    { step: '01', title: 'Pick Your Path', desc: 'Choose the career track that fits your goals, with friendly advice from an academic advisor.' },
+    { step: '02', title: 'Learn the Basics', desc: 'Master core concepts step-by-step with simple explanations and clear practical examples.' },
+    { step: '03', title: 'Daily Coding Labs', desc: 'Practice coding in bite-sized interactive challenges to build strong muscle memory.' },
+    { step: '04', title: 'Build Real Apps', desc: 'Create full working applications you can test, run, and share with friends and employers.' },
+    { step: '05', title: 'Get Mentor Feedback', desc: 'Review your code with an experienced mentor who gives you actionable tips to improve.' },
+    { step: '06', title: 'Get Career Ready', desc: 'Polish your resume, practice live job interviews, and apply to opportunities with confidence.' }
   ];
 
   const sampleProjects = [
     {
-      title: 'Enterprise Microservices Orchestration',
+      title: 'Modern Cloud Web App',
       program: 'Cloud Computing & DevOps',
-      desc: 'Simulated containerized infrastructure with automated CI/CD pipeline and telemetry.',
-      tags: ['Docker', 'Kubernetes', 'GitHub Actions'],
+      desc: 'Deploy a live, high-speed website on the cloud using Docker containers and automated updates.',
+      tags: ['Docker', 'Cloud Hosting', 'GitHub'],
       icon: Cloud
     },
     {
-      title: 'Predictive Churn Classification Pipeline',
+      title: 'Customer Prediction AI',
       program: 'AI & Machine Learning',
-      desc: 'End-to-end data pipeline with feature selection, cross-validation, and REST API inference.',
-      tags: ['Python', 'Scikit-Learn', 'FastAPI'],
+      desc: 'Build an AI tool in Python that analyzes customer behavior and automatically answers questions.',
+      tags: ['Python', 'AI Models', 'FastAPI'],
       icon: Brain
     },
     {
-      title: 'Collaborative Real-Time Workspace',
+      title: 'Full-Stack Team Workspace',
       program: 'Full-Stack Web Development',
-      desc: 'Full-stack application featuring modular React components, typed APIs, and relational persistence.',
-      tags: ['React', 'TypeScript', 'Node.js', 'PostgreSQL'],
+      desc: 'A complete website with user login, live database storage, and a smooth interactive dashboard.',
+      tags: ['React', 'JavaScript', 'Node.js', 'Database'],
       icon: Code2
     },
     {
-      title: 'Web Application Defensive Audit',
+      title: 'Website Defense & Security Lab',
       program: 'Cybersecurity Defense',
-      desc: 'Security assessment lab identifying OWASP Top 10 vulnerabilities with remediation patches.',
-      tags: ['AppSec', 'OWASP', 'Wireshark'],
+      desc: 'Learn how ethical hackers find security flaws and how to fix vulnerabilities to keep websites safe.',
+      tags: ['Security Basics', 'Password Defense', 'Firewalls'],
       icon: Shield
     },
     {
-      title: 'Cohort Retention & Revenue Analytics',
+      title: 'Company Growth Dashboard',
       program: 'Data Science & Analytics',
-      desc: 'Multi-touch attribution analysis evaluating customer lifetime engagement patterns.',
-      tags: ['SQL', 'Pandas', 'Business Intelligence'],
+      desc: 'Turn messy business numbers into clean visual charts to show how a company can increase sales.',
+      tags: ['Python', 'Data Charts', 'Excel / SQL'],
       icon: BarChart3
     },
     {
-      title: 'Autonomous Document Search Engine',
+      title: 'Smart Search Assistant',
       program: 'Emerging Technologies',
-      desc: 'Vectorized text retrieval architecture with similarity search and semantic ranking.',
-      tags: ['Python', 'Vector DB', 'Information Retrieval'],
+      desc: 'A search tool that reads hundreds of documents and answers questions in simple plain English.',
+      tags: ['Smart Search', 'Python', 'AI Tools'],
       icon: Database
     }
   ];
@@ -132,22 +132,22 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenAdvisorModal }) => {
   return (
     <div className="space-y-0">
       
-      {/* ================= HERO SECTION ================= */}
-      <section className="relative min-h-[85vh] lg:min-h-[90vh] flex items-center justify-center bg-[#0B1020] text-white overflow-hidden pt-12 pb-20">
+      {/* ================= HERO SECTION - Light & Bright ================= */}
+      <section className="relative min-h-[85vh] lg:min-h-[90vh] flex items-center justify-center bg-gradient-to-b from-blue-50/90 via-indigo-50/30 to-[#F5F7FC] text-slate-900 overflow-hidden pt-12 pb-20 border-b border-slate-200/80">
         {/* Animated Canvas */}
         <PathwaysCanvas />
 
-        {/* Ambient Gradient Flares */}
-        <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-gradient-to-tr from-[#4F7CFF]/20 via-[#8B5CF6]/15 to-transparent blur-[120px] pointer-events-none" />
-        <div className="absolute bottom-0 right-0 w-[500px] h-[350px] bg-[#252B66]/30 blur-[140px] pointer-events-none" />
+        {/* Ambient Soft Glows */}
+        <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-gradient-to-tr from-[#4F7CFF]/15 via-[#8B5CF6]/10 to-transparent blur-[120px] pointer-events-none" />
+        <div className="absolute bottom-0 right-0 w-[500px] h-[350px] bg-blue-100/60 blur-[140px] pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           
           {/* Co-branded Presentation Lockup: Madyan Holdings (Left) & Astra Pathways (Right) */}
-          <div className="inline-flex flex-col sm:flex-row items-center gap-3 sm:gap-4 px-4 sm:px-6 py-2.5 sm:py-3 rounded-2xl bg-gradient-to-r from-[#181124]/90 via-[#0B1020]/95 to-[#121B3A]/90 border border-white/15 backdrop-blur-xl mb-8 shadow-2xl shadow-[#7C3AED]/20 hover:border-white/25 transition-all animate-in fade-in duration-500">
+          <div className="inline-flex flex-col sm:flex-row items-center gap-3 sm:gap-4 px-4 sm:px-6 py-2.5 sm:py-3 rounded-2xl bg-white/95 border border-slate-200/90 backdrop-blur-xl mb-8 shadow-xl shadow-blue-500/5 hover:border-slate-300 transition-all animate-in fade-in duration-500">
             {/* Left: Madyan Holdings Logo & Name */}
             <div className="flex items-center gap-2.5">
-              <div className="h-10 sm:h-11 px-2.5 py-1 rounded-xl overflow-hidden bg-[#160e24] border border-[#7C3AED]/40 flex items-center justify-center shadow-md shrink-0">
+              <div className="h-10 sm:h-11 px-2.5 py-1 rounded-xl overflow-hidden bg-slate-50 border border-slate-200 flex items-center justify-center shadow-xs shrink-0">
                 <img 
                   src="/madyan-holdings.png" 
                   alt="Madyan Holdings Logo" 
@@ -155,57 +155,55 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenAdvisorModal }) => {
                 />
               </div>
               <div className="flex flex-col text-left justify-center">
-                <span className="text-sm sm:text-base font-black text-white tracking-tight leading-tight">
-                  Madyan <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-200 to-amber-400">Holdings</span>
+                <span className="text-sm sm:text-base font-black text-slate-900 tracking-tight leading-tight">
+                  Madyan <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-amber-700">Holdings</span>
                 </span>
-                <span className="text-[9px] sm:text-[10px] text-amber-300/90 font-medium tracking-wider uppercase">
-                  Crossroads of Commerce
+                <span className="text-[9px] sm:text-[10px] text-amber-700 font-semibold tracking-wider uppercase">
+                  Operating Entity
                 </span>
               </div>
             </div>
 
             {/* Middle Badge: Host & Introduce */}
-            <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 border border-white/15 text-[10px] sm:text-xs font-semibold text-gray-200">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping" />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-white to-[#8B5CF6]">
-                Introduces & Hosts
-              </span>
+            <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 border border-blue-200 text-[10px] sm:text-xs font-bold text-blue-700">
+              <span className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-ping" />
+              <span>Operates & Introduces</span>
             </div>
 
             {/* Right: Astra Pathways Logo & Name */}
             <div className="flex items-center gap-2.5">
-              <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl overflow-hidden bg-white/10 border border-white/20 flex items-center justify-center shadow-lg shadow-[#4F7CFF]/25 shrink-0">
+              <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl overflow-hidden bg-white border border-slate-200 flex items-center justify-center shadow-xs shrink-0">
                 <img src="/logo.png" alt="Astra Pathways Logo" className="w-full h-full object-cover" />
               </div>
               <div className="flex flex-col text-left justify-center">
-                <span className="text-sm sm:text-base font-black text-white tracking-tight leading-tight">
+                <span className="text-sm sm:text-base font-black text-slate-900 tracking-tight leading-tight">
                   Astra <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#4F7CFF] to-[#8B5CF6]">Pathways</span>
                 </span>
-                <span className="text-[9px] sm:text-[10px] text-cyan-300/90 font-medium tracking-wider uppercase">
-                  School & Programs
+                <span className="text-[9px] sm:text-[10px] text-[#4F7CFF] font-semibold tracking-wider uppercase">
+                  Practical Programs
                 </span>
               </div>
             </div>
           </div>
 
           {/* Headline */}
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-white max-w-5xl mx-auto leading-[1.1] mb-6">
-            Build Skills Today.{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#4F7CFF] via-[#8B5CF6] to-[#60A5FA]">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-slate-900 max-w-5xl mx-auto leading-[1.1] mb-6">
+            Learn Practical Tech Skills.{' '}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#4F7CFF] via-[#8B5CF6] to-[#3B82F6]">
               Shape Your Tomorrow.
             </span>
           </h1>
 
-          {/* Supporting Copy */}
-          <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed mb-10 font-normal">
-            <span className="text-white font-semibold">Madyan Holdings</span> proudly introduces <span className="text-white font-semibold">Astra Pathways</span> — our premier school of practical technical education, offering industry-calibrated curricula, verifiable milestone artifacts, and guided career pathways.
+          {/* Supporting Copy - Simple and Welcoming */}
+          <p className="text-base sm:text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed mb-10 font-normal">
+            <span className="text-slate-900 font-bold">Madyan Holdings</span> operates <span className="text-slate-900 font-bold">Astra Pathways</span> — beginner-friendly tech programs designed for students, graduates, and career switchers. Build real projects, master in-demand tools, and get 1-on-1 guidance from friendly mentors.
           </p>
 
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-md mx-auto">
             <Link
               to="/programs"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl bg-gradient-to-r from-[#4F7CFF] to-[#8B5CF6] text-white font-bold text-sm sm:text-base hover:from-[#3d6bf0] hover:to-[#7c4bed] transition-all shadow-lg shadow-[#4F7CFF]/25 hover:shadow-xl hover:shadow-[#4F7CFF]/35 hover:-translate-y-0.5"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl bg-gradient-to-r from-[#4F7CFF] to-[#8B5CF6] text-white font-bold text-sm sm:text-base hover:opacity-95 transition-all shadow-lg shadow-[#4F7CFF]/25 hover:-translate-y-0.5"
             >
               <Sparkles className="w-4 h-4" />
               Explore Programs
@@ -213,7 +211,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenAdvisorModal }) => {
 
             <button
               onClick={() => onOpenAdvisorModal()}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl bg-white/5 hover:bg-white/10 text-white font-semibold text-sm sm:text-base border border-white/15 hover:border-white/30 backdrop-blur-md transition-all hover:-translate-y-0.5"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl bg-white hover:bg-slate-50 text-slate-700 font-semibold text-sm sm:text-base border border-slate-300 shadow-sm transition-all hover:-translate-y-0.5"
             >
               <MessageSquare className="w-4 h-4 text-[#4F7CFF]" />
               Talk to an Advisor
@@ -221,146 +219,146 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenAdvisorModal }) => {
           </div>
 
           {/* Trust Highlights Strip */}
-          <div className="pt-16 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4 text-center max-w-5xl mx-auto border-t border-white/10 mt-16">
+          <div className="pt-16 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4 text-center max-w-5xl mx-auto border-t border-slate-200 mt-16">
             <div className="p-3">
-              <span className="block text-sm font-bold text-white">Project-First</span>
-              <span className="text-xs text-gray-400">Hands-on Labs</span>
+              <span className="block text-sm font-bold text-slate-900">Hands-On Practice</span>
+              <span className="text-xs text-slate-500">Real Coding Labs</span>
             </div>
             <div className="p-3">
-              <span className="block text-sm font-bold text-white">Curated Paths</span>
-              <span className="text-xs text-gray-400">Zero Fluff Content</span>
+              <span className="block text-sm font-bold text-slate-900">Zero Fluff</span>
+              <span className="text-xs text-slate-500">In-Demand Skills</span>
             </div>
             <div className="p-3">
-              <span className="block text-sm font-bold text-white">Practitioner Review</span>
-              <span className="text-xs text-gray-400">Code Feedback</span>
+              <span className="block text-sm font-bold text-slate-900">Friendly Mentors</span>
+              <span className="text-xs text-slate-500">Personal Reviews</span>
             </div>
             <div className="p-3">
-              <span className="block text-sm font-bold text-white">Career Support</span>
-              <span className="text-xs text-gray-400">Resume & Mock Prep</span>
+              <span className="block text-sm font-bold text-slate-900">Job Preparation</span>
+              <span className="text-xs text-slate-500">Resume & Mocks</span>
             </div>
             <div className="p-3">
-              <span className="block text-sm font-bold text-white">Student Portal</span>
-              <span className="text-xs text-gray-400">Milestone Tracking</span>
+              <span className="block text-sm font-bold text-slate-900">Easy Online Portal</span>
+              <span className="text-xs text-slate-500">Track Progress</span>
             </div>
             <div className="p-3">
-              <span className="block text-sm font-bold text-white">Transparent Ethics</span>
-              <span className="text-xs text-gray-400">No False Claims</span>
+              <span className="block text-sm font-bold text-slate-900">Honest Guidance</span>
+              <span className="text-xs text-slate-500">Transparent Terms</span>
             </div>
           </div>
 
         </div>
       </section>
 
-      {/* ================= HOSTED BY MADYAN HOLDINGS SECTION ================= */}
-      <section className="bg-gradient-to-b from-[#0B1020] via-[#120d24] to-[#0B1020] text-white py-16 border-y border-white/10 relative overflow-hidden">
+      {/* ================= OPERATED BY MADYAN HOLDINGS SECTION - Light Theme ================= */}
+      <section className="bg-gradient-to-b from-[#F5F7FC] via-white to-slate-50 text-slate-900 py-16 border-b border-slate-200/90 relative overflow-hidden">
         {/* Ambient glow */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[300px] bg-gradient-to-r from-[#7C3AED]/15 via-transparent to-[#4F7CFF]/15 blur-[120px] pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[300px] bg-gradient-to-r from-[#7C3AED]/10 via-transparent to-[#4F7CFF]/10 blur-[120px] pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="p-8 sm:p-12 rounded-3xl bg-white/[0.03] border border-white/10 backdrop-blur-xl shadow-2xl">
+          <div className="p-8 sm:p-12 rounded-3xl bg-white border border-slate-200/90 shadow-xl">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
               
               {/* Dual Logo Card (Left: Madyan Holdings, Right: Astra Pathways) */}
               <div className="lg:col-span-5 flex flex-col items-center sm:items-start text-center sm:text-left space-y-6">
-                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-amber-400/10 text-amber-300 border border-amber-400/20">
-                  <Sparkles className="w-3.5 h-3.5 text-amber-400" />
-                  Institutional Sponsor & Host
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-amber-50 text-amber-800 border border-amber-200">
+                  <Sparkles className="w-3.5 h-3.5 text-amber-600" />
+                  Operating Company & Sponsor
                 </span>
 
                 {/* Both Logos in clear Left/Right presentation */}
-                <div className="w-full flex items-center justify-between sm:justify-start gap-4 p-5 rounded-2xl bg-[#0B1020]/90 border border-white/15 shadow-xl">
+                <div className="w-full flex items-center justify-between sm:justify-start gap-4 p-5 rounded-2xl bg-slate-50 border border-slate-200 shadow-sm">
                   {/* Left: Madyan Holdings Logo */}
                   <div className="flex flex-col items-center text-center">
-                    <div className="h-16 w-28 sm:w-32 rounded-xl overflow-hidden bg-[#160e24] border border-[#7C3AED]/40 flex items-center justify-center shadow-lg p-1">
+                    <div className="h-16 w-28 sm:w-32 rounded-xl overflow-hidden bg-white border border-slate-200 flex items-center justify-center shadow-xs p-1">
                       <img 
                         src="/madyan-holdings.png" 
                         alt="Madyan Holdings" 
-                        className="h-full w-full object-cover rounded-lg" 
+                        className="h-full w-full object-contain rounded-lg" 
                       />
                     </div>
-                    <span className="block text-sm font-black text-white mt-2 uppercase tracking-wide">
-                      Madyan <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-200 to-amber-400">Holdings</span>
+                    <span className="block text-sm font-black text-slate-900 mt-2 uppercase tracking-wide">
+                      Madyan <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-amber-700">Holdings</span>
                     </span>
-                    <span className="block text-[9px] text-amber-300 font-semibold tracking-widest uppercase">
+                    <span className="block text-[9px] text-amber-700 font-semibold tracking-widest uppercase">
                       Crossroads of Commerce
                     </span>
                   </div>
 
                   {/* Host Connector */}
                   <div className="flex flex-col items-center justify-center px-1">
-                    <span className="text-[10px] font-extrabold text-gray-400 uppercase tracking-widest">hosts</span>
-                    <div className="w-8 h-8 rounded-full bg-white/5 border border-white/15 flex items-center justify-center text-cyan-400 my-1 font-bold">
+                    <span className="text-[10px] font-extrabold text-slate-500 uppercase tracking-widest">operates</span>
+                    <div className="w-8 h-8 rounded-full bg-white border border-slate-200 flex items-center justify-center text-blue-600 my-1 font-bold shadow-xs">
                       &rarr;
                     </div>
-                    <span className="text-[9px] text-[#8B5CF6] font-semibold uppercase">program</span>
+                    <span className="text-[9px] text-purple-600 font-semibold uppercase">program</span>
                   </div>
 
                   {/* Right: Astra Pathways Logo */}
                   <div className="flex flex-col items-center text-center">
-                    <div className="h-16 w-16 sm:w-20 rounded-xl overflow-hidden bg-white/10 border border-white/20 flex items-center justify-center shadow-lg shadow-[#4F7CFF]/20 p-1">
+                    <div className="h-16 w-16 sm:w-20 rounded-xl overflow-hidden bg-white border border-slate-200 flex items-center justify-center shadow-xs p-1">
                       <img 
                         src="/logo.png" 
                         alt="Astra Pathways" 
                         className="h-full w-full object-contain rounded-lg" 
                       />
                     </div>
-                    <span className="block text-xs font-black text-white mt-2 uppercase tracking-wider">
+                    <span className="block text-xs font-black text-slate-900 mt-2 uppercase tracking-wider">
                       Astra Pathways
                     </span>
-                    <span className="block text-[8px] text-cyan-300/80 tracking-widest uppercase font-semibold">
-                      School & Programs
+                    <span className="block text-[8px] text-blue-600 tracking-widest uppercase font-semibold">
+                      Practical EdTech
                     </span>
                   </div>
                 </div>
 
-                <p className="text-xs text-gray-400 leading-relaxed">
-                  Astra Pathways is hosted and operated under the strategic umbrella of Madyan Holdings, bridging enterprise commerce with rigorous technical education.
+                <p className="text-xs text-slate-600 leading-relaxed">
+                  Astra Pathways is hosted and operated under Madyan Holdings, bringing industry-standard training and supportive mentorship directly to motivated learners.
                 </p>
               </div>
 
               {/* Informational Pillars */}
               <div className="lg:col-span-7 space-y-6">
                 <div>
-                  <h3 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
-                    Madyan Holdings Introduces Astra Pathways
+                  <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+                    Madyan Holdings Presents Astra Pathways
                   </h3>
-                  <p className="text-sm text-gray-300 mt-2 leading-relaxed">
-                    At the crossroads of global commerce and technological transformation, Madyan Holdings introduces Astra Pathways as an elite training ground for the modern workforce. Every program blends technical depth with real-world business context.
+                  <p className="text-sm text-slate-600 mt-2 leading-relaxed">
+                    We designed Astra Pathways to make high-demand technology careers accessible to anyone. We cut out confusing academic jargon and replace it with practical projects, friendly guidance, and real-world tools that tech teams actually use.
                   </p>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-1">
-                  <div className="p-4 rounded-xl bg-white/[0.04] border border-white/10 hover:border-white/20 transition-all">
+                  <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 hover:border-blue-300 transition-all">
                     <div className="text-[#4F7CFF] font-bold text-sm mb-1.5 flex items-center gap-1.5">
-                      <Building2 className="w-4 h-4" /> Enterprise Foundation
+                      <Building2 className="w-4 h-4" /> Trusted Organization
                     </div>
-                    <p className="text-xs text-gray-400 leading-relaxed">
-                      Backed by Madyan Holdings' governance, ensuring accredited curricula, transparent ethics, and high educational standards.
+                    <p className="text-xs text-slate-600 leading-relaxed">
+                      Backed by Madyan Holdings, ensuring clear policies, prompt support, and transparent student protections.
                     </p>
                   </div>
 
-                  <div className="p-4 rounded-xl bg-white/[0.04] border border-white/10 hover:border-white/20 transition-all">
+                  <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 hover:border-purple-300 transition-all">
                     <div className="text-[#8B5CF6] font-bold text-sm mb-1.5 flex items-center gap-1.5">
-                      <Briefcase className="w-4 h-4" /> Crossroads of Commerce
+                      <Briefcase className="w-4 h-4" /> Career-First Curriculum
                     </div>
-                    <p className="text-xs text-gray-400 leading-relaxed">
-                      Lab projects and milestone artifacts modeled on real-world industry requirements, architectures, and data pipelines.
+                    <p className="text-xs text-slate-600 leading-relaxed">
+                      Every module is built around projects you can actually demonstrate to hiring managers and clients.
                     </p>
                   </div>
                 </div>
 
-                <div className="pt-2 flex flex-wrap items-center gap-4 text-xs text-gray-300">
+                <div className="pt-2 flex flex-wrap items-center gap-4 text-xs text-slate-700">
                   <span className="inline-flex items-center gap-1.5 font-medium">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
-                    Verified Project Portfolios
+                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
+                    Real Portfolio Projects
                   </span>
                   <span className="inline-flex items-center gap-1.5 font-medium">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
-                    Dedicated Career Mentorship
+                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
+                    Dedicated 1-on-1 Mentors
                   </span>
                   <span className="inline-flex items-center gap-1.5 font-medium">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
-                    Accredited Technical Modules
+                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
+                    Beginner-Friendly Modules
                   </span>
                 </div>
               </div>
@@ -408,19 +406,19 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenAdvisorModal }) => {
         </div>
       </section>
 
-      {/* ================= FEATURED PROGRAMS ================= */}
-      <section className="py-20 bg-[#0B1020] text-white relative">
+      {/* ================= FEATURED PROGRAMS - Light Theme ================= */}
+      <section className="py-20 bg-slate-50 text-slate-900 relative border-b border-slate-200/80">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
             <div>
-              <span className="text-xs font-bold tracking-widest uppercase text-[#8B5CF6] bg-[#8B5CF6]/15 px-3 py-1 rounded-full border border-[#8B5CF6]/30">
-                Curriculum Catalog
+              <span className="text-xs font-bold tracking-widest uppercase text-purple-700 bg-purple-100/80 px-3 py-1 rounded-full border border-purple-200">
+                Explore What You Can Learn
               </span>
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mt-3">
-                Featured Learning Programs
+              <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mt-3">
+                Featured Career Programs
               </h2>
-              <p className="text-gray-400 text-sm sm:text-base mt-2 max-w-xl">
-                Structured, rigorous, and project-based pathways designed to build demonstrable competence in modern technical disciplines.
+              <p className="text-slate-600 text-sm sm:text-base mt-2 max-w-xl">
+                Practical, beginner-friendly courses designed to teach you real-world tech skills step-by-step through guided projects.
               </p>
             </div>
             <Link
@@ -435,34 +433,34 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenAdvisorModal }) => {
             {featuredPrograms.map((prog) => (
               <div 
                 key={prog.id}
-                className="rounded-2xl bg-[#0B1020]/80 border border-white/10 hover:border-[#4F7CFF]/50 p-6 flex flex-col justify-between transition-all duration-300 hover:shadow-xl hover:shadow-[#4F7CFF]/10 group"
+                className="rounded-2xl bg-white border border-slate-200 hover:border-[#4F7CFF]/60 p-6 flex flex-col justify-between transition-all duration-300 hover:shadow-xl shadow-sm group"
               >
                 <div>
                   <div className="flex items-center justify-between gap-2 mb-4">
-                    <span className="text-[11px] font-semibold text-[#4F7CFF] bg-[#4F7CFF]/15 px-2.5 py-1 rounded-md border border-[#4F7CFF]/30">
+                    <span className="text-[11px] font-semibold text-[#4F7CFF] bg-blue-50 px-2.5 py-1 rounded-md border border-blue-100">
                       {prog.category}
                     </span>
-                    <span className="text-[11px] font-medium text-gray-400">
+                    <span className="text-[11px] font-medium text-slate-500">
                       {prog.level}
                     </span>
                   </div>
 
-                  <h3 className="text-xl font-bold text-white mb-2.5 group-hover:text-[#4F7CFF] transition-colors">
+                  <h3 className="text-xl font-bold text-slate-900 mb-2.5 group-hover:text-[#4F7CFF] transition-colors">
                     {prog.title}
                   </h3>
 
-                  <p className="text-xs text-gray-300 leading-relaxed mb-5 line-clamp-3">
+                  <p className="text-xs text-slate-600 leading-relaxed mb-5 line-clamp-3">
                     {prog.short_description}
                   </p>
 
                   {/* Skills badges */}
                   <div className="mb-5">
-                    <span className="block text-[11px] font-semibold text-gray-400 uppercase tracking-wider mb-2">
-                      Key Competencies:
+                    <span className="block text-[11px] font-semibold text-slate-500 uppercase tracking-wider mb-2">
+                      Tools You Will Master:
                     </span>
                     <div className="flex flex-wrap gap-1.5">
                       {prog.skills_covered.slice(0, 5).map((skill, sIdx) => (
-                        <span key={sIdx} className="text-[10px] font-medium px-2 py-0.5 rounded bg-white/5 text-gray-300 border border-white/5">
+                        <span key={sIdx} className="text-[10px] font-medium px-2 py-0.5 rounded bg-slate-100 text-slate-700 border border-slate-200">
                           {skill}
                         </span>
                       ))}
@@ -470,26 +468,26 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenAdvisorModal }) => {
                   </div>
 
                   {/* Highlights */}
-                  <div className="space-y-1.5 py-3 border-t border-white/10 text-xs text-gray-300">
+                  <div className="space-y-1.5 py-3 border-t border-slate-100 text-xs text-slate-600">
                     <div className="flex items-center gap-2">
                       <CheckCircle2 className="w-3.5 h-3.5 text-[#4F7CFF] shrink-0" />
-                      <span>{prog.curriculum_modules.length} Detailed Modules & Labs</span>
+                      <span>{prog.curriculum_modules.length} Guided Learning Modules</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <CheckCircle2 className="w-3.5 h-3.5 text-[#8B5CF6] shrink-0" />
-                      <span>{prog.sample_projects.length} Real-World Portfolio Projects</span>
+                      <span>{prog.sample_projects.length} Real Portfolio Projects</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
                       <span>{prog.learning_format}</span>
                     </div>
                   </div>
                 </div>
 
-                <div className="pt-6 border-t border-white/10 grid grid-cols-2 gap-3 mt-6">
+                <div className="pt-6 border-t border-slate-100 grid grid-cols-2 gap-3 mt-6">
                   <Link
                     to={`/programs/${prog.id}`}
-                    className="text-center py-2.5 px-3 rounded-xl bg-white/5 hover:bg-white/10 text-white font-semibold text-xs border border-white/10 transition-colors"
+                    className="text-center py-2.5 px-3 rounded-xl bg-slate-50 hover:bg-slate-100 text-slate-800 font-semibold text-xs border border-slate-200 transition-colors"
                   >
                     View Curriculum
                   </Link>
@@ -504,34 +502,34 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenAdvisorModal }) => {
             ))}
 
             {/* Custom Track Card completing the balanced 3x2 grid */}
-            <div className="rounded-2xl bg-gradient-to-br from-[#0B1020] via-[#111827] to-[#1E1B4B] border border-dashed border-[#8B5CF6]/40 hover:border-[#8B5CF6] p-6 flex flex-col justify-between transition-all duration-300 hover:shadow-xl hover:shadow-[#8B5CF6]/15 group">
+            <div className="rounded-2xl bg-gradient-to-br from-purple-50/70 via-white to-blue-50/70 border-2 border-dashed border-purple-200 hover:border-purple-400 p-6 flex flex-col justify-between transition-all duration-300 hover:shadow-xl shadow-sm group">
               <div>
                 <div className="flex items-center justify-between gap-2 mb-4">
-                  <span className="text-[11px] font-semibold text-[#A78BFA] bg-[#8B5CF6]/15 px-2.5 py-1 rounded-md border border-[#8B5CF6]/30 flex items-center gap-1.5">
-                    <Sparkles className="w-3 h-3 text-[#A78BFA]" />
-                    Custom & Corporate
+                  <span className="text-[11px] font-semibold text-purple-700 bg-purple-100 px-2.5 py-1 rounded-md border border-purple-200 flex items-center gap-1.5">
+                    <Sparkles className="w-3 h-3 text-purple-600" />
+                    Custom & Team Training
                   </span>
-                  <span className="text-[11px] font-medium text-emerald-400">
-                    Cohort & 1-on-1
+                  <span className="text-[11px] font-medium text-emerald-600">
+                    Flexible Pacing
                   </span>
                 </div>
 
-                <h3 className="text-xl font-bold text-white mb-2.5 group-hover:text-[#A78BFA] transition-colors">
-                  Enterprise & Custom Engineering Tracks
+                <h3 className="text-xl font-bold text-slate-900 mb-2.5 group-hover:text-purple-700 transition-colors">
+                  Custom & Career Switcher Tracks
                 </h3>
 
-                <p className="text-xs text-gray-300 leading-relaxed mb-5">
-                  Need a tailored syllabus for your engineering squad, or a specialized technical transition track? Our curriculum architects design customized learning roadmaps.
+                <p className="text-xs text-slate-600 leading-relaxed mb-5">
+                  Looking to switch into tech from another field, or need a customized syllabus for your team? Our advisors create tailored study plans matching your background.
                 </p>
 
                 {/* Skills badges */}
                 <div className="mb-5">
-                  <span className="block text-[11px] font-semibold text-gray-400 uppercase tracking-wider mb-2">
-                    Flexible Modules:
+                  <span className="block text-[11px] font-semibold text-slate-500 uppercase tracking-wider mb-2">
+                    Flexible Features:
                   </span>
                   <div className="flex flex-wrap gap-1.5">
-                    {['Team Upskilling', 'Tailored Syllabi', 'Live Architecture Reviews', 'Executive Briefings', 'Custom Capstones'].map((skill, sIdx) => (
-                      <span key={sIdx} className="text-[10px] font-medium px-2 py-0.5 rounded bg-white/5 text-purple-200 border border-purple-500/20">
+                    {['Beginner Onboarding', 'Personalized Pace', '1-on-1 Mentorship', 'Custom Projects', 'Career Coaching'].map((skill, sIdx) => (
+                      <span key={sIdx} className="text-[10px] font-medium px-2 py-0.5 rounded bg-white text-purple-700 border border-purple-200">
                         {skill}
                       </span>
                     ))}
@@ -539,26 +537,26 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenAdvisorModal }) => {
                 </div>
 
                 {/* Highlights */}
-                <div className="space-y-1.5 py-3 border-t border-white/10 text-xs text-gray-300">
+                <div className="space-y-1.5 py-3 border-t border-purple-100 text-xs text-slate-600">
                   <div className="flex items-center gap-2">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-[#8B5CF6] shrink-0" />
-                    <span>Customized Duration & Modular Schedule</span>
+                    <CheckCircle2 className="w-3.5 h-3.5 text-purple-600 shrink-0" />
+                    <span>Flexible Evening & Weekend Schedules</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <CheckCircle2 className="w-3.5 h-3.5 text-[#4F7CFF] shrink-0" />
-                    <span>Dedicated Domain Practitioner Mentors</span>
+                    <span>Direct Access to Friendly Tech Mentors</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
-                    <span>Production Alignment & Security Hardening</span>
+                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                    <span>Resume & Interview Support Included</span>
                   </div>
                 </div>
               </div>
 
-              <div className="pt-6 border-t border-white/10 grid grid-cols-2 gap-3 mt-6">
+              <div className="pt-6 border-t border-purple-100 grid grid-cols-2 gap-3 mt-6">
                 <Link
                   to="/programs"
-                  className="text-center py-2.5 px-3 rounded-xl bg-white/5 hover:bg-white/10 text-white font-semibold text-xs border border-white/10 transition-colors"
+                  className="text-center py-2.5 px-3 rounded-xl bg-white hover:bg-slate-50 text-slate-800 font-semibold text-xs border border-slate-200 transition-colors"
                 >
                   All Curricula
                 </Link>
@@ -709,20 +707,18 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenAdvisorModal }) => {
       </section>
 
       {/* ================= PRACTICAL PROJECTS SECTION ================= */}
-      <section className="py-20 bg-[#0B1020] text-white">
+      {/* ================= PRACTICAL PROJECTS SECTION - Light Theme ================= */}
+      <section className="py-20 bg-white text-slate-900 border-b border-slate-200/80">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-xs font-bold tracking-widest uppercase text-[#4F7CFF] bg-[#4F7CFF]/15 px-3 py-1 rounded-full border border-[#4F7CFF]/30">
-              Concrete Deliverables
+            <span className="text-xs font-bold tracking-widest uppercase text-blue-700 bg-blue-100/80 px-3 py-1 rounded-full border border-blue-200">
+              Build Real Things
             </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mt-3">
-              Sample Practical Projects
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mt-3">
+              Sample Projects You Will Build
             </h2>
-            <p className="text-gray-400 text-sm sm:text-base mt-3 leading-relaxed">
-              Real engineering artifacts built across our pathways. These represent sample assignments designed to showcase practical capability in your professional portfolio.
-            </p>
-            <p className="text-xs text-gray-500 italic mt-2">
-              (Clearly presented as representative program project samples, not fabricated individual testimonials.)
+            <p className="text-slate-600 text-sm sm:text-base mt-3 leading-relaxed">
+              Every course is built around real, portfolio-ready projects. You will create apps, websites, and data dashboards that you can show to employers.
             </p>
           </div>
 
@@ -732,29 +728,29 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenAdvisorModal }) => {
               return (
                 <div 
                   key={idx}
-                  className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-white/25 transition-all hover:-translate-y-1"
+                  className="p-6 rounded-2xl bg-slate-50 border border-slate-200/90 hover:border-[#4F7CFF]/50 transition-all hover:-translate-y-1 shadow-xs hover:shadow-md"
                 >
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="w-10 h-10 rounded-xl bg-[#4F7CFF]/15 text-[#4F7CFF] flex items-center justify-center">
+                    <div className="w-10 h-10 rounded-xl bg-blue-100 text-[#4F7CFF] flex items-center justify-center">
                       <Icon className="w-5 h-5" />
                     </div>
                     <div>
-                      <span className="block text-[11px] font-semibold text-[#8B5CF6]">
+                      <span className="block text-[11px] font-semibold text-purple-700">
                         {proj.program}
                       </span>
-                      <h3 className="text-base font-bold text-white leading-tight">
+                      <h3 className="text-base font-bold text-slate-900 leading-tight">
                         {proj.title}
                       </h3>
                     </div>
                   </div>
 
-                  <p className="text-xs text-gray-300 leading-relaxed mb-4">
+                  <p className="text-xs text-slate-600 leading-relaxed mb-4">
                     {proj.desc}
                   </p>
 
-                  <div className="flex flex-wrap gap-1.5 pt-3 border-t border-white/10">
+                  <div className="flex flex-wrap gap-1.5 pt-3 border-t border-slate-200/80">
                     {proj.tags.map((tag, tIdx) => (
-                      <span key={tIdx} className="text-[10px] font-medium px-2 py-0.5 rounded bg-white/10 text-gray-300">
+                      <span key={tIdx} className="text-[10px] font-medium px-2 py-0.5 rounded bg-white text-slate-700 border border-slate-200 shadow-xs">
                         {tag}
                       </span>
                     ))}
@@ -767,47 +763,47 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenAdvisorModal }) => {
       </section>
 
       {/* ================= CAREER SUPPORT SECTION ================= */}
-      <section className="py-20 bg-white text-[#0B1020]">
+      <section className="py-20 bg-slate-50/50 text-[#0B1020] border-b border-slate-200/80">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-14">
             <span className="text-xs font-bold tracking-widest uppercase text-[#4F7CFF] bg-[#4F7CFF]/10 px-3 py-1 rounded-full">
               Career Readiness
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0B1020] tracking-tight mt-3">
-              Comprehensive Career Support Services
+              Friendly Career & Placement Support
             </h2>
             <p className="text-gray-600 text-sm sm:text-base mt-3 leading-relaxed">
-              We empower learners through systematic interview preparation, resume refinement, code presentation coaching, and structured placement assistance.
+              We help you prepare for job opportunities with personal resume feedback, mock coding interviews, and guided company outreach.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
             {[
-              { title: 'Resume Development', desc: 'Craft modern, ATS-friendly technical resumes that effectively showcase your project artifacts.' },
-              { title: 'Profile & Portfolio Review', desc: 'Optimize your GitHub and LinkedIn profiles to highlight demonstrable technical problem-solving.' },
-              { title: 'Mock Technical Interviews', desc: 'Simulate live coding challenges, system design discussions, and behavioral interview questions.' },
-              { title: 'Placement Assistance', desc: 'Receive structured guidance and outreach support to connect with prospective career opportunities.' }
+              { title: 'Resume Development', desc: 'Craft a clean, professional resume that clearly highlights your projects and practical skills.' },
+              { title: 'LinkedIn & GitHub Polish', desc: 'Set up your profiles so recruiters and tech teams can easily see what you can build.' },
+              { title: 'Mock Tech Interviews', desc: 'Practice answering real coding challenges and interview questions with supportive mentors.' },
+              { title: 'Placement Assistance', desc: 'Get personal guidance on finding open roles, applying to companies, and handling offers.' }
             ].map((support, idx) => (
-              <div key={idx} className="p-6 rounded-2xl bg-[#F5F7FC] border border-gray-200/80">
+              <div key={idx} className="p-6 rounded-2xl bg-white border border-gray-200/80 shadow-xs">
                 <h3 className="text-base font-bold text-[#0B1020] mb-2">{support.title}</h3>
                 <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">{support.desc}</p>
               </div>
             ))}
           </div>
 
-          {/* Mandatory Transparent Disclaimer Box */}
-          <div className="p-6 sm:p-8 rounded-2xl bg-[#0B1020] text-gray-300 border border-white/10 max-w-4xl mx-auto">
+          {/* Mandatory Transparent Disclaimer Box - Light Theme */}
+          <div className="p-6 sm:p-8 rounded-2xl bg-blue-50/70 text-slate-800 border border-blue-200/90 max-w-4xl mx-auto shadow-xs">
             <div className="flex items-start gap-4">
-              <div className="w-10 h-10 rounded-xl bg-[#4F7CFF]/20 text-[#4F7CFF] flex items-center justify-center shrink-0 mt-0.5">
+              <div className="w-10 h-10 rounded-xl bg-white text-[#4F7CFF] border border-blue-200 flex items-center justify-center shrink-0 mt-0.5 shadow-xs">
                 <Shield className="w-5 h-5" />
               </div>
               <div className="space-y-2">
-                <h4 className="text-base font-bold text-white">Our Placement Assistance Policy</h4>
-                <p className="text-xs sm:text-sm leading-relaxed text-gray-300">
+                <h4 className="text-base font-bold text-slate-900">Our Placement Assistance Policy</h4>
+                <p className="text-xs sm:text-sm leading-relaxed text-slate-700">
                   “We support learners in preparing for career opportunities through structured guidance, interview preparation, resume support, and placement assistance. Employment outcomes depend on individual skills, preparation, eligibility, and employer requirements.”
                 </p>
-                <p className="text-[11px] text-gray-400">
-                  Astra Pathways never claims or promises guaranteed jobs, placement guarantees, or salary packages. Our commitment is providing high-quality, practical education and sincere guidance.
+                <p className="text-[11px] text-slate-500">
+                  Madyan Holdings and Astra Pathways never make exaggerated claims or fake job guarantees. We focus on giving you high-quality, practical skills and honest mentorship.
                 </p>
               </div>
             </div>
@@ -932,33 +928,33 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenAdvisorModal }) => {
         </div>
       </section>
 
-      {/* ================= FINAL CTA ================= */}
-      <section className="py-24 bg-gradient-to-b from-[#0B1020] via-[#252B66] to-[#0B1020] text-white text-center relative overflow-hidden">
+      {/* ================= FINAL CTA - Light & Inspiring ================= */}
+      <section className="py-24 bg-gradient-to-b from-blue-50/80 via-indigo-50/30 to-white text-slate-900 text-center relative overflow-hidden border-t border-slate-200">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <span className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-semibold bg-white/10 text-gray-200 mb-6">
+          <span className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-semibold bg-white text-[#4F7CFF] border border-blue-200 shadow-xs mb-6">
             <Sparkles className="w-3.5 h-3.5 text-[#4F7CFF]" />
-            Your Next Learning Chapter Starts Here
+            Your Tech Career Starts Today
           </span>
 
-          <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight mb-6 max-w-3xl mx-auto leading-tight">
-            Ready to Build Real-World Skills with Astra Pathways?
+          <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight mb-6 max-w-3xl mx-auto leading-tight">
+            Ready to Build Real Skills with Astra Pathways?
           </h2>
 
-          <p className="text-gray-300 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed mb-10">
-            Explore our project-based technical programs or connect with an academic advisor to map out a personalized learning path tailored to your professional objectives.
+          <p className="text-slate-600 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed mb-10">
+            Take the first step toward an exciting tech career. Explore our beginner-friendly courses or chat with a friendly advisor to find the perfect track for you.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-md mx-auto">
             <Link
               to="/programs"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl bg-gradient-to-r from-[#4F7CFF] to-[#8B5CF6] text-white font-bold text-sm sm:text-base hover:opacity-95 shadow-lg shadow-[#4F7CFF]/30 transition-all hover:-translate-y-0.5"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl bg-gradient-to-r from-[#4F7CFF] to-[#8B5CF6] text-white font-bold text-sm sm:text-base hover:opacity-95 shadow-lg shadow-[#4F7CFF]/25 transition-all hover:-translate-y-0.5"
             >
               Explore Programs
             </Link>
 
             <button
               onClick={() => onOpenAdvisorModal()}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl bg-white/10 hover:bg-white/15 text-white font-semibold text-sm sm:text-base border border-white/20 transition-all hover:-translate-y-0.5"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl bg-white hover:bg-slate-50 text-slate-700 font-semibold text-sm sm:text-base border border-slate-300 shadow-xs transition-all hover:-translate-y-0.5"
             >
               Talk to an Advisor
             </button>

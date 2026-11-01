@@ -8,33 +8,33 @@ import {
 export const TermsPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-[#F5F7FC] text-[#0B1020] pb-24 font-sans">
-      {/* Header Banner */}
-      <div className="bg-[#0B1020] text-white py-14 sm:py-20 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-[500px] h-[300px] bg-[#4F7CFF]/15 rounded-full blur-[120px] pointer-events-none" />
+      {/* Header Banner - Light & Crisp */}
+      <div className="bg-gradient-to-b from-blue-50/70 via-indigo-50/30 to-[#F5F7FC] text-[#0B1020] py-14 sm:py-20 relative overflow-hidden border-b border-gray-200/80">
+        <div className="absolute top-0 right-0 w-[500px] h-[300px] bg-[#4F7CFF]/10 rounded-full blur-[120px] pointer-events-none" />
         <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10">
-          <Link to="/" className="inline-flex items-center gap-2 text-xs font-semibold text-gray-400 hover:text-white transition-colors mb-4">
+          <Link to="/" className="inline-flex items-center gap-2 text-xs font-semibold text-gray-500 hover:text-gray-900 transition-colors mb-4">
             <ArrowLeft className="w-3.5 h-3.5" /> Back to Home
           </Link>
           <div className="flex items-center gap-2 text-xs text-[#4F7CFF] font-semibold mb-2 uppercase tracking-wider">
             <Shield className="w-4 h-4" /> Legal & Operational Agreement
           </div>
-          <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight">Terms and Conditions</h1>
-          <p className="text-sm text-gray-300 mt-3 max-w-2xl leading-relaxed">
-            These Terms govern your access to and use of Astra Pathways' website, educational learning portal, programs, and career-support services.
+          <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-gray-900">Terms and Conditions</h1>
+          <p className="text-sm text-gray-600 mt-3 max-w-2xl leading-relaxed">
+            These Terms govern your access to and use of Madyan Holdings' website, educational learning portal, programs, and career-support services provided through Astra Pathways.
           </p>
 
-          <div className="mt-6 pt-6 border-t border-white/10 grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs text-gray-400">
+          <div className="mt-6 pt-6 border-t border-gray-200/80 grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs text-gray-600">
             <div>
               <span className="block text-gray-500 uppercase tracking-wider text-[10px]">Effective Date</span>
-              <span className="font-semibold text-white">October 28, 2026</span>
+              <span className="font-semibold text-gray-900">October 28, 2026</span>
             </div>
             <div>
               <span className="block text-gray-500 uppercase tracking-wider text-[10px]">Operating Entity</span>
-              <span className="font-semibold text-white">Astra Pathways (Madyan Holdings)</span>
+              <span className="font-semibold text-gray-900">Madyan Holdings</span>
             </div>
             <div>
               <span className="block text-gray-500 uppercase tracking-wider text-[10px]">Jurisdiction</span>
-              <span className="font-semibold text-white">State of Wyoming, USA</span>
+              <span className="font-semibold text-gray-900">State of Wyoming, USA</span>
             </div>
           </div>
         </div>
@@ -42,32 +42,32 @@ export const TermsPage: React.FC = () => {
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 pt-10 space-y-8">
         
-        {/* Quick Navigation & Form Action Bar */}
-        <div className="bg-gradient-to-r from-[#181124] to-[#0B1020] text-white p-6 rounded-3xl border border-white/10 shadow-lg flex flex-col md:flex-row items-center justify-between gap-4">
+        {/* Quick Navigation & Form Action Bar - Light Theme */}
+        <div className="bg-white text-slate-800 p-6 rounded-3xl border border-gray-200/90 shadow-sm flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="space-y-1 text-center md:text-left">
-            <span className="text-xs font-bold uppercase tracking-wider text-amber-300 flex items-center gap-1.5 justify-center md:justify-start">
-              <Scale className="w-3.5 h-3.5" /> Student Rights & Forms Center
+            <span className="text-xs font-bold uppercase tracking-wider text-amber-700 flex items-center gap-1.5 justify-center md:justify-start">
+              <Scale className="w-3.5 h-3.5 text-amber-600" /> Student Rights & Forms Center
             </span>
-            <p className="text-xs text-gray-300">
+            <p className="text-xs text-gray-600">
               Need to submit a formal cancellation, refund request, complaint, or query under these Terms?
             </p>
           </div>
           <div className="flex flex-wrap items-center gap-2.5 shrink-0">
             <Link
               to="/forms/cancellation"
-              className="px-3.5 py-2 rounded-xl bg-white/10 hover:bg-white/15 text-white text-xs font-semibold border border-white/15 transition-all"
+              className="px-3.5 py-2 rounded-xl bg-gray-50 hover:bg-gray-100 text-gray-800 text-xs font-semibold border border-gray-200 transition-all"
             >
               Cancellation Form
             </Link>
             <Link
               to="/forms/refund"
-              className="px-3.5 py-2 rounded-xl bg-white/10 hover:bg-white/15 text-white text-xs font-semibold border border-white/15 transition-all"
+              className="px-3.5 py-2 rounded-xl bg-gray-50 hover:bg-gray-100 text-gray-800 text-xs font-semibold border border-gray-200 transition-all"
             >
               Refund Form
             </Link>
             <Link
               to="/forms/complaint"
-              className="px-3.5 py-2 rounded-xl bg-gradient-to-r from-[#4F7CFF] to-[#8B5CF6] text-white text-xs font-bold shadow-md transition-all"
+              className="px-3.5 py-2 rounded-xl bg-gradient-to-r from-[#4F7CFF] to-[#8B5CF6] text-white text-xs font-bold shadow-md hover:opacity-95 transition-all"
             >
               Complaint / Dispute Form
             </Link>
@@ -79,12 +79,12 @@ export const TermsPage: React.FC = () => {
           
           {/* Introductory Preamble */}
           <div className="p-5 rounded-2xl bg-gray-50 border border-gray-200 text-xs sm:text-sm text-gray-600 space-y-2">
-            <p><strong>Website:</strong> https://astrapathways.net</p>
-            <p><strong>Company:</strong> Astra Pathways (operating under Madyan Holdings)</p>
+            <p><strong>Merchant & Operating Company:</strong> Madyan Holdings (operating Astra Pathways)</p>
+            <p><strong>Website:</strong> https://madyanholdings.com</p>
             <p><strong>Registered Address:</strong> 30 N Gould St, STE N, Sheridan, WY, USA - 82801</p>
-            <p><strong>Support & Inquiries Email:</strong> <a href="mailto:info@astrapathways.net" className="text-[#4F7CFF] font-semibold underline">info@astrapathways.net</a></p>
+            <p><strong>Support & Inquiries Email:</strong> <a href="mailto:info@madyanholdings.com" className="text-[#4F7CFF] font-semibold underline">info@madyanholdings.com</a></p>
             <p className="pt-2 text-gray-500 border-t border-gray-200">
-              These Terms and Conditions (“Terms”) govern your access to and use of the Astra Pathways website, learning platform, programs, career-support services, and related services. By accessing the website, creating an account, enrolling in a program, making a payment, or using any Astra Pathways service, you agree to these Terms, our <Link to="/privacy" className="text-[#4F7CFF] underline">Privacy Policy</Link>, and our <Link to="/refunds" className="text-[#4F7CFF] underline">Refund and Cancellation Policy</Link>.
+              These Terms and Conditions (“Terms”) govern your access to and use of Madyan Holdings website, learning platform, programs, career-support services, and related offerings (operating as Astra Pathways). By accessing the website, creating an account, enrolling in a program, making a payment, or using any service, you agree to these Terms, our <Link to="/privacy" className="text-[#4F7CFF] underline">Privacy Policy</Link>, and our <Link to="/refunds" className="text-[#4F7CFF] underline">Refund and Cancellation Policy</Link>.
             </p>
           </div>
 
@@ -92,13 +92,13 @@ export const TermsPage: React.FC = () => {
           <section className="space-y-3">
             <h2 className="text-xl font-bold text-[#0B1020] flex items-center gap-2">
               <span className="w-7 h-7 rounded-lg bg-[#4F7CFF]/10 text-[#4F7CFF] flex items-center justify-center text-xs font-extrabold">1</span>
-              About Astra Pathways
+              About Madyan Holdings & Astra Pathways
             </h2>
             <p>
-              Astra Pathways is an education and career-support platform operated by Astra Pathways under Madyan Holdings. We provide training, mentorship, portfolio development, career-support services, employer-outreach assistance, and related services in high-demand technology fields, including Cybersecurity, Generative AI, Data Science, and Full-Stack Development.
+              Madyan Holdings is an education, training, and career-support company operating Astra Pathways. We provide practical training, mentorship, portfolio development, career-support services, employer-outreach assistance, and related services in high-demand technology fields, including Cybersecurity, Generative AI, Data Science, and Full-Stack Development.
             </p>
             <p className="font-semibold text-gray-900 bg-amber-50 p-3.5 rounded-xl border border-amber-200/60">
-              Astra Pathways is not an employer, staffing agency guaranteeing employment, immigration consultant, law firm, or financial institution.
+              Madyan Holdings and Astra Pathways are not employers, staffing agencies guaranteeing employment, immigration consultants, law firms, or financial institutions.
             </p>
           </section>
 
@@ -183,9 +183,11 @@ export const TermsPage: React.FC = () => {
                 <h3 className="font-bold text-gray-900 text-base">6.1 Cash / Upfront Payment</h3>
                 <ul className="list-disc pl-5 space-y-1.5 text-sm text-gray-600">
                   <li>A student may request a full refund within <strong>72 hours</strong> of enrollment.</li>
-                  <li>After 72 hours but within <strong>90 calendar days</strong>, a student may cancel and receive a refund of amounts paid, minus a <strong>10% administrative and cancellation fee</strong> and a <strong>pro-rated service charge</strong> for services already delivered.</li>
+                  <li>After 72 hours but within <strong>90 calendar days</strong>, a student may cancel and receive a refund of amounts paid, minus a <strong>10% administrative and cancellation fee</strong> and a <strong>monthly pro-rated service charge</strong> for services already delivered.</li>
+                  <li><strong>Monthly Calculation Basis:</strong> Refunds are calculated on a monthly basis rather than weekly. Our standard average monthly invoice is <strong>$500</strong>, which is used to charge on a pro-rated basis for the duration of services utilized.</li>
                   <li>After <strong>90 calendar days</strong>, no refund is available.</li>
-                  <li>The pro-rated service charge is calculated as: <code>Total Program Fee ÷ Total Program Weeks × Number of Weeks Elapsed from Cohort Start Date</code>.</li>
+                  <li>The pro-rated service charge is calculated as: <code>Months Elapsed × $500 (average monthly invoice rate)</code>.</li>
+                  <li><strong>Refund Formula:</strong> <code>Refund Amount = Total Paid − 10% Admin Fee − (Months Elapsed × $500)</code>.</li>
                   <li>Approved refunds are processed within <strong>7–10 business days</strong>.</li>
                 </ul>
               </div>
@@ -193,10 +195,10 @@ export const TermsPage: React.FC = () => {
               {/* 6.2 In-House Payment Plan */}
               <div className="p-5 rounded-2xl bg-gray-50 border border-gray-200/80 space-y-2">
                 <h3 className="font-bold text-gray-900 text-base">6.2 In-House Payment Plan</h3>
-                <p className="text-sm text-gray-600">The In-House Payment Plan is a no-interest installment payment plan offered directly by Astra Pathways.</p>
+                <p className="text-sm text-gray-600">The In-House Payment Plan is a no-interest installment payment plan offered by Madyan Holdings (operating Astra Pathways).</p>
                 <ul className="list-disc pl-5 space-y-1.5 text-sm text-gray-600">
                   <li>A student may request a full refund within <strong>24 hours</strong> of enrollment.</li>
-                  <li>After 24 hours, enrollment payments are non-refundable, subject to the pro-rated cancellation calculation.</li>
+                  <li>After 24 hours, enrollment payments are non-refundable, subject to the monthly pro-rated cancellation calculation ($500/month average rate).</li>
                   <li>No interest, financing charge, or penalty other than the stated late fee applies.</li>
                   <li>A <strong>7-calendar-day grace period</strong> applies after each installment due date.</li>
                   <li>After the grace period, a <strong>$10 late fee</strong> applies for every 3-calendar-day period the installment remains unpaid. Total late fees for any single overdue installment will not exceed <strong>$30</strong>.</li>
@@ -208,12 +210,12 @@ export const TermsPage: React.FC = () => {
               {/* 6.3 Finance Option */}
               <div className="p-5 rounded-2xl bg-gray-50 border border-gray-200/80 space-y-2">
                 <h3 className="font-bold text-gray-900 text-base">6.3 Third-Party Finance Option</h3>
-                <p className="text-sm text-gray-600">Where Astra Pathways offers financing through a third-party Finance Partner:</p>
+                <p className="text-sm text-gray-600">Where Madyan Holdings offers financing through an authorized third-party Finance Partner:</p>
                 <ul className="list-disc pl-5 space-y-1.5 text-sm text-gray-600">
                   <li>A student may request cancellation within <strong>5 business days</strong> of enrollment confirmation.</li>
-                  <li>Astra Pathways will initiate the cancellation with the Finance Partner, but any refund, loan reversal, or adjustment is subject to the Finance Partner's policies and processing timeline.</li>
-                  <li>After 5 business days but within <strong>90 calendar days</strong>, the 10% administrative and cancellation fee and pro-rated service charge apply.</li>
-                  <li>After 90 calendar days, no refund is available from Astra Pathways. Any remaining obligation to the Finance Partner is governed by the Finance Partner's loan agreement.</li>
+                  <li>Madyan Holdings will initiate the cancellation with the Finance Partner, but any refund, loan reversal, or adjustment is subject to the Finance Partner's policies and processing timeline.</li>
+                  <li>After 5 business days but within <strong>90 calendar days</strong>, the 10% administrative and cancellation fee and monthly pro-rated service charge ($500/month average rate) apply.</li>
+                  <li>After 90 calendar days, no refund is available from Madyan Holdings. Any remaining obligation to the Finance Partner is governed by the Finance Partner's loan agreement.</li>
                 </ul>
               </div>
             </div>
@@ -226,17 +228,17 @@ export const TermsPage: React.FC = () => {
               Recurring Payment Authorization
             </h2>
             <p>
-              By selecting an installment or recurring payment method, you authorize Astra Pathways or its authorized payment processor to charge your selected payment method for the scheduled installment amounts on their due dates.
+              By selecting an installment or recurring payment method, you authorize Madyan Holdings or its authorized payment processor to charge your selected payment method for the scheduled installment amounts on their due dates.
             </p>
             <p>You confirm that you have reviewed:</p>
             <ul className="list-disc pl-5 space-y-1.5 text-sm text-gray-600">
               <li>The total program fee, installment count, and due dates.</li>
               <li>The 7-day grace period, $10 late-fee rule, and $30 late-fee cap.</li>
               <li>The service-pause policy after 14 days of non-payment.</li>
-              <li>The cancellation and refund policy.</li>
+              <li>The monthly cancellation and refund calculation policy ($500/month rate).</li>
             </ul>
             <p className="text-xs text-gray-500 pt-1">
-              You may cancel future recurring authorization by written notice to <a href="mailto:info@astrapathways.net" className="text-[#4F7CFF] underline">info@astrapathways.net</a> or by submitting our online <Link to="/forms/cancellation" className="text-[#4F7CFF] underline">Cancellation Form</Link>, subject to amounts already due under the enrollment agreement.
+              You may cancel future recurring authorization by written notice to <a href="mailto:info@madyanholdings.com" className="text-[#4F7CFF] underline">info@madyanholdings.com</a> or by submitting our online <Link to="/forms/cancellation" className="text-[#4F7CFF] underline">Cancellation Form</Link>, subject to amounts already due under the enrollment agreement.
             </p>
           </section>
 
@@ -341,7 +343,7 @@ export const TermsPage: React.FC = () => {
               <div>
                 <h3 className="font-bold text-gray-900">14.2 Informal Dispute Resolution</h3>
                 <p className="mt-1 text-gray-600">
-                  Before initiating arbitration or filing a formal claim, the student must first contact Astra Pathways via our online <Link to="/forms/complaint" className="text-[#4F7CFF] underline font-semibold">Complaint Form</Link> or email <a href="mailto:info@astrapathways.net" className="text-[#4F7CFF] underline">info@astrapathways.net</a> and provide:
+                  Before initiating arbitration or filing a formal claim, the student must first contact Madyan Holdings via our online <Link to="/forms/complaint" className="text-[#4F7CFF] underline font-semibold">Complaint Form</Link> or email <a href="mailto:info@madyanholdings.com" className="text-[#4F7CFF] underline">info@madyanholdings.com</a> and provide:
                 </p>
                 <ul className="list-disc pl-5 space-y-1 mt-1 text-gray-600">
                   <li>Full name and enrolled program.</li>
@@ -351,7 +353,7 @@ export const TermsPage: React.FC = () => {
                   <li>The resolution requested.</li>
                 </ul>
                 <p className="mt-1.5 text-gray-600">
-                  Astra Pathways will review the matter and respond within 15 business days. Both parties will attempt to resolve the dispute in good faith for 30 days after the initial written notice.
+                  Madyan Holdings will review the matter and respond within 15 business days. Both parties will attempt to resolve the dispute in good faith for 30 days after the initial written notice.
                 </p>
               </div>
 
@@ -368,14 +370,14 @@ export const TermsPage: React.FC = () => {
               <div>
                 <h3 className="font-bold text-gray-900">14.4 Individual Claims Only (Class-Action Waiver)</h3>
                 <p className="mt-1 text-gray-600">
-                  The student and Astra Pathways agree that disputes will be resolved only on an individual basis. Neither party may bring a claim as a plaintiff or class member in a class, collective, consolidated, or representative proceeding. The parties waive any right to participate in a class action, class arbitration, or representative action against the other party.
+                  The student and Madyan Holdings agree that disputes will be resolved only on an individual basis. Neither party may bring a claim as a plaintiff or class member in a class, collective, consolidated, or representative proceeding. The parties waive any right to participate in a class action, class arbitration, or representative action against the other party.
                 </p>
               </div>
 
               <div>
                 <h3 className="font-bold text-gray-900">14.5 Arbitration Fees</h3>
                 <p className="mt-1 text-gray-600">
-                  If the student initiates arbitration and the arbitration provider requires a filing fee, Astra Pathways will reimburse the student’s filing fee if the student’s claim is less than $10,000, unless the arbitrator determines that the claim was filed for an improper purpose. Each party will otherwise bear its own legal fees, except where applicable law or the arbitrator’s award provides otherwise.
+                  If the student initiates arbitration and the arbitration provider requires a filing fee, Madyan Holdings will reimburse the student’s filing fee if the student’s claim is less than $10,000, unless the arbitrator determines that the claim was filed for an improper purpose. Each party will otherwise bear its own legal fees, except where applicable law or the arbitrator’s award provides otherwise.
                 </p>
               </div>
 
@@ -389,14 +391,14 @@ export const TermsPage: React.FC = () => {
               <div>
                 <h3 className="font-bold text-gray-900">14.7 30-Day Opt-Out Right</h3>
                 <p className="mt-1 text-gray-600">
-                  The student may opt out of this arbitration agreement by sending written notice to <a href="mailto:info@astrapathways.net" className="text-[#4F7CFF] underline">info@astrapathways.net</a> within 30 days of the date the student first accepts these Terms. The opt-out notice must include the student’s full name, email address used for enrollment, mailing address, program enrolled in, and the statement: <em>“I opt out of the arbitration agreement.”</em>
+                  The student may opt out of this arbitration agreement by sending written notice to <a href="mailto:info@madyanholdings.com" className="text-[#4F7CFF] underline">info@madyanholdings.com</a> within 30 days of the date the student first accepts these Terms. The opt-out notice must include the student’s full name, email address used for enrollment, mailing address, program enrolled in, and the statement: <em>“I opt out of the arbitration agreement.”</em>
                 </p>
               </div>
 
               <div>
                 <h3 className="font-bold text-gray-900">14.8 Severability & 14.9 Changes</h3>
                 <p className="mt-1 text-gray-600">
-                  If any part of this dispute-resolution provision is found unenforceable, the remaining provisions will continue to apply. If Astra Pathways materially changes this dispute-resolution provision after the student has enrolled, the student may reject the change within 30 days.
+                  If any part of this dispute-resolution provision is found unenforceable, the remaining provisions will continue to apply. If Madyan Holdings materially changes this dispute-resolution provision after the student has enrolled, the student may reject the change within 30 days.
                 </p>
               </div>
 
@@ -411,13 +413,13 @@ export const TermsPage: React.FC = () => {
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs sm:text-sm text-gray-700">
               <div className="p-4 rounded-xl bg-gray-50 border border-gray-200">
-                <span className="font-bold text-gray-900 block mb-1">Astra Pathways</span>
-                <p className="text-gray-600">Operated under Madyan Holdings</p>
+                <span className="font-bold text-gray-900 block mb-1">Madyan Holdings</span>
+                <p className="text-gray-600">Operating Astra Pathways</p>
                 <p className="text-gray-600">30 N Gould St, STE N, Sheridan, WY, USA - 82801</p>
               </div>
               <div className="p-4 rounded-xl bg-gray-50 border border-gray-200">
                 <span className="font-bold text-gray-900 block mb-1">Electronic Inquiries</span>
-                <p className="text-gray-600">Support Email: <a href="mailto:info@astrapathways.net" className="text-[#4F7CFF] underline">info@astrapathways.net</a></p>
+                <p className="text-gray-600">Support Email: <a href="mailto:info@madyanholdings.com" className="text-[#4F7CFF] underline">info@madyanholdings.com</a></p>
                 <p className="text-gray-600">Telephone: <a href="tel:13073177151" className="text-[#4F7CFF] underline">1-307-317-7151</a></p>
               </div>
             </div>

@@ -121,23 +121,23 @@ export const FormsHubPage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-[#F5F7FC] text-[#0B1020] pb-24 font-sans">
-      {/* Hero Banner */}
-      <div className="bg-[#0B1020] text-white py-16 sm:py-20 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-[600px] h-[350px] bg-gradient-to-tr from-[#4F7CFF]/15 via-[#8B5CF6]/15 to-transparent blur-[140px] pointer-events-none" />
+      {/* Hero Banner - Light Theme */}
+      <div className="bg-gradient-to-b from-blue-50/70 via-indigo-50/30 to-[#F5F7FC] text-[#0B1020] py-16 sm:py-20 relative overflow-hidden border-b border-gray-200/80">
+        <div className="absolute top-0 right-0 w-[600px] h-[350px] bg-gradient-to-tr from-[#4F7CFF]/10 via-[#8B5CF6]/10 to-transparent blur-[140px] pointer-events-none" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-white/10 text-[#4F7CFF] border border-white/10 mb-4">
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-white text-[#4F7CFF] border border-blue-200 shadow-xs mb-4">
             <FileText className="w-3.5 h-3.5" />
             Official Student Services
           </span>
-          <h1 className="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight max-w-4xl mx-auto">
+          <h1 className="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight max-w-4xl mx-auto text-gray-900">
             Student Forms & Requests Hub
           </h1>
-          <p className="text-sm sm:text-base text-gray-300 max-w-2xl mx-auto mt-4 leading-relaxed">
+          <p className="text-sm sm:text-base text-gray-600 max-w-2xl mx-auto mt-4 leading-relaxed">
             Access official forms for program enrollment, inquiries, tuition refunds, cohort cancellations, dispute filings, and career placement support.
           </p>
 
           {/* Quick Reference Tracker Bar */}
-          <div className="mt-8 max-w-xl mx-auto bg-white/10 backdrop-blur-md p-2 rounded-2xl border border-white/20 shadow-2xl">
+          <div className="mt-8 max-w-xl mx-auto bg-white p-2 rounded-2xl border border-gray-200/90 shadow-md">
             <form onSubmit={handleLookup} className="flex items-center gap-2">
               <div className="relative flex-1">
                 <Search className="w-4 h-4 text-gray-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
@@ -146,7 +146,7 @@ export const FormsHubPage: React.FC = () => {
                   value={lookupRef}
                   onChange={e => setLookupRef(e.target.value)}
                   placeholder="Check Ticket Status: e.g. REF-CAN-2026-..."
-                  className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-white/90 text-[#0B1020] text-xs sm:text-sm font-medium placeholder-gray-500 focus:outline-none focus:bg-white"
+                  className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-gray-50 text-[#0B1020] text-xs sm:text-sm font-medium placeholder-gray-400 focus:outline-none focus:bg-white border border-gray-200 focus:border-[#4F7CFF]"
                 />
               </div>
               <button

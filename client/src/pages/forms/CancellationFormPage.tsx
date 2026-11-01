@@ -95,18 +95,18 @@ export const CancellationFormPage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-[#F5F7FC] text-[#0B1020] pb-24 font-sans">
-      {/* Header Banner */}
-      <div className="bg-[#0B1020] text-white py-14 sm:py-16 relative overflow-hidden">
+      {/* Header Banner - Light Theme */}
+      <div className="bg-gradient-to-b from-rose-50/70 via-indigo-50/20 to-[#F5F7FC] text-[#0B1020] py-14 sm:py-16 relative overflow-hidden border-b border-gray-200/80">
         <div className="absolute top-0 right-0 w-[500px] h-[300px] bg-red-500/10 rounded-full blur-[130px] pointer-events-none" />
         <div className="max-w-3xl mx-auto px-4 sm:px-6 relative z-10">
-          <Link to="/forms" className="inline-flex items-center gap-2 text-xs font-semibold text-gray-400 hover:text-white transition-colors mb-4">
+          <Link to="/forms" className="inline-flex items-center gap-2 text-xs font-semibold text-gray-500 hover:text-gray-900 transition-colors mb-4">
             <ArrowLeft className="w-3.5 h-3.5" /> Back to Student Forms Hub
           </Link>
-          <div className="flex items-center gap-2 text-xs text-red-400 font-semibold mb-2 uppercase tracking-wider">
+          <div className="flex items-center gap-2 text-xs text-red-600 font-semibold mb-2 uppercase tracking-wider">
             <XCircle className="w-4 h-4" /> Academic Operations
           </div>
-          <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight">Program Cancellation Form</h1>
-          <p className="text-sm text-gray-300 mt-2 max-w-xl leading-relaxed">
+          <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-gray-900">Program Cancellation Form</h1>
+          <p className="text-sm text-gray-600 mt-2 max-w-xl leading-relaxed">
             Submit a formal request to withdraw from your cohort seat, pause active billing, or cancel an enrollment agreement in accordance with our policies.
           </p>
         </div>
@@ -172,10 +172,10 @@ export const CancellationFormPage: React.FC = () => {
                   <Shield className="w-4 h-4 text-[#4F7CFF]" /> Policy Snapshot (Refund & Cancellation)
                 </span>
                 <p>
-                  • <strong>Cash Payment:</strong> 100% refund within 72 hours. After 72 hours up to 90 days: pro-rated service charge & 10% admin fee apply.
+                  • <strong>Cash Payment:</strong> 100% refund within 72 hours. After 72 hours up to 90 days: monthly pro-rated service charge ($500/mo) & 10% admin fee apply.
                 </p>
                 <p>
-                  • <strong>In-House Installment:</strong> Full refund within 24 hours. Future installments cancelled upon covering pro-rated elapsed weeks.
+                  • <strong>In-House Installment:</strong> Full refund within 24 hours. Future installments cancelled upon covering pro-rated elapsed months ($500/mo).
                 </p>
                 <p>
                   • <strong>Financing:</strong> Cancellation requested within 5 business days initiates loan termination with the finance partner.

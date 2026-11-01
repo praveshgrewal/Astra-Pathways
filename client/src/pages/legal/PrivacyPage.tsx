@@ -5,33 +5,33 @@ import { ArrowLeft, Shield, Lock, Eye, Database, Server, CheckCircle2, UserCheck
 export const PrivacyPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-[#F5F7FC] text-[#0B1020] pb-24 font-sans">
-      {/* Header Banner */}
-      <div className="bg-[#0B1020] text-white py-14 sm:py-20 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-[500px] h-[300px] bg-cyan-500/15 rounded-full blur-[120px] pointer-events-none" />
+      {/* Header Banner - Light Theme */}
+      <div className="bg-gradient-to-b from-cyan-50/70 via-blue-50/30 to-[#F5F7FC] text-[#0B1020] py-14 sm:py-20 relative overflow-hidden border-b border-gray-200/80">
+        <div className="absolute top-0 right-0 w-[500px] h-[300px] bg-cyan-500/10 rounded-full blur-[120px] pointer-events-none" />
         <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10">
-          <Link to="/" className="inline-flex items-center gap-2 text-xs font-semibold text-gray-400 hover:text-white transition-colors mb-4">
+          <Link to="/" className="inline-flex items-center gap-2 text-xs font-semibold text-gray-500 hover:text-gray-900 transition-colors mb-4">
             <ArrowLeft className="w-3.5 h-3.5" /> Back to Home
           </Link>
-          <div className="flex items-center gap-2 text-xs text-cyan-400 font-semibold mb-2 uppercase tracking-wider">
+          <div className="flex items-center gap-2 text-xs text-cyan-600 font-semibold mb-2 uppercase tracking-wider">
             <Shield className="w-4 h-4" /> Data Governance & Security
           </div>
-          <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight">Privacy & Data Security Policy</h1>
-          <p className="text-sm text-gray-300 mt-3 max-w-2xl leading-relaxed">
-            Explaining how Astra Pathways collects, uses, shares, protects, and retains personal information, alongside our internal Data Privacy and Security standards.
+          <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-gray-900">Privacy & Data Security Policy</h1>
+          <p className="text-sm text-gray-600 mt-3 max-w-2xl leading-relaxed">
+            Explaining how Madyan Holdings (operating Astra Pathways) collects, uses, shares, protects, and retains personal information, alongside our internal Data Privacy and Security standards.
           </p>
 
-          <div className="mt-6 pt-6 border-t border-white/10 grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs text-gray-400">
+          <div className="mt-6 pt-6 border-t border-gray-200/80 grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs text-gray-600">
             <div>
               <span className="block text-gray-500 uppercase tracking-wider text-[10px]">Effective Date</span>
-              <span className="font-semibold text-white">October 28, 2026</span>
+              <span className="font-semibold text-gray-900">October 28, 2026</span>
             </div>
             <div>
               <span className="block text-gray-500 uppercase tracking-wider text-[10px]">Privacy Contact</span>
-              <span className="font-semibold text-white">info@astrapathways.net</span>
+              <span className="font-semibold text-gray-900">info@madyanholdings.com</span>
             </div>
             <div>
               <span className="block text-gray-500 uppercase tracking-wider text-[10px]">Commercial Data Sale</span>
-              <span className="font-semibold text-emerald-400">Strictly Prohibited (Zero Sale)</span>
+              <span className="font-semibold text-emerald-600">Strictly Prohibited (Zero Sale)</span>
             </div>
           </div>
         </div>
@@ -43,9 +43,9 @@ export const PrivacyPage: React.FC = () => {
         <div className="bg-white rounded-3xl p-6 sm:p-12 border border-gray-200/80 shadow-sm space-y-12 text-sm sm:text-base text-gray-700 leading-relaxed">
           
           <div className="p-5 rounded-2xl bg-gray-50 border border-gray-200 text-xs sm:text-sm text-gray-600 space-y-1.5">
-            <p><strong>Company:</strong> Astra Pathways (operating under Madyan Holdings)</p>
+            <p><strong>Merchant & Operating Company:</strong> Madyan Holdings (operating Astra Pathways)</p>
             <p><strong>Registered Address:</strong> 30 N Gould St, STE N, Sheridan, WY, USA - 82801</p>
-            <p><strong>Privacy Contact:</strong> <a href="mailto:info@astrapathways.net" className="text-[#4F7CFF] underline font-semibold">info@astrapathways.net</a></p>
+            <p><strong>Privacy Contact:</strong> <a href="mailto:info@madyanholdings.com" className="text-[#4F7CFF] underline font-semibold">info@madyanholdings.com</a></p>
           </div>
 
           {/* ================= PART 1: PRIVACY POLICY ================= */}
@@ -90,7 +90,7 @@ export const PrivacyPage: React.FC = () => {
               <h3 className="text-lg font-bold text-gray-900">3. Legal Basis and Consent</h3>
               <p>We process personal information based on: your consent; performance of our enrollment agreement; legitimate business interests (such as service improvement and fraud prevention); and legal or regulatory obligations.</p>
               <p className="text-xs text-gray-500">
-                We obtain separate opt-in consent for marketing messages, employer-profile sharing, session recordings, testimonials, and optional data uses. You may withdraw consent for future optional uses by emailing <a href="mailto:info@astrapathways.net" className="text-[#4F7CFF] underline">info@astrapathways.net</a>.
+                We obtain separate opt-in consent for marketing messages, employer-profile sharing, session recordings, testimonials, and optional data uses. You may withdraw consent for future optional uses by emailing <a href="mailto:info@madyanholdings.com" className="text-[#4F7CFF] underline">info@madyanholdings.com</a>.
               </p>
             </section>
 
@@ -143,7 +143,7 @@ export const PrivacyPage: React.FC = () => {
                 <li>Withdraw consent for optional data uses.</li>
               </ul>
               <p className="text-xs text-gray-500">
-                To exercise these rights, email <a href="mailto:info@astrapathways.net" className="text-[#4F7CFF] underline">info@astrapathways.net</a>. We may verify your identity before processing the request.
+                To exercise these rights, email <a href="mailto:info@madyanholdings.com" className="text-[#4F7CFF] underline">info@madyanholdings.com</a>. We may verify your identity before processing the request.
               </p>
             </section>
 

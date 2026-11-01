@@ -52,30 +52,30 @@ export const ProgramsPage: React.FC<ProgramsPageProps> = ({ onOpenAdvisorModal }
   return (
     <div className="min-h-screen bg-[#F5F7FC] text-[#0B1020] pb-24">
       {/* Header Banner */}
-      <section className="bg-[#0B1020] text-white py-16 sm:py-20 relative overflow-hidden">
+      <section className="bg-gradient-to-b from-blue-50/90 via-indigo-50/30 to-[#F5F7FC] text-slate-900 py-16 sm:py-20 relative overflow-hidden border-b border-slate-200">
         <div className="absolute top-0 right-0 w-96 h-96 bg-[#4F7CFF]/10 rounded-full blur-3xl pointer-events-none" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-white/10 text-[#4F7CFF] border border-white/10 mb-4">
+          <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-blue-100/80 text-[#4F7CFF] border border-blue-200 mb-4">
             <Sparkles className="w-3.5 h-3.5" />
-            Practical Engineering Curricula
+            Hands-On Career Programs
           </span>
-          <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white max-w-3xl mx-auto">
-            Explore Learning Pathways
+          <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-slate-900 max-w-3xl mx-auto">
+            Explore Training Programs
           </h1>
-          <p className="text-sm sm:text-base text-gray-300 max-w-2xl mx-auto mt-4 leading-relaxed">
-            Deliberately structured technical programs combining conceptual rigor, hands-on laboratory exercises, and real-world project deliverables.
+          <p className="text-sm sm:text-base text-slate-600 max-w-2xl mx-auto mt-4 leading-relaxed">
+            Clear, step-by-step tech training designed for students, beginners, and professionals switching careers. Learn real skills with mentor guidance and build projects you can be proud of.
           </p>
 
           {/* Search Bar */}
           <form onSubmit={handleSearchSubmit} className="max-w-xl mx-auto mt-8 flex gap-2">
             <div className="relative flex-1">
-              <Search className="w-5 h-5 text-gray-400 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
+              <Search className="w-5 h-5 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
               <input
                 type="text"
-                placeholder="Search programs, topics, or skills (e.g. React, Python, Cloud)..."
+                placeholder="Search programs, topics, or skills (e.g. Web, Python, Cloud)..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-11 pr-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:border-[#4F7CFF] text-sm backdrop-blur-md"
+                className="w-full pl-11 pr-4 py-3 rounded-xl bg-white border border-slate-200 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#4F7CFF] focus:ring-2 focus:ring-blue-100 text-sm shadow-sm"
               />
             </div>
             <button
@@ -92,12 +92,12 @@ export const ProgramsPage: React.FC<ProgramsPageProps> = ({ onOpenAdvisorModal }
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10">
         
         {/* Filter Controls */}
-        <div className="bg-white rounded-2xl p-5 border border-gray-200/80 shadow-sm mb-10 space-y-4">
+        <div className="bg-white rounded-2xl p-5 border border-slate-200 shadow-sm mb-10 space-y-4">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
             
             {/* Category Pills */}
             <div className="flex items-center gap-2 overflow-x-auto pb-2 md:pb-0 scrollbar-none">
-              <span className="text-xs font-bold text-gray-400 uppercase tracking-wider flex items-center gap-1 shrink-0 mr-1">
+              <span className="text-xs font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1 shrink-0 mr-1">
                 <Filter className="w-3.5 h-3.5" /> Category:
               </span>
               {categories.map((cat) => (
@@ -106,8 +106,8 @@ export const ProgramsPage: React.FC<ProgramsPageProps> = ({ onOpenAdvisorModal }
                   onClick={() => setSelectedCategory(cat)}
                   className={`px-3.5 py-1.5 rounded-lg text-xs font-semibold whitespace-nowrap transition-all ${
                     selectedCategory === cat
-                      ? 'bg-[#0B1020] text-white shadow-sm'
-                      : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                      ? 'bg-[#4F7CFF] text-white shadow-sm'
+                      : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
                   }`}
                 >
                   {cat}

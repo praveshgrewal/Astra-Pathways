@@ -103,18 +103,18 @@ export const RefundFormPage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-[#F5F7FC] text-[#0B1020] pb-24 font-sans">
-      {/* Header Banner */}
-      <div className="bg-[#0B1020] text-white py-14 sm:py-16 relative overflow-hidden">
+      {/* Header Banner - Light Theme */}
+      <div className="bg-gradient-to-b from-emerald-50/70 via-teal-50/20 to-[#F5F7FC] text-[#0B1020] py-14 sm:py-16 relative overflow-hidden border-b border-gray-200/80">
         <div className="absolute top-0 right-0 w-[500px] h-[300px] bg-emerald-500/10 rounded-full blur-[130px] pointer-events-none" />
         <div className="max-w-3xl mx-auto px-4 sm:px-6 relative z-10">
-          <Link to="/forms" className="inline-flex items-center gap-2 text-xs font-semibold text-gray-400 hover:text-white transition-colors mb-4">
+          <Link to="/forms" className="inline-flex items-center gap-2 text-xs font-semibold text-gray-500 hover:text-gray-900 transition-colors mb-4">
             <ArrowLeft className="w-3.5 h-3.5" /> Back to Student Forms Hub
           </Link>
-          <div className="flex items-center gap-2 text-xs text-emerald-400 font-semibold mb-2 uppercase tracking-wider">
+          <div className="flex items-center gap-2 text-xs text-emerald-600 font-semibold mb-2 uppercase tracking-wider">
             <DollarSign className="w-4 h-4" /> Finance & Billing Services
           </div>
-          <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight">Tuition Refund Request Form</h1>
-          <p className="text-sm text-gray-300 mt-2 max-w-xl leading-relaxed">
+          <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-gray-900">Tuition Refund Request Form</h1>
+          <p className="text-sm text-gray-600 mt-2 max-w-xl leading-relaxed">
             Submit your payment verification and refund request in accordance with the Astra Pathways Refund and Cancellation Policy.
           </p>
         </div>
@@ -168,7 +168,7 @@ export const RefundFormPage: React.FC = () => {
                 </Link>
                 <Link
                   to="/refunds"
-                  className="px-6 py-2.5 rounded-xl bg-[#0B1020] text-white text-xs font-bold hover:bg-gray-800 transition-all"
+                  className="px-6 py-2.5 rounded-xl bg-gray-900 text-white text-xs font-bold hover:bg-gray-800 transition-all"
                 >
                   Review Refund Policy
                 </Link>
@@ -180,13 +180,13 @@ export const RefundFormPage: React.FC = () => {
               {/* Formula & Rule Guidance */}
               <div className="p-4 rounded-2xl bg-blue-50/70 border border-blue-200 text-xs text-blue-900 space-y-1.5">
                 <span className="font-bold flex items-center gap-1.5 text-blue-950">
-                  <Calculator className="w-4 h-4 text-[#4F7CFF]" /> Refund Calculation Reference (Section 2.3)
+                  <Calculator className="w-4 h-4 text-[#4F7CFF]" /> Refund Calculation Reference (Monthly Pro-Rated Basis)
                 </span>
                 <p>
-                  <code>Refund Amount = Total Paid − 10% Administrative Fee − Pro-Rated Service Charge</code>
+                  <code>Refund Amount = Total Paid − 10% Administrative Fee − (Months Elapsed × $500)</code>
                 </p>
                 <p className="text-[11px] text-blue-800">
-                  Full 100% refund is available if cancellation occurred within 72 hours of initial enrollment (or 24 hours for In-House installment plans).
+                  Refunds are calculated on a monthly basis rather than weekly using our standard average monthly invoice rate of $500. Full 100% refund is available if cancellation occurred within 72 hours of initial enrollment (or 24 hours for In-House installment plans).
                 </p>
               </div>
 
@@ -398,7 +398,7 @@ export const RefundFormPage: React.FC = () => {
                     className="mt-1 w-4 h-4 text-[#4F7CFF] rounded border-gray-300 focus:ring-[#4F7CFF]"
                   />
                   <span className="text-xs text-gray-600 leading-relaxed">
-                    I verify that the amounts and dates entered above are accurate. I have read and agree to the <Link to="/refunds" target="_blank" className="text-[#4F7CFF] underline font-semibold">Astra Pathways Refund and Cancellation Policy</Link>, including the 72-hour full refund rule and the pro-rated calculation with 10% administrative fee for cancellations after 72 hours.
+                    I verify that the amounts and dates entered above are accurate. I have read and agree to the <Link to="/refunds" target="_blank" className="text-[#4F7CFF] underline font-semibold">Astra Pathways Refund and Cancellation Policy</Link>, including the 72-hour full refund rule and the monthly pro-rated calculation ($500/month average invoice rate) with 10% administrative fee for cancellations after 72 hours.
                   </span>
                 </label>
               </div>

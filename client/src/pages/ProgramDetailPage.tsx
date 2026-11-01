@@ -80,8 +80,8 @@ ${program.mentorship_support}
 CAREER SUPPORT & PLACEMENT ASSISTANCE:
 ${program.placement_support_info}
 
-Note: Astra Pathways provides career support and placement assistance without guaranteeing job placement or employment outcomes.
-Contact: info@astrapathways.net | Phone: 1-307-317-7151 | Office: 30 N Gould St, STE N, Sheridan, WY, USA - 82801
+Note: Astra Pathways is operated by Madyan Holdings. We provide career support and placement assistance without guaranteeing job placement or employment outcomes.
+Contact: info@madyanholdings.com | Phone: 1-307-317-7151 | Office: 30 N Gould St, STE N, Sheridan, WY, USA - 82801
 Availability: Monday to Sunday (7 days a week), 9am to 9pm EST.`;
 
     const blob = new Blob([syllabusText], { type: 'text/plain;charset=utf-8' });
@@ -99,7 +99,7 @@ Availability: Monday to Sunday (7 days a week), 9am to 9pm EST.`;
     return (
       <div className="min-h-screen bg-[#F5F7FC] py-24 flex items-center justify-center">
         <div className="text-center space-y-4">
-          <div className="w-10 h-10 border-4 border-[#4F7CFF] border-t-transparent rounded-full animate-spin mx-auto" />
+          <div className="w-10 h-10 border-4 border-blue-600 border-t-transparent rounded-full animate-spin mx-auto" />
           <p className="text-sm font-semibold text-gray-600">Loading program curriculum details...</p>
         </div>
       </div>
@@ -115,7 +115,7 @@ Availability: Monday to Sunday (7 days a week), 9am to 9pm EST.`;
           <p className="text-sm text-gray-600 mt-2 mb-6">The requested curriculum pathway does not exist or has been updated.</p>
           <Link
             to="/programs"
-            className="px-6 py-2.5 rounded-xl bg-[#0B1020] text-white text-xs font-semibold hover:bg-gray-800 transition-colors inline-flex items-center gap-2"
+            className="px-6 py-2.5 rounded-xl bg-slate-900 text-white text-xs font-semibold hover:bg-slate-800 transition-colors inline-flex items-center gap-2"
           >
             <ArrowLeft className="w-4 h-4" /> Return to Programs
           </Link>
@@ -128,51 +128,51 @@ Availability: Monday to Sunday (7 days a week), 9am to 9pm EST.`;
     <div className="min-h-screen bg-[#F5F7FC] text-[#0B1020] pb-24">
       
       {/* Program Header Hero */}
-      <section className="bg-[#0B1020] text-white py-16 sm:py-20 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-[500px] h-[350px] bg-[#4F7CFF]/15 rounded-full blur-[120px] pointer-events-none" />
+      <section className="bg-gradient-to-b from-blue-50/70 via-indigo-50/30 to-[#F5F7FC] text-slate-900 py-16 sm:py-20 relative overflow-hidden border-b border-slate-200/80">
+        <div className="absolute top-0 right-0 w-[500px] h-[350px] bg-blue-500/10 rounded-full blur-[120px] pointer-events-none" />
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           
           <Link
             to="/programs"
-            className="inline-flex items-center gap-2 text-xs font-semibold text-gray-400 hover:text-white transition-colors mb-6"
+            className="inline-flex items-center gap-2 text-xs font-semibold text-slate-500 hover:text-blue-600 transition-colors mb-6"
           >
             <ArrowLeft className="w-3.5 h-3.5" /> Back to all programs
           </Link>
 
           <div className="flex flex-wrap items-center gap-2.5 mb-4">
-            <span className="text-xs font-bold text-[#4F7CFF] bg-[#4F7CFF]/15 px-3 py-1 rounded-full border border-[#4F7CFF]/30">
+            <span className="text-xs font-bold text-blue-700 bg-blue-100/90 px-3 py-1 rounded-full border border-blue-200">
               {program.category}
             </span>
-            <span className="text-xs font-medium text-gray-300 bg-white/5 px-3 py-1 rounded-full border border-white/10">
+            <span className="text-xs font-medium text-slate-700 bg-white px-3 py-1 rounded-full border border-slate-200 shadow-xs">
               Level: {program.level}
             </span>
-            <span className="text-xs font-medium text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20">
+            <span className="text-xs font-medium text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">
               {program.learning_format}
             </span>
           </div>
 
-          <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white max-w-4xl leading-tight mb-6">
+          <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-slate-900 max-w-4xl leading-tight mb-6">
             {program.title}
           </h1>
 
-          <p className="text-base sm:text-lg text-gray-300 max-w-3xl leading-relaxed mb-8">
+          <p className="text-base sm:text-lg text-slate-600 max-w-3xl leading-relaxed mb-8">
             {program.full_overview}
           </p>
 
           <div className="flex flex-wrap items-center gap-4">
             <button
               onClick={() => onOpenAdvisorModal(program.title)}
-              className="px-8 py-3.5 rounded-xl bg-gradient-to-r from-[#4F7CFF] to-[#8B5CF6] text-white font-bold text-sm hover:opacity-95 shadow-lg shadow-[#4F7CFF]/25 transition-all flex items-center gap-2"
+              className="px-8 py-3.5 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-bold text-sm hover:opacity-95 shadow-lg shadow-blue-500/25 transition-all flex items-center gap-2"
             >
               <MessageSquare className="w-4 h-4" /> Enquire About This Program
             </button>
 
             <button
               onClick={handleDownloadCurriculum}
-              className="px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/15 text-white font-semibold text-sm border border-white/20 transition-all flex items-center gap-2"
+              className="px-6 py-3.5 rounded-xl bg-white hover:bg-slate-50 text-slate-800 font-semibold text-sm border border-slate-300 transition-all flex items-center gap-2 shadow-xs"
             >
-              <Download className="w-4 h-4 text-[#4F7CFF]" />
+              <Download className="w-4 h-4 text-blue-600" />
               {downloadSuccess ? 'Curriculum Downloaded!' : 'Download Syllabus Outline'}
             </button>
           </div>

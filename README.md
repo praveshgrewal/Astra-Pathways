@@ -91,8 +91,8 @@ npm run dev
 
 | Portal | Email | Password | Role | Description |
 | :--- | :--- | :--- | :--- | :--- |
-| **Admin Console** | `admin@astrapathways.com` | `AdminPass123!` | Administrator | Full access to leads, programs CRUD, content, and student grading |
-| **Student Portal** | `student@astrapathways.com` | `StudentPass123!` | Student (Alex Morgan) | Enrolled in Full-Stack track, interactive quiz, milestone submissions |
+| **Admin Console** | `admin@madyanholdings.com` | `AdminPass123!` | Administrator | Full access to leads, programs CRUD, content, and student grading |
+| **Student Portal** | `student@madyanholdings.com` | `StudentPass123!` | Student (Alex Morgan) | Enrolled in Full-Stack track, interactive quiz, milestone submissions |
 
 *(Both login pages feature one-click "Quick Login" buttons for instant evaluation without typing.)*
 
@@ -196,9 +196,10 @@ cd server && npm start
 
 ## 7. Official Contact & Operational Details
 
-- **Email:** `info@astrapathways.net`
+- **Email:** `info@madyanholdings.com`
 - **Phone:** `1-307-317-7151`
 - **Office Address:** `30 N Gould St, STE N, Sheridan, WY, USA - 82801`
+- **Operating Entity:** Madyan Holdings (operating Astra Pathways)
 - **Availability:** Monday to Sunday (7 days a week)
 - **Timing:** 9am to 9pm EST
 

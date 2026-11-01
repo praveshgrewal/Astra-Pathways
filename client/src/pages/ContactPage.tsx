@@ -44,19 +44,19 @@ export const ContactPage: React.FC = () => {
     <div className="min-h-screen bg-[#F5F7FC] text-[#0B1020] pb-24 font-sans">
       
       {/* Header Banner */}
-      <section className="bg-[#0B1020] text-white py-16 sm:py-24 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-[500px] h-[350px] bg-[#4F7CFF]/15 rounded-full blur-[130px] pointer-events-none" />
+      <section className="bg-gradient-to-b from-blue-50/70 via-indigo-50/30 to-[#F5F7FC] text-slate-900 py-16 sm:py-24 relative overflow-hidden border-b border-slate-200/80">
+        <div className="absolute top-0 right-0 w-[500px] h-[350px] bg-blue-500/10 rounded-full blur-[130px] pointer-events-none" />
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-white/10 text-[#4F7CFF] border border-white/10 mb-4">
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-blue-100 text-blue-700 border border-blue-200 mb-4">
             <Sparkles className="w-3.5 h-3.5" />
-            Admissions & Academic Inquiries
+            Admissions & Student Advisory
           </span>
-          <h1 className="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white max-w-4xl mx-auto leading-tight">
+          <h1 className="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-slate-900 max-w-4xl mx-auto leading-tight">
             Connect with Astra Pathways
           </h1>
-          <p className="text-base sm:text-lg text-gray-300 max-w-2xl mx-auto mt-6 leading-relaxed">
-            Have questions regarding program prerequisites, syllabus modules, or scheduling? Our academic advisory team is here to guide you.
+          <p className="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto mt-6 leading-relaxed">
+            Have questions about our courses, class schedules, or payment plans? Our friendly advisory team is ready to guide you step by step.
           </p>
         </div>
       </section>
@@ -69,29 +69,29 @@ export const ContactPage: React.FC = () => {
             <div className="bg-white p-7 rounded-3xl border border-gray-200/80 shadow-sm space-y-6">
               <h2 className="text-xl font-bold text-[#0B1020]">Direct Communication</h2>
               <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
-                Reach out directly or submit the enquiry form. We aim to respond to all inquiries within one business day.
+                Reach out directly or send us a message below. We respond to all inquiries within one business day.
               </p>
 
               <div className="space-y-4 pt-2 text-xs sm:text-sm">
                 <div className="flex items-start gap-3">
-                  <div className="w-9 h-9 rounded-xl bg-[#4F7CFF]/10 text-[#4F7CFF] flex items-center justify-center shrink-0">
+                  <div className="w-9 h-9 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center shrink-0">
                     <Mail className="w-4 h-4" />
                   </div>
                   <div>
                     <span className="block font-bold text-[#0B1020]">Email Inquiries</span>
-                    <a href="mailto:info@astrapathways.net" className="text-gray-600 hover:text-[#4F7CFF] transition-colors">
-                      info@astrapathways.net
+                    <a href="mailto:info@madyanholdings.com" className="text-gray-600 hover:text-blue-600 transition-colors font-medium">
+                      info@madyanholdings.com
                     </a>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-3">
-                  <div className="w-9 h-9 rounded-xl bg-[#8B5CF6]/10 text-[#8B5CF6] flex items-center justify-center shrink-0">
+                  <div className="w-9 h-9 rounded-xl bg-indigo-100 text-indigo-600 flex items-center justify-center shrink-0">
                     <Phone className="w-4 h-4" />
                   </div>
                   <div>
                     <span className="block font-bold text-[#0B1020]">Contact Phone</span>
-                    <a href="tel:13073177151" className="text-gray-600 hover:text-[#4F7CFF] transition-colors">
+                    <a href="tel:13073177151" className="text-gray-600 hover:text-blue-600 transition-colors font-medium">
                       1-307-317-7151
                     </a>
                   </div>
@@ -122,10 +122,10 @@ export const ContactPage: React.FC = () => {
             </div>
 
             {/* Transparent Educational Policy Box */}
-            <div className="p-6 rounded-2xl bg-[#0B1020] text-gray-300 border border-white/10 space-y-2 text-xs">
-              <span className="font-bold text-white block text-sm">Transparent Policy</span>
-              <p className="leading-relaxed text-gray-300">
-                Astra Pathways provides practical skills instruction, hands-on lab projects, and career placement assistance support. We do not provide job guarantees or guaranteed salaries.
+            <div className="p-6 rounded-2xl bg-white text-slate-600 border border-slate-200/80 shadow-xs space-y-2 text-xs">
+              <span className="font-bold text-slate-900 block text-sm">Transparent Policy</span>
+              <p className="leading-relaxed text-slate-600">
+                Astra Pathways is operated by Madyan Holdings. We provide practical skills instruction, hands-on lab projects, and career placement assistance support. We do not provide job guarantees or guaranteed salaries.
               </p>
             </div>
           </div>

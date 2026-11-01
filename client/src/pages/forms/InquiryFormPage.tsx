@@ -85,18 +85,18 @@ export const InquiryFormPage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-[#F5F7FC] text-[#0B1020] pb-24 font-sans">
-      {/* Header Banner */}
-      <div className="bg-[#0B1020] text-white py-14 sm:py-16 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-[500px] h-[300px] bg-[#4F7CFF]/15 rounded-full blur-[130px] pointer-events-none" />
+      {/* Header Banner - Light Theme */}
+      <div className="bg-gradient-to-b from-blue-50/70 via-indigo-50/20 to-[#F5F7FC] text-[#0B1020] py-14 sm:py-16 relative overflow-hidden border-b border-gray-200/80">
+        <div className="absolute top-0 right-0 w-[500px] h-[300px] bg-[#4F7CFF]/10 rounded-full blur-[130px] pointer-events-none" />
         <div className="max-w-3xl mx-auto px-4 sm:px-6 relative z-10">
-          <Link to="/forms" className="inline-flex items-center gap-2 text-xs font-semibold text-gray-400 hover:text-white transition-colors mb-4">
+          <Link to="/forms" className="inline-flex items-center gap-2 text-xs font-semibold text-gray-500 hover:text-gray-900 transition-colors mb-4">
             <ArrowLeft className="w-3.5 h-3.5" /> Back to Student Forms Hub
           </Link>
           <div className="flex items-center gap-2 text-xs text-[#4F7CFF] font-semibold mb-2 uppercase tracking-wider">
             <Sparkles className="w-4 h-4" /> Admissions & Advisory
           </div>
-          <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight">Program Inquiry Form</h1>
-          <p className="text-sm text-gray-300 mt-2 max-w-xl leading-relaxed">
+          <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-gray-900">Program Inquiry Form</h1>
+          <p className="text-sm text-gray-600 mt-2 max-w-xl leading-relaxed">
             Speak with an academic advisor about prerequisites, milestone projects, curriculum pacing, and tuition payment options.
           </p>
         </div>
