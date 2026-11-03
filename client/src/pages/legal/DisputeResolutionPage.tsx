@@ -126,16 +126,16 @@ export const DisputeResolutionPage: React.FC = () => {
           <section className="space-y-4">
             <h2 className="text-xl font-bold text-[#0B1020] flex items-center gap-2">
               <span className="w-7 h-7 rounded-lg bg-amber-500/10 text-amber-600 flex items-center justify-center text-xs font-extrabold">4</span>
-              Agreement to Arbitrate (Section 14.3)
+              Mandatory Binding Arbitration
             </h2>
             <p>
-              If a dispute cannot be resolved through the 30-day informal discussion, either party may require that the dispute be resolved exclusively by final and binding individual arbitration:
+              If an informal resolution is not reached within thirty (30) days, you and Madyan Holdings agree that any unresolved dispute, controversy, or claim shall be settled exclusively by final and binding arbitration. The arbitration shall be administered by the American Arbitration Association (AAA) in accordance with its Consumer Arbitration Rules.
             </p>
-            <ul className="list-disc pl-5 space-y-2 text-sm text-gray-600">
-              <li><strong>Arbitration Provider:</strong> Administered by the American Arbitration Association (AAA) or JAMS under its Consumer Arbitration Rules.</li>
-              <li><strong>Location:</strong> Held in Sheridan, Wyoming, or remotely via secure video conference for the student's convenience.</li>
-              <li><strong>Individual Claims Only:</strong> All disputes must be arbitrated on an individual basis. Class-action arbitrations, collective actions, and private attorney general suits are waived.</li>
-              <li><strong>Fee Assistance:</strong> If the student's claim is under $10,000, Madyan Holdings will reimburse the filing fee unless the arbitrator determines the claim was frivolous or filed for an improper purpose.</li>
+            <ul className="list-disc pl-5 space-y-2 text-sm text-gray-700 leading-relaxed">
+              <li><strong>Governing Law & Venue:</strong> The arbitration shall be governed by the Federal Arbitration Act (FAA) and the laws of the State of Wyoming, USA. The physical seat of the arbitration shall be Cheyenne, Wyoming, unless both parties mutually agree to conduct proceedings virtually or telephonically.</li>
+              <li><strong>Arbitrator Authority:</strong> The arbitrator, and not any federal, state, or local court or agency, shall have exclusive authority to resolve any dispute relating to the interpretation, applicability, enforceability, or formation of this agreement. The arbitrator's award shall be final, binding, and may be entered as a judgment in any court of competent jurisdiction.</li>
+              <li><strong>Costs:</strong> Payment of all filing, administration, and arbitrator fees will be governed by the AAA rules. Each party shall bear its own attorneys' fees and costs unless the arbitrator awards them otherwise based on statutory provisions.</li>
+              <li><strong>Class Action Waiver:</strong> YOU AND MADYAN HOLDINGS AGREE THAT EACH PARTY MAY BRING CLAIMS AGAINST THE OTHER ONLY IN AN INDIVIDUAL CAPACITY, AND NOT AS A PLAINTIFF OR CLASS MEMBER IN ANY PURPORTED CLASS, COLLECTIVE, OR REPRESENTATIVE PROCEEDING. The arbitrator may not consolidate more than one person's claims, and may not otherwise preside over any form of a representative or class proceeding.</li>
             </ul>
           </section>
 
@@ -143,13 +143,13 @@ export const DisputeResolutionPage: React.FC = () => {
           <section className="space-y-3">
             <h2 className="text-xl font-bold text-[#0B1020] flex items-center gap-2">
               <span className="w-7 h-7 rounded-lg bg-amber-500/10 text-amber-600 flex items-center justify-center text-xs font-extrabold">5</span>
-              30-Day Opt-Out Right (Section 14.7)
+              30-Day Opt-Out Right
             </h2>
             <p>
-              Students have the right to opt out of the arbitration agreement by sending written notice within <strong>30 calendar days</strong> of their initial enrollment or acceptance of terms to <a href="mailto:info@madyanholdings.com" className="text-[#4F7CFF] underline">info@madyanholdings.com</a>.
+              You have the right to opt out of this mandatory arbitration provision and class action waiver. To do so, you must send a clear, written opt-out notice via email to <a href="mailto:info@madyanholdings.com" className="text-[#4F7CFF] underline font-semibold">info@madyanholdings.com</a> within thirty (30) calendar days from the date you submit your initial Enrollment Application.
             </p>
-            <p className="text-xs text-gray-500">
-              The opt-out notice must state your name, registered email address, enrolled program, and the clear statement: <em>“I opt out of the arbitration agreement.”</em> Valid opt-out does not affect any other provisions of the Terms and Conditions.
+            <p className="text-xs text-gray-600 leading-relaxed">
+              The opt-out notice must include your full legal name, the email address associated with your enrollment, and a specific statement requesting to opt out of binding arbitration. If you opt out timely, all disputes will be resolved exclusively in the state or federal courts located in the State of Wyoming.
             </p>
           </section>
 

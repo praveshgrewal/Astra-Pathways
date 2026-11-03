@@ -238,7 +238,7 @@ export const TermsPage: React.FC = () => {
               <li>The monthly cancellation and refund calculation policy ($500/month rate).</li>
             </ul>
             <p className="text-xs text-gray-500 pt-1">
-              You may cancel future recurring authorization by written notice to <a href="mailto:info@madyanholdings.com" className="text-[#4F7CFF] underline">info@madyanholdings.com</a> or by submitting our online <Link to="/forms/cancellation" className="text-[#4F7CFF] underline">Cancellation Form</Link>, subject to amounts already due under the enrollment agreement.
+              You may cancel future recurring authorizations by providing written notice to <a href="mailto:info@madyanholdings.com" className="text-[#4F7CFF] underline">info@madyanholdings.com</a> or by submitting our online <Link to="/forms/cancellation" className="text-[#4F7CFF] underline">Cancellation Form</Link> at least three (3) business days prior to the next scheduled installment due date. Failure to provide timely notice will result in the processing of the scheduled charge.
             </p>
           </section>
 
@@ -277,7 +277,7 @@ export const TermsPage: React.FC = () => {
               To the maximum extent permitted by law, Astra Pathways will not be liable for indirect, incidental, special, consequential, or punitive damages, including lost wages, lost employment opportunities, lost profits, or emotional distress.
             </p>
             <p>
-              Astra Pathways’ total liability arising from your enrollment or use of the services is limited to the total amount you actually paid to Astra Pathways during the 12 months before the claim arose.
+              Astra Pathways’ total liability arising from or relating to these Terms, the program, or the services shall not exceed the total amount actually paid by you to Madyan Holdings for the specific program giving rise to the liability.
             </p>
           </section>
 
@@ -285,10 +285,10 @@ export const TermsPage: React.FC = () => {
           <section className="space-y-3">
             <h2 className="text-xl font-bold text-[#0B1020] flex items-center gap-2">
               <span className="w-7 h-7 rounded-lg bg-[#4F7CFF]/10 text-[#4F7CFF] flex items-center justify-center text-xs font-extrabold">11</span>
-              Indemnification
+              Governing Law & Dispute Resolution
             </h2>
             <p>
-              You agree to indemnify and hold harmless Astra Pathways, its affiliates, employees, contractors, and agents from claims, damages, losses, and expenses arising from your breach of these Terms, misuse of the platform, infringement of third-party rights, or unlawful conduct.
+              These Terms shall be governed by, construed, and enforced in accordance with the laws of the State of Wyoming, USA, without regard to conflict of law principles. Any legal action or proceeding arising under these Terms shall be brought exclusively in the state or federal courts located in Wyoming, and you hereby consent to personal jurisdiction therein.
             </p>
           </section>
 
@@ -296,6 +296,28 @@ export const TermsPage: React.FC = () => {
           <section className="space-y-3">
             <h2 className="text-xl font-bold text-[#0B1020] flex items-center gap-2">
               <span className="w-7 h-7 rounded-lg bg-[#4F7CFF]/10 text-[#4F7CFF] flex items-center justify-center text-xs font-extrabold">12</span>
+              Chargeback and Dispute Policy
+            </h2>
+            <p>
+              You agree to contact support at <a href="mailto:info@madyanholdings.com" className="text-[#4F7CFF] underline font-semibold">info@madyanholdings.com</a> to resolve any billing issues or dissatisfaction before initiating a chargeback or dispute with your bank or credit card provider. In the event of an unauthorized chargeback, Astra Pathways reserves the right to suspend platform access immediately and pursue collection of the outstanding balance plus any administrative fees incurred.
+            </p>
+          </section>
+
+          {/* Section 13 */}
+          <section className="space-y-3">
+            <h2 className="text-xl font-bold text-[#0B1020] flex items-center gap-2">
+              <span className="w-7 h-7 rounded-lg bg-[#4F7CFF]/10 text-[#4F7CFF] flex items-center justify-center text-xs font-extrabold">13</span>
+              Indemnification
+            </h2>
+            <p>
+              You agree to indemnify and hold harmless Astra Pathways, its affiliates, employees, contractors, and agents from claims, damages, losses, and expenses arising from your breach of these Terms, misuse of the platform, infringement of third-party rights, or unlawful conduct.
+            </p>
+          </section>
+
+          {/* Section 14 */}
+          <section className="space-y-3">
+            <h2 className="text-xl font-bold text-[#0B1020] flex items-center gap-2">
+              <span className="w-7 h-7 rounded-lg bg-[#4F7CFF]/10 text-[#4F7CFF] flex items-center justify-center text-xs font-extrabold">14</span>
               Termination
             </h2>
             <p>Astra Pathways may suspend or terminate your access if you:</p>
@@ -311,10 +333,10 @@ export const TermsPage: React.FC = () => {
             </p>
           </section>
 
-          {/* Section 13 */}
+          {/* Section 15 */}
           <section className="space-y-3">
             <h2 className="text-xl font-bold text-[#0B1020] flex items-center gap-2">
-              <span className="w-7 h-7 rounded-lg bg-[#4F7CFF]/10 text-[#4F7CFF] flex items-center justify-center text-xs font-extrabold">13</span>
+              <span className="w-7 h-7 rounded-lg bg-[#4F7CFF]/10 text-[#4F7CFF] flex items-center justify-center text-xs font-extrabold">15</span>
               Changes to These Terms
             </h2>
             <p>
@@ -322,93 +344,66 @@ export const TermsPage: React.FC = () => {
             </p>
           </section>
 
-          {/* Section 14: Comprehensive Governing Law & Dispute Resolution */}
+          {/* Section 16: Dispute Resolution and Arbitration Provision */}
           <section className="space-y-5 pt-4 border-t border-gray-200">
             <div className="flex items-center gap-2">
-              <span className="w-7 h-7 rounded-lg bg-amber-500/10 text-amber-600 flex items-center justify-center text-xs font-extrabold">14</span>
+              <span className="w-7 h-7 rounded-lg bg-amber-500/10 text-amber-600 flex items-center justify-center text-xs font-extrabold">16</span>
               <h2 className="text-xl font-bold text-[#0B1020]">
-                Governing Law and Dispute Resolution
+                DISPUTE RESOLUTION AND ARBITRATION PROVISION
               </h2>
             </div>
+            <p className="text-xs font-bold text-amber-800 uppercase tracking-wider">
+              (For Wyoming Jurisdictional Enforcement)
+            </p>
             
-            <div className="p-6 rounded-2xl bg-amber-50/50 border border-amber-200/80 space-y-4 text-sm text-gray-800">
+            <div className="p-6 rounded-2xl bg-amber-50/50 border border-amber-200/80 space-y-5 text-sm text-gray-800">
               
               <div>
-                <h3 className="font-bold text-gray-900">14.1 Governing Law</h3>
-                <p className="mt-1 text-gray-600">
-                  These Terms and any dispute arising out of or relating to them, your enrollment, or your use of Astra Pathways services shall be governed by the laws of the State of Wyoming, USA, without regard to its conflict-of-laws principles.
+                <h3 className="font-bold text-gray-900 text-base">1. Dispute Resolution Policy & Intent</h3>
+                <p className="mt-1.5 text-gray-700 leading-relaxed">
+                  Madyan Holdings (operating as Astra Pathways) is committed to resolving student concerns efficiently and amicably. You agree that in the event of any dispute, claim, question, or disagreement arising out of or relating to these Terms, your enrollment, or the services provided, you must first contact our support team at <a href="mailto:info@madyanholdings.com" className="text-[#4F7CFF] underline font-semibold">info@madyanholdings.com</a> to attempt an informal, good-faith negotiation. No formal legal proceeding or arbitration may be initiated until both parties have engaged in this informal process for a minimum of thirty (30) calendar days.
                 </p>
               </div>
 
               <div>
-                <h3 className="font-bold text-gray-900">14.2 Informal Dispute Resolution</h3>
-                <p className="mt-1 text-gray-600">
-                  Before initiating arbitration or filing a formal claim, the student must first contact Madyan Holdings via our online <Link to="/forms/complaint" className="text-[#4F7CFF] underline font-semibold">Complaint Form</Link> or email <a href="mailto:info@madyanholdings.com" className="text-[#4F7CFF] underline">info@madyanholdings.com</a> and provide:
+                <h3 className="font-bold text-gray-900 text-base">2. Mandatory Binding Arbitration</h3>
+                <p className="mt-1.5 text-gray-700 leading-relaxed">
+                  If an informal resolution is not reached within thirty (30) days, you and Madyan Holdings agree that any unresolved dispute, controversy, or claim shall be settled exclusively by final and binding arbitration. The arbitration shall be administered by the American Arbitration Association (AAA) in accordance with its Consumer Arbitration Rules.
                 </p>
-                <ul className="list-disc pl-5 space-y-1 mt-1 text-gray-600">
-                  <li>Full name and enrolled program.</li>
-                  <li>Date of enrollment.</li>
-                  <li>Description of the dispute.</li>
-                  <li>Supporting documents or evidence.</li>
-                  <li>The resolution requested.</li>
+                <ul className="list-disc pl-5 space-y-2 mt-2 text-gray-700 leading-relaxed">
+                  <li>
+                    <strong>Governing Law & Venue:</strong> The arbitration shall be governed by the Federal Arbitration Act (FAA) and the laws of the State of Wyoming, USA. The physical seat of the arbitration shall be Cheyenne, Wyoming, unless both parties mutually agree to conduct proceedings virtually or telephonically.
+                  </li>
+                  <li>
+                    <strong>Arbitrator Authority:</strong> The arbitrator, and not any federal, state, or local court or agency, shall have exclusive authority to resolve any dispute relating to the interpretation, applicability, enforceability, or formation of this agreement. The arbitrator's award shall be final, binding, and may be entered as a judgment in any court of competent jurisdiction.
+                  </li>
+                  <li>
+                    <strong>Costs:</strong> Payment of all filing, administration, and arbitrator fees will be governed by the AAA rules. Each party shall bear its own attorneys' fees and costs unless the arbitrator awards them otherwise based on statutory provisions.
+                  </li>
                 </ul>
-                <p className="mt-1.5 text-gray-600">
-                  Madyan Holdings will review the matter and respond within 15 business days. Both parties will attempt to resolve the dispute in good faith for 30 days after the initial written notice.
+              </div>
+
+              <div>
+                <h3 className="font-bold text-gray-900 text-base">3. Class Action Waiver</h3>
+                <p className="mt-1.5 text-gray-900 font-bold uppercase tracking-wide leading-relaxed">
+                  YOU AND MADYAN HOLDINGS AGREE THAT EACH PARTY MAY BRING CLAIMS AGAINST THE OTHER ONLY IN AN INDIVIDUAL CAPACITY, AND NOT AS A PLAINTIFF OR CLASS MEMBER IN ANY PURPORTED CLASS, COLLECTIVE, OR REPRESENTATIVE PROCEEDING. The arbitrator may not consolidate more than one person's claims, and may not otherwise preside over any form of a representative or class proceeding.
                 </p>
               </div>
 
               <div>
-                <h3 className="font-bold text-gray-900">14.3 Agreement to Arbitrate</h3>
-                <p className="mt-1 text-gray-600">
-                  If the dispute is not resolved through informal discussion within 30 days, either party may require that the dispute be resolved exclusively by final and binding arbitration, rather than in court.
-                </p>
-                <p className="mt-1 text-gray-600">
-                  The arbitration will be administered by the American Arbitration Association (AAA) or JAMS under its applicable Consumer Arbitration Rules. The arbitration will take place in Sheridan, Wyoming, or remotely by video conference or in a location reasonably convenient to the student. The arbitrator shall have authority to award the same damages and remedies available in court, subject to these Terms.
-                </p>
-              </div>
-
-              <div>
-                <h3 className="font-bold text-gray-900">14.4 Individual Claims Only (Class-Action Waiver)</h3>
-                <p className="mt-1 text-gray-600">
-                  The student and Madyan Holdings agree that disputes will be resolved only on an individual basis. Neither party may bring a claim as a plaintiff or class member in a class, collective, consolidated, or representative proceeding. The parties waive any right to participate in a class action, class arbitration, or representative action against the other party.
-                </p>
-              </div>
-
-              <div>
-                <h3 className="font-bold text-gray-900">14.5 Arbitration Fees</h3>
-                <p className="mt-1 text-gray-600">
-                  If the student initiates arbitration and the arbitration provider requires a filing fee, Madyan Holdings will reimburse the student’s filing fee if the student’s claim is less than $10,000, unless the arbitrator determines that the claim was filed for an improper purpose. Each party will otherwise bear its own legal fees, except where applicable law or the arbitrator’s award provides otherwise.
-                </p>
-              </div>
-
-              <div>
-                <h3 className="font-bold text-gray-900">14.6 Exceptions</h3>
-                <p className="mt-1 text-gray-600">
-                  This arbitration agreement does not apply to: claims that qualify for small-claims court; applications for temporary or injunctive relief to protect confidential information, intellectual property, or prevent imminent harm; and claims that cannot legally be subject to arbitration under applicable law.
-                </p>
-              </div>
-
-              <div>
-                <h3 className="font-bold text-gray-900">14.7 30-Day Opt-Out Right</h3>
-                <p className="mt-1 text-gray-600">
-                  The student may opt out of this arbitration agreement by sending written notice to <a href="mailto:info@madyanholdings.com" className="text-[#4F7CFF] underline">info@madyanholdings.com</a> within 30 days of the date the student first accepts these Terms. The opt-out notice must include the student’s full name, email address used for enrollment, mailing address, program enrolled in, and the statement: <em>“I opt out of the arbitration agreement.”</em>
-                </p>
-              </div>
-
-              <div>
-                <h3 className="font-bold text-gray-900">14.8 Severability & 14.9 Changes</h3>
-                <p className="mt-1 text-gray-600">
-                  If any part of this dispute-resolution provision is found unenforceable, the remaining provisions will continue to apply. If Madyan Holdings materially changes this dispute-resolution provision after the student has enrolled, the student may reject the change within 30 days.
+                <h3 className="font-bold text-gray-900 text-base">4. 30-Day Opt-Out Right</h3>
+                <p className="mt-1.5 text-gray-700 leading-relaxed">
+                  You have the right to opt out of this mandatory arbitration provision and class action waiver. To do so, you must send a clear, written opt-out notice via email to <a href="mailto:info@madyanholdings.com" className="text-[#4F7CFF] underline font-semibold">info@madyanholdings.com</a> within thirty (30) calendar days from the date you submit your initial Enrollment Application. The opt-out notice must include your full legal name, the email address associated with your enrollment, and a specific statement requesting to opt out of binding arbitration. If you opt out timely, all disputes will be resolved exclusively in the state or federal courts located in the State of Wyoming.
                 </p>
               </div>
 
             </div>
           </section>
 
-          {/* Section 15 */}
+          {/* Section 17 */}
           <section className="space-y-4 pt-4 border-t border-gray-200">
             <h2 className="text-xl font-bold text-[#0B1020] flex items-center gap-2">
-              <span className="w-7 h-7 rounded-lg bg-[#4F7CFF]/10 text-[#4F7CFF] flex items-center justify-center text-xs font-extrabold">15</span>
+              <span className="w-7 h-7 rounded-lg bg-[#4F7CFF]/10 text-[#4F7CFF] flex items-center justify-center text-xs font-extrabold">17</span>
               Contact Information & Inquiries
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs sm:text-sm text-gray-700">

@@ -63,6 +63,7 @@ export function initDatabase() {
       program_of_interest TEXT,
       current_experience TEXT,
       preferred_contact TEXT,
+      best_time_to_connect TEXT DEFAULT '',
       message TEXT,
       source TEXT DEFAULT 'Website',
       status TEXT DEFAULT 'New',
@@ -156,10 +157,23 @@ export function initDatabase() {
       payload TEXT NOT NULL,
       notes TEXT DEFAULT '',
       resolution TEXT DEFAULT '',
+      ip_address TEXT DEFAULT '',
       created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
       updated_at DATETIME DEFAULT CURRENT_TIMESTAMP
     );
   `);
+
+  try {
+    db.exec(`ALTER TABLE leads ADD COLUMN best_time_to_connect TEXT DEFAULT ''`);
+  } catch {
+    // Column already exists
+  }
+
+  try {
+    db.exec(`ALTER TABLE forms_submissions ADD COLUMN ip_address TEXT DEFAULT ''`);
+  } catch {
+    // Column already exists
+  }
 
   console.log('Database tables verified and initialized.');
 }

@@ -13,6 +13,7 @@ export const PlacementAssistanceFormPage: React.FC = () => {
     phone: '',
     student_id: '',
     program_name: 'Full-Stack Web Development',
+    best_time_to_connect: '',
     graduation_date: '',
     target_roles: '',
     work_authorization: 'US Citizen / Permanent Resident',
@@ -72,6 +73,7 @@ export const PlacementAssistanceFormPage: React.FC = () => {
           github_url: formData.github_url,
           resume_link: formData.resume_link,
           services_requested: formData.services_requested,
+          best_time_to_connect: formData.best_time_to_connect,
           transparency_accepted: formData.transparency_accepted
         },
         website_hp: formData.website_hp
@@ -272,6 +274,21 @@ export const PlacementAssistanceFormPage: React.FC = () => {
                       <option key={p} value={p}>{p}</option>
                     ))}
                   </select>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-1.5">
+                    Best Time to Connect
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="e.g. 12-2pm, Morning, Weekday afternoons"
+                    value={formData.best_time_to_connect}
+                    onChange={e => setFormData({ ...formData, best_time_to_connect: e.target.value })}
+                    className="w-full px-3.5 py-2.5 rounded-xl border border-gray-300 text-sm focus:outline-none focus:ring-2 focus:ring-[#8B5CF6] focus:border-transparent transition-all"
+                  />
                 </div>
               </div>
 

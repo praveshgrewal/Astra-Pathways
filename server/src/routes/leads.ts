@@ -13,6 +13,7 @@ const leadSchema = z.object({
   program_of_interest: z.string().optional(),
   current_experience: z.string().optional(),
   preferred_contact: z.string().optional(),
+  best_time_to_connect: z.string().optional(),
   message: z.string().max(2000, 'Message is too long').optional(),
   source: z.string().optional(),
   consent: z.boolean().optional(),
@@ -33,7 +34,7 @@ router.post('/', (req, res) => {
 
   const {
     name, email, phone, program_of_interest,
-    current_experience, preferred_contact, message,
+    current_experience, preferred_contact, best_time_to_connect, message,
     source, website_hp
   } = result.data;
 
@@ -62,9 +63,9 @@ router.post('/', (req, res) => {
   db.prepare(`
     INSERT INTO leads (
       id, name, email, phone, program_of_interest,
-      current_experience, preferred_contact, message,
+      current_experience, preferred_contact, best_time_to_connect, message,
       source, status, notes
-    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, 'New', '')
+    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'New', '')
   `).run(
     leadId,
     name.trim(),
@@ -73,6 +74,7 @@ router.post('/', (req, res) => {
     program_of_interest || 'General Inquiry',
     current_experience || 'Not specified',
     preferred_contact || 'Email',
+    best_time_to_connect || 'Anytime',
     message ? message.trim() : '',
     source || 'Website Contact Form'
   );

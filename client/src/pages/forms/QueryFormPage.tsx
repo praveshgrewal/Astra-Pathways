@@ -13,6 +13,7 @@ export const QueryFormPage: React.FC = () => {
     phone: '',
     subject: '',
     category: 'Curriculum & Lab Projects',
+    best_time_to_connect: '',
     priority: 'Standard',
     query_details: '',
     website_hp: ''
@@ -48,6 +49,7 @@ export const QueryFormPage: React.FC = () => {
         payload: {
           subject: formData.subject,
           category: formData.category,
+          best_time_to_connect: formData.best_time_to_connect,
           query_details: formData.query_details
         },
         website_hp: formData.website_hp
@@ -211,6 +213,21 @@ export const QueryFormPage: React.FC = () => {
                       <option key={c} value={c}>{c}</option>
                     ))}
                   </select>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-1.5">
+                    Best Time to Connect
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="e.g. 12-2pm, Morning, Weekday afternoons"
+                    value={formData.best_time_to_connect}
+                    onChange={e => setFormData({ ...formData, best_time_to_connect: e.target.value })}
+                    className="w-full px-3.5 py-2.5 rounded-xl border border-gray-300 text-sm focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all"
+                  />
                 </div>
               </div>
 

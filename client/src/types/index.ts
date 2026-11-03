@@ -54,6 +54,7 @@ export interface Lead {
   program_of_interest?: string;
   current_experience?: string;
   preferred_contact?: string;
+  best_time_to_connect?: string;
   message?: string;
   source?: string;
   status: 'New' | 'Contacted' | 'Follow-up' | 'Qualified' | 'Closed';

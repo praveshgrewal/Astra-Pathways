@@ -13,6 +13,7 @@ export const ContactPage: React.FC = () => {
     program_of_interest: 'Full-Stack Web Development',
     current_experience: 'Beginner / Student',
     preferred_contact: 'Email',
+    best_time_to_connect: '',
     message: '',
     consent: true,
     website_hp: ''
@@ -239,6 +240,21 @@ export const ContactPage: React.FC = () => {
                           <option value="Phone">Phone Call</option>
                           <option value="WhatsApp">WhatsApp</option>
                         </select>
+                      </div>
+                    </div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                      <div>
+                        <label className="block text-xs font-semibold text-gray-700 mb-1.5">
+                          Best Time to Connect
+                        </label>
+                        <input
+                          type="text"
+                          placeholder="e.g. 12-2pm, Morning, Weekday afternoons"
+                          value={formData.best_time_to_connect}
+                          onChange={(e) => setFormData({ ...formData, best_time_to_connect: e.target.value })}
+                          className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#4F7CFF] focus:outline-none focus:ring-1 focus:ring-[#4F7CFF] text-sm text-[#0B1020] transition-colors"
+                        />
                       </div>
                     </div>
 

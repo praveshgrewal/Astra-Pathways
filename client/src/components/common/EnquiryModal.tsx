@@ -22,6 +22,7 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
     program_of_interest: initialProgram || 'Full-Stack Web Development',
     current_experience: 'Beginner / Student',
     preferred_contact: 'Email',
+    best_time_to_connect: '',
     message: '',
     consent: true,
     website_hp: ''
@@ -205,6 +206,21 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
                       <option value="Phone">Phone Call</option>
                       <option value="WhatsApp">WhatsApp</option>
                     </select>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-xs font-semibold text-gray-300 mb-1.5">
+                      Best Time to Connect
+                    </label>
+                    <input
+                      type="text"
+                      placeholder="e.g. 12-2pm, Morning, Weekday afternoons"
+                      value={formData.best_time_to_connect}
+                      onChange={(e) => setFormData({ ...formData, best_time_to_connect: e.target.value })}
+                      className="w-full px-3.5 py-2.5 rounded-xl bg-white/5 border border-white/15 focus:border-[#4F7CFF] focus:outline-none focus:ring-1 focus:ring-[#4F7CFF] text-white text-sm placeholder-gray-500 transition-colors"
+                    />
                   </div>
                 </div>
 

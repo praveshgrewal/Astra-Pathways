@@ -11,6 +11,7 @@ export const EnrollmentFormPage: React.FC = () => {
     full_name: '',
     email: '',
     phone: '',
+    best_time_to_connect: '',
     dob: '',
     address: '',
     city: '',
@@ -26,6 +27,7 @@ export const EnrollmentFormPage: React.FC = () => {
     terms_accepted: false,
     arbitration_accepted: false,
     refund_accepted: false,
+    recurring_billing_accepted: false,
     website_hp: ''
   });
 
@@ -47,8 +49,8 @@ export const EnrollmentFormPage: React.FC = () => {
     e.preventDefault();
     setErrorMessage(null);
 
-    if (!formData.terms_accepted || !formData.arbitration_accepted || !formData.refund_accepted) {
-      setErrorMessage('Please accept all required legal disclosures to proceed with enrollment.');
+    if (!formData.terms_accepted || !formData.arbitration_accepted || !formData.refund_accepted || !formData.recurring_billing_accepted) {
+      setErrorMessage('Please accept all required legal disclosures and payment authorizations to proceed with enrollment.');
       return;
     }
 
@@ -69,13 +71,15 @@ export const EnrollmentFormPage: React.FC = () => {
           state: formData.state,
           country: formData.country,
           postal_code: formData.postal_code,
+          best_time_to_connect: formData.best_time_to_connect,
           education_level: formData.education_level,
           payment_method: formData.payment_method,
           emergency_contact: formData.emergency_contact,
           emergency_phone: formData.emergency_phone,
           terms_accepted: formData.terms_accepted,
           arbitration_accepted: formData.arbitration_accepted,
-          refund_accepted: formData.refund_accepted
+          refund_accepted: formData.refund_accepted,
+          recurring_billing_accepted: formData.recurring_billing_accepted
         },
         website_hp: formData.website_hp
       });
@@ -128,9 +132,9 @@ export const EnrollmentFormPage: React.FC = () => {
                 <CheckCircle2 className="w-9 h-9" />
               </div>
               <div className="space-y-2">
-                <h2 className="text-2xl font-black text-gray-900">Enrollment Application Received!</h2>
+                <h2 className="text-2xl font-black text-gray-900">Thank you for your payment!</h2>
                 <p className="text-sm text-gray-600 max-w-md mx-auto">
-                  Welcome to Astra Pathways! Your enrollment has been registered under reference:
+                  Your enrollment application is complete. A receipt has been sent to your email. Please note that this transaction will appear on your financial statements under the name <strong>Madyan Holdings (operating as Astra Pathways)</strong>.
                 </p>
               </div>
 
@@ -143,6 +147,10 @@ export const EnrollmentFormPage: React.FC = () => {
                   {copied ? <Check className="w-3.5 h-3.5 text-emerald-600" /> : <Copy className="w-3.5 h-3.5" />}
                   {copied ? 'Copied' : 'Copy'}
                 </button>
+              </div>
+
+              <div className="p-3.5 rounded-xl bg-gray-50 border border-gray-200 text-xs text-gray-500 text-center max-w-md mx-auto leading-relaxed">
+                This invoice/receipt is issued by Madyan Holdings, the registered operating company of Astra Pathways. For billing inquiries, support, or cancellation requests under our pro-rated policy, contact <a href="mailto:info@madyanholdings.com" className="text-[#4F7CFF] underline font-medium">info@madyanholdings.com</a>.
               </div>
 
               <div className="p-4 rounded-2xl bg-blue-50/70 border border-blue-200 text-left text-xs sm:text-sm text-blue-900 space-y-2">
@@ -249,6 +257,21 @@ export const EnrollmentFormPage: React.FC = () => {
                     required
                     value={formData.dob}
                     onChange={e => setFormData({ ...formData, dob: e.target.value })}
+                    className="w-full px-3.5 py-2.5 rounded-xl border border-gray-300 text-sm focus:outline-none focus:ring-2 focus:ring-[#4F7CFF] focus:border-transparent transition-all"
+                  />
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-1.5">
+                    Best Time to Connect
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="e.g. 12-2pm, Morning, Weekday afternoons"
+                    value={formData.best_time_to_connect}
+                    onChange={e => setFormData({ ...formData, best_time_to_connect: e.target.value })}
                     className="w-full px-3.5 py-2.5 rounded-xl border border-gray-300 text-sm focus:outline-none focus:ring-2 focus:ring-[#4F7CFF] focus:border-transparent transition-all"
                   />
                 </div>
@@ -393,6 +416,14 @@ export const EnrollmentFormPage: React.FC = () => {
                 </div>
               </div>
 
+              {/* Payment Processing Notice */}
+              <div className="p-3.5 rounded-xl bg-blue-50/80 border border-blue-200 text-xs text-blue-900 space-y-1">
+                <span className="font-bold block text-blue-950">Payment Processing Notice:</span>
+                <p>
+                  Payments are securely processed by our parent entity, Madyan Holdings, a registered Wyoming LLC. Your credit card or bank statement will display the charge as <strong>MADYAN ASTRA PATHWAY.*</strong>
+                </p>
+              </div>
+
               <div className="border-b border-gray-100 pt-4 pb-2">
                 <h3 className="text-sm font-bold text-gray-900 uppercase tracking-wider">3. Mandatory Disclosures & Consents</h3>
               </div>
@@ -406,7 +437,7 @@ export const EnrollmentFormPage: React.FC = () => {
                     className="mt-1 w-4 h-4 text-[#4F7CFF] rounded border-gray-300 focus:ring-[#4F7CFF]"
                   />
                   <span className="text-xs text-gray-600 leading-relaxed">
-                    I have read and agree to the <Link to="/terms" target="_blank" className="text-[#4F7CFF] underline font-semibold">Terms and Conditions</Link>, including student responsibilities and educational transparency notice.
+                    I have read and agree to the <Link to="/terms" target="_blank" className="text-[#4F7CFF] underline font-semibold">Terms and Conditions</Link>, including student responsibilities, the educational transparency notice, and the explicit policy that employment, placement, or career outcomes are not guaranteed.
                   </span>
                 </label>
 
@@ -430,7 +461,19 @@ export const EnrollmentFormPage: React.FC = () => {
                     className="mt-1 w-4 h-4 text-[#4F7CFF] rounded border-gray-300 focus:ring-[#4F7CFF]"
                   />
                   <span className="text-xs text-gray-600 leading-relaxed">
-                    I have read and accept the <Link to="/refunds" target="_blank" className="text-[#4F7CFF] underline font-semibold">Refund and Cancellation Policy</Link>, including the applicable full-refund window, late fee terms, and pro-rated formula.
+                    I have read and accept the <Link to="/refunds" target="_blank" className="text-[#4F7CFF] underline font-semibold">Refund and Cancellation Policy</Link>, including the applicable full-refund window, late fee terms, and the explicit $500/month pro-rated cancellation formula.
+                  </span>
+                </label>
+
+                <label className="flex items-start gap-3 cursor-pointer">
+                  <input
+                    type="checkbox"
+                    checked={formData.recurring_billing_accepted}
+                    onChange={e => setFormData({ ...formData, recurring_billing_accepted: e.target.checked })}
+                    className="mt-1 w-4 h-4 text-[#4F7CFF] rounded border-gray-300 focus:ring-[#4F7CFF]"
+                  />
+                  <span className="text-xs text-gray-600 leading-relaxed">
+                    I authorize Madyan Holdings (operating Astra Pathways) to automatically charge my saved payment method on each scheduled installment due date in accordance with Section 6.2 and Section 7 of the <Link to="/terms" target="_blank" className="text-[#4F7CFF] underline font-semibold">Terms and Conditions</Link>.
                   </span>
                 </label>
               </div>

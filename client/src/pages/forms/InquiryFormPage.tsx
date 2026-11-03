@@ -15,6 +15,7 @@ export const InquiryFormPage: React.FC = () => {
     background: 'Career Switcher (Non-Tech)',
     start_timing: 'Next Available Cohort',
     preferred_contact: 'Email',
+    best_time_to_connect: '',
     questions: '',
     website_hp: ''
   });
@@ -58,6 +59,7 @@ export const InquiryFormPage: React.FC = () => {
           background: formData.background,
           start_timing: formData.start_timing,
           preferred_contact: formData.preferred_contact,
+          best_time_to_connect: formData.best_time_to_connect,
           questions: formData.questions
         },
         website_hp: formData.website_hp
@@ -277,6 +279,19 @@ export const InquiryFormPage: React.FC = () => {
                     </button>
                   ))}
                 </div>
+              </div>
+
+              <div>
+                <label className="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-1.5">
+                  Best Time to Connect
+                </label>
+                <input
+                  type="text"
+                  placeholder="e.g. 12-2pm, Morning, Weekday afternoons"
+                  value={formData.best_time_to_connect}
+                  onChange={e => setFormData({ ...formData, best_time_to_connect: e.target.value })}
+                  className="w-full px-3.5 py-2.5 rounded-xl border border-gray-300 text-sm focus:outline-none focus:ring-2 focus:ring-[#4F7CFF] focus:border-transparent transition-all"
+                />
               </div>
 
               <div>

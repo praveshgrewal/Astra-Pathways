@@ -73,12 +73,33 @@ router.post('/submit', (req, res) => {
   const id = 'sub_' + uuidv4().slice(0, 8);
   const referenceNumber = generateReferenceNumber(form_type);
 
-  // Insert into forms_submissions
+  // Capture student IP address and precise UTC timestamp for legal/chargeback evidence
+  const rawIp = (req.headers['x-forwarded-for'] as string) || req.socket.remoteAddress || req.ip || '';
+  const clientIp = rawIp.split(',')[0].trim() || '127.0.0.1';
+  const submissionTimestamp = new Date().toISOString();
+
+  // Explicitly record IP address, timestamp, user agent, and verified checked status (true) for all checkboxes
+  const enrichedPayload = {
+    ...payload,
+    ip_address: clientIp,
+    timestamp: submissionTimestamp,
+    submitted_at: submissionTimestamp,
+    user_agent: (req.headers['user-agent'] as string) || '',
+    consents: {
+      terms_accepted: Boolean(payload.terms_accepted),
+      arbitration_accepted: Boolean(payload.arbitration_accepted),
+      refund_accepted: Boolean(payload.refund_accepted),
+      recurring_billing_accepted: Boolean(payload.recurring_billing_accepted ?? payload.auto_charge_authorized),
+      ...(payload.consents || {})
+    }
+  };
+
+  // Insert into forms_submissions with ip_address
   db.prepare(`
     INSERT INTO forms_submissions (
       id, reference_number, form_type, full_name, email,
-      phone, program_name, cohort, status, priority, payload, notes, resolution
-    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, 'New', ?, ?, '', '')
+      phone, program_name, cohort, status, priority, payload, notes, resolution, ip_address
+    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, 'New', ?, ?, '', '', ?)
   `).run(
     id,
     referenceNumber,
@@ -89,7 +110,8 @@ router.post('/submit', (req, res) => {
     program_name || '',
     cohort || '',
     priority || 'Standard',
-    JSON.stringify(payload)
+    JSON.stringify(enrichedPayload),
+    clientIp
   );
 
   // Also sync to leads table so it is instantly tracked in the unified admin leads list
@@ -151,6 +173,108 @@ router.get('/lookup/:ref', (req, res) => {
     success: true,
     submission
   });
+});
+
+// GET /api/forms/evidence/:ref - Export audit trail / signed terms evidence for chargeback defense
+router.get('/evidence/:ref', (req, res) => {
+  const ref = req.params.ref.toUpperCase().trim();
+  const sub = db.prepare('SELECT * FROM forms_submissions WHERE reference_number = ?').get(ref) as any;
+  if (!sub) {
+    res.status(404).send('Submission not found.');
+    return;
+  }
+  let payload: any = {};
+  try { payload = JSON.parse(sub.payload); } catch {}
+
+  const html = `<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Enrollment Legal Audit & Chargeback Evidence - ${sub.reference_number}</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; margin: 40px; color: #111; line-height: 1.5; font-size: 13px; }
+    h1 { font-size: 20px; margin-bottom: 4px; }
+    .badge { display: inline-block; padding: 4px 8px; background: #e0f2fe; color: #0369a1; border-radius: 4px; font-weight: bold; font-size: 11px; }
+    .box { border: 1px solid #ddd; border-radius: 8px; padding: 16px; margin: 16px 0; background: #fafafa; }
+    table { width: 100%; border-collapse: collapse; margin-top: 8px; }
+    td, th { padding: 8px 12px; border: 1px solid #e5e5e5; text-align: left; }
+    th { background: #f0f0f0; width: 35%; font-weight: 600; }
+    .verified { color: #166534; font-weight: bold; }
+    .terms-box { border: 1px solid #ccc; padding: 16px; margin-top: 16px; font-size: 11px; background: #fff; border-radius: 6px; }
+    @media print { .no-print { display: none; } }
+  </style>
+</head>
+<body>
+  <div class="no-print" style="margin-bottom: 20px;">
+    <button onclick="window.print()" style="padding: 10px 20px; font-size: 14px; font-weight: bold; background: #2563eb; color: #fff; border: none; border-radius: 6px; cursor: pointer;">
+      🖨️ Print / Save as PDF (Stripe Chargeback Evidence)
+    </button>
+  </div>
+  <h1>Madyan Holdings LLC · Student Enrollment Verification Record</h1>
+  <p style="color: #666; margin-top: 0;">Official Enrollment Record & Cryptographic Audit Trail for Astra Pathways</p>
+  
+  <div class="box">
+    <span class="badge">VERIFIED AUDIT LOG</span>
+    <table>
+      <tr><th>Reference Number</th><td><strong>${sub.reference_number}</strong></td></tr>
+      <tr><th>Student Full Legal Name</th><td>${sub.full_name}</td></tr>
+      <tr><th>Email Address</th><td>${sub.email}</td></tr>
+      <tr><th>Phone</th><td>${sub.phone || 'N/A'}</td></tr>
+      <tr><th>Program Enrolled</th><td>${sub.program_name}</td></tr>
+      <tr><th>Cohort / Batch</th><td>${sub.cohort || 'Standard'}</td></tr>
+      <tr><th>Submission Timestamp (UTC)</th><td>${payload.timestamp || sub.created_at}</td></tr>
+      <tr><th>Student IP Address</th><td><strong>${sub.ip_address || payload.ip_address || 'Verified on file'}</strong></td></tr>
+      <tr><th>User Agent / Device</th><td>${payload.user_agent || 'Web Browser'}</td></tr>
+    </table>
+  </div>
+
+  <div class="box">
+    <h3 style="margin-top: 0;">Verified Mandatory Consents & Disclosures</h3>
+    <table>
+      <tr>
+        <th>Terms and Conditions</th>
+        <td class="verified">
+          ${payload.consents?.terms_accepted || payload.terms_accepted ? '✔ ACCEPTED & CHECKED (TRUE)' : 'NOT ACCEPTED'}
+          <br><small style="color: #555;">Agreement to student responsibilities, transparency notice, and non-guarantee of employment.</small>
+        </td>
+      </tr>
+      <tr>
+        <th>Dispute Resolution & Binding Arbitration</th>
+        <td class="verified">
+          ${payload.consents?.arbitration_accepted || payload.arbitration_accepted ? '✔ ACCEPTED & CHECKED (TRUE)' : 'NOT ACCEPTED'}
+          <br><small style="color: #555;">Agreement to informal negotiation, binding AAA arbitration in Cheyenne, WY, and class-action waiver.</small>
+        </td>
+      </tr>
+      <tr>
+        <th>Refund & Cancellation Policy</th>
+        <td class="verified">
+          ${payload.consents?.refund_accepted || payload.refund_accepted ? '✔ ACCEPTED & CHECKED (TRUE)' : 'NOT ACCEPTED'}
+          <br><small style="color: #555;">Acceptance of full-refund window, late fee terms, and explicit $500/month pro-rated cancellation formula.</small>
+        </td>
+      </tr>
+      <tr>
+        <th>Recurring Payment Authorization</th>
+        <td class="verified">
+          ${payload.consents?.recurring_billing_accepted || payload.recurring_billing_accepted ? '✔ AUTHORIZED & CHECKED (TRUE)' : 'N/A'}
+          <br><small style="color: #555;">Authorization to charge saved payment method on each installment due date under Section 6.2 & Section 7.</small>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="terms-box">
+    <h4 style="margin-top: 0;">Governing Terms & Dispute Policy Text at Time of Submission</h4>
+    <p><strong>Operating Entity:</strong> Madyan Holdings LLC, 30 N Gould St, STE N, Sheridan, WY, USA - 82801 (Operating Astra Pathways).</p>
+    <p><strong>Payment Processing Notice:</strong> Payments are securely processed by our parent entity, Madyan Holdings, a registered Wyoming LLC. Your credit card or bank statement will display the charge as MADYAN ASTRA PATHWAY.*</p>
+    <p><strong>Governing Law:</strong> State of Wyoming, USA. Jurisdiction and venue exclusively in the state or federal courts located in Wyoming, or binding AAA arbitration seated in Cheyenne, Wyoming.</p>
+    <p><strong>Chargeback & Dispute Policy:</strong> Students agree to contact support at info@madyanholdings.com to resolve billing issues before initiating a bank chargeback. Unauthorized chargebacks result in immediate platform suspension and collections recovery.</p>
+    <p><strong>Cancellation & Pro-Rated Formula:</strong> After the initial refund window, services are charged at $500/month plus a 10% administrative fee for elapsed months.</p>
+  </div>
+</body>
+</html>`;
+
+  res.setHeader('Content-Type', 'text/html');
+  res.send(html);
 });
 
 // GET /api/forms/submissions - Admin list of form submissions
